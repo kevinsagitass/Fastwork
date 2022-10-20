@@ -1,26 +1,22 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int nomor1, nomor2, nomor3, median = 0;
+    int nomor[3] = {0};
     cout << "Input Nomor 1" << endl;
-    cin >> nomor1;
-    median = nomor1;
+    cin >> nomor[0];
     cout << "Input Nomor 2" << endl;
-    cin >> nomor2;
-    if (nomor2 > nomor1) {
-        median = nomor2;
-    }
+    cin >> nomor[1];
     cout << "Input Nomor 3" << endl;
-    cin >> nomor3;
-    if (nomor3 < nomor2) {
-        median = nomor3;
-    }
+    cin >> nomor[2];
 
-    cout << "Nilai Tengah : " + std::to_string(median) << endl;
+    sort(nomor, nomor + sizeof(nomor)/sizeof(nomor[0]));
+
+    cout << "Nilai Tengah : " + std::to_string(nomor[1]) << endl;
 
 
 

@@ -36,13 +36,13 @@ int main()
     pukulBerangkat1DalamDetik += std::stoi(pukulBerangkat1.substr(0, pukulBerangkat1.find(":")));
     pukulBerangkat1.erase(0, pukulBerangkat1.find(":") + 1);
 
-    // Jam Tiba
+    // Jam Berangkat
     pukulBerangkat2DalamDetik += std::stoi(pukulBerangkat2.substr(0, pukulBerangkat2.find(":"))) * 3600;
     pukulBerangkat2.erase(0, pukulBerangkat2.find(":") + 1);
-    // Menit Tiba
+    // Menit Berangkat
     pukulBerangkat2DalamDetik += std::stoi(pukulBerangkat2.substr(0, pukulBerangkat2.find(":"))) * 60;
     pukulBerangkat2.erase(0, pukulBerangkat2.find(":") + 1);
-    // Detik Tiba
+    // Detik Berangkat
     pukulBerangkat2DalamDetik += std::stoi(pukulBerangkat2.substr(0, pukulBerangkat2.find(":")));
     pukulBerangkat2.erase(0, pukulBerangkat2.find(":") + 1);
 
@@ -66,15 +66,16 @@ int main()
 
     if (pukulBerangkat1DalamDetik < pukulBerangkat2DalamDetik) {
         waktuBerpapasan += pukulBerangkat1DalamDetik;
-        jam = waktuBerpapasan / 3600;
-        waktuBerpapasan %= 3600;
-        menit = waktuBerpapasan / 60;
-        waktuBerpapasan %= 60;
-        detik = waktuBerpapasan;
-        cout << "Mereka akan Bertemu Pada Pukul " + std::to_string(jam) + ":" + std::to_string(menit) + ":" + std::to_string(detik) << endl;
     } else {
-
+        waktuBerpapasan += pukulBerangkat2DalamDetik;
     }
+
+    jam = waktuBerpapasan / 3600;
+    waktuBerpapasan %= 3600;
+    menit = waktuBerpapasan / 60;
+    waktuBerpapasan %= 60;
+    detik = waktuBerpapasan;
+    cout << "Mereka akan Bertemu Pada Pukul " + std::to_string(jam) + ":" + std::to_string(menit) + ":" + std::to_string(detik) << endl;
 
     return 0;
 }
