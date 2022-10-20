@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1666254074 source:d:\learning module\learning project\fastwork\akbar\soal10\main.cpp
+	<iostream>
+	<limits>
+	<ios>
+	<bits/stdc++.h>
+
