@@ -6,8 +6,8 @@
 
 package com.stockBarang;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.*;
 
@@ -17,15 +17,9 @@ import javax.swing.table.*;
  */
 public class MainForm extends javax.swing.JFrame {
 
-    // koneksi connect = new koneksi();
-    List<Barang> data = new ArrayList<Barang>(){
-        {
-           add(new Barang("ATK001", "Pensil 2B", "2000", "190"));
-           add(new Barang("ATK002", "Buku Tulis", "1500", "225"));
-           add(new Barang("ATK003", "Pulpen", "2500", "300"));
-           add(new Barang("MKN001", "Kacang 200gr", "5400", "150"));
-        }
-    };
+    koneksi connect = new koneksi();
+    ResultSet data = null;
+    
 
     /**
      * Creates new form myForm
@@ -40,40 +34,30 @@ public class MainForm extends javax.swing.JFrame {
         int jumbaris = 0;
         int i = 0;
 
-//        String query = "select*from barang";
-//
-//        try {
-//            data = connect.getStatement().executeQuery(query);
-//            while (data.next()) {
-//                jumbaris++;
-//            }
-//        } catch (SQLException ex) {
-//
-//        }
-//        String isi[][] = new String[jumbaris][5];
-        
-          String isi[][] = new String[data.size()][5];
-          
-          for(int x = 0; x < data.size(); x++) {
-              isi[i][0] = data.get(x).kode;
-              isi[i][1] = data.get(x).nama;
-              isi[i][2] = data.get(x).harga;
-              isi[i][3] = data.get(x).stok;
-              i++;
-          };
+        String query = "select*from barang";
 
-//        try {
-//            data = connect.getStatement().executeQuery(query);
-//            while (data.next()) {
-//                isi[i][0] = data.getString("kode");
-//                isi[i][1] = data.getString("nama");
-//                isi[i][2] = data.getString("harga");
-//                isi[i][3] = data.getString("stok");
-//                i++;
-//            }
-//        } catch (SQLException ex) {
-//
-//        }
+        try {
+            data = connect.getStatement().executeQuery(query);
+            while (data.next()) {
+                jumbaris++;
+            }
+        } catch (SQLException ex) {
+
+        }
+        String isi[][] = new String[jumbaris][5];
+        
+        try {
+            data = connect.getStatement().executeQuery(query);
+            while (data.next()) {
+                isi[i][0] = data.getString("kode");
+                isi[i][1] = data.getString("nama");
+                isi[i][2] = data.getString("harga");
+                isi[i][3] = data.getString("stok");
+                i++;
+            }
+        } catch (SQLException ex) {
+
+        }
         String namakolom[] = {"kode", "nama", "harga", "stok"};
         DefaultTableModel model = new DefaultTableModel(isi, namakolom) {
         };
@@ -494,17 +478,14 @@ public class MainForm extends javax.swing.JFrame {
         String harga = txtharga.getText();
         String stok = txtstok.getText();
 
-//        String query = "insert into barang(kode, nama, harga, stok) values('" + kode + "','" + nama + "','" + harga + "','" + stok + "')";
-//
-//        try {
-//            connect.getStatement().executeUpdate(query);
-//            JOptionPane.showMessageDialog(null, "Insert berhasil");
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Insert gagal");
-//        }
-        
-        data.add(new Barang(kode, nama, harga, stok));
-        JOptionPane.showMessageDialog(null, "Insert berhasil");
+        String query = "insert into barang(kode, nama, harga, stok) values('" + kode + "','" + nama + "','" + harga + "','" + stok + "')";
+
+        try {
+            connect.getStatement().executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Insert berhasil");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Insert gagal");
+        }
     
         refresh();
     }
@@ -514,30 +495,13 @@ public class MainForm extends javax.swing.JFrame {
         String kode = txtambilkode.getText();
         int stok = Integer.parseInt(txtambilmengambil.getText());
 
-//        String query = "insert into barang(kode, nama, harga, stok) values('" + kode + "','" + nama + "','" + harga + "','" + stok + "')";
-//
-//        try {
-//            connect.getStatement().executeUpdate(query);
-//            JOptionPane.showMessageDialog(null, "Insert berhasil");
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Insert gagal");
-//        }
-        
-          boolean found = false;
-        
-         for(int x = 0; x < data.size(); x++) {
-              if (data.get(x).kode.equals(kode)) {
-                data.get(x).stok = Integer.toString(Integer.parseInt(data.get(x).stok) - stok);
-                found = true;
-              }
-          };
+        String query = "update barang set stok = stok - " + stok + " where kode='" + kode + "'";
+        try {
+            connect.getStatement().executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Ambil Barang berhasil");
+        } catch (SQLException ex) {
 
-          if (!found) {
-              JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-          }
-       
-        
-        JOptionPane.showMessageDialog(null, "Ambil Barang berhasil");
+        }
     
         refresh();
     }
@@ -554,50 +518,32 @@ public class MainForm extends javax.swing.JFrame {
         int jumbaris = 0;
         int i = 0;
 
-//        String query = "select*from barang where kode='" + kode + "'";
-//
-//        try {
-//            data = connect.getStatement().executeQuery(query);
-//            while (data.next()) {
-//                jumbaris++;
-//            }
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-//        }
-//        String isi[][] = new String[jumbaris][5];
-//
-//        try {
-//            data = connect.getStatement().executeQuery(query);
-//
-//            while (data.next()) {
-//                isi[i][0] = data.getString("kode");
-//                isi[i][1] = data.getString("nama");
-//                isi[i][2] = data.getString("harga");
-//                isi[i][3] = data.getString("stok");
-//                i++;
-//            }
-//
-//        } catch (SQLException ex) {
-//
-//        }
-        
-         String isi[][] = new String[data.size()][5];
-        boolean found = false;
-          
-          for(int x = 0; x < data.size(); x++) {
-              if (data.get(x).kode.equals(kode)) {
-               isi[i][0] = data.get(x).kode;
-                isi[i][1] = data.get(x).nama;
-                isi[i][2] = data.get(x).harga;
-                isi[i][3] = data.get(x).stok;
-                i++;   
-                found = true;
-              }
-          };
-          
-          if (!found) {
-              JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-          }
+        String query = "select*from barang where kode='" + kode + "'";
+
+        try {
+            data = connect.getStatement().executeQuery(query);
+            while (data.next()) {
+                jumbaris++;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "data tidak ditemukan");
+        }
+        String isi[][] = new String[jumbaris][5];
+
+        try {
+            data = connect.getStatement().executeQuery(query);
+
+            while (data.next()) {
+                isi[i][0] = data.getString("kode");
+                isi[i][1] = data.getString("nama");
+                isi[i][2] = data.getString("harga");
+                isi[i][3] = data.getString("stok");
+                i++;
+            }
+
+        } catch (SQLException ex) {
+
+        }
         
         String namakolom[] = {"kode", "nama", "harga", "stok"};
         DefaultTableModel model = new DefaultTableModel(isi, namakolom) {
@@ -610,37 +556,21 @@ public class MainForm extends javax.swing.JFrame {
         String kode = txtkodehapus.getText();
         String nama, harga, stok;
 
-//        String query = "delete from barang where kode='" + kode + "'";
-//        try {
-//            int konfirmasi = JOptionPane.showConfirmDialog(null, "Ingin dihapus?");
-//
-//            switch (konfirmasi) {
-//                case 0:
-//                    connect.getStatement().executeUpdate(query);
-//                    JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
-//                    break;
-//                default:
-//                    JOptionPane.showMessageDialog(null, "Data gagal dihapus");
-//            }
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-//        }
-        
-        boolean found = false;
-        
-          for(int x = 0; x < data.size(); x++) {
-              if (data.get(x).kode.equals(kode)) {
-                  data.remove(x);
-                  found = true;
-                  JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
-                  break;
-              }
-          };
-          
-          if (!found) {
-              JOptionPane.showMessageDialog(null, "Data gagal dihapus");
-          }
-        
+        String query = "delete from barang where kode='" + kode + "'";
+        try {
+            int konfirmasi = JOptionPane.showConfirmDialog(null, "Ingin dihapus?");
+
+            switch (konfirmasi) {
+                case 0:
+                    connect.getStatement().executeUpdate(query);
+                    JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Data gagal dihapus");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "data tidak ditemukan");
+        }
         
         refresh();
     }                                        
@@ -648,94 +578,55 @@ public class MainForm extends javax.swing.JFrame {
     private void btncariupdateActionPerformed(java.awt.event.ActionEvent evt) {                                              
         String kode = txtkodeupdate.getText();
         String nama, harga, stok;
-        
-        boolean found = false;
-        
-         for(int x = 0; x < data.size(); x++) {
-              if (data.get(x).kode.equals(kode)) {
-                txtnamaupdate.setText(data.get(x).nama);
-                txthargaupdate.setText(data.get(x).harga);
-                txtstokupdate.setText(data.get(x).stok);
+          
+        String query = "select*from barang where kode='" + kode + "'";
+
+        try {
+            data = connect.getStatement().executeQuery(query);
+            if (data.next()) {
+                nama = data.getString("nama");
+                harga = data.getString("harga");
+                stok = data.getString("stok");
+
+                txtnamaupdate.setText(nama);
+                txthargaupdate.setText(harga);
+                txtstokupdate.setText(stok);
 
                 txtnamaupdate.setEnabled(true);
                 txthargaupdate.setEnabled(true);
                 txtstokupdate.setEnabled(true);
-                found = true;
-              }
-          };
+            } else {
+                JOptionPane.showMessageDialog(null, "data tidak ditemukan");
+            }
+        } catch (SQLException ex) {
 
-          if (!found) {
-              JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-          }
-          
-//        String query = "select*from barang where kode='" + kode + "'";
-//
-//        try {
-//            data = connect.getStatement().executeQuery(query);
-//            if (data.next()) {
-//                nama = data.getString("nama");
-//                harga = data.getString("harga");
-//                stok = data.getString("stok");
-//
-//                txtnamaupdate.setText(nama);
-//                txthargaupdate.setText(harga);
-//                txtstokupdate.setText(stok);
-//
-//                txtnamaupdate.setEnabled(true);
-//                txthargaupdate.setEnabled(true);
-//                txtstokupdate.setEnabled(true);
-//            } else {
-//                JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-//            }
-//        } catch (SQLException ex) {
-//
-//        }
+        }
     }    
     
     
     private void btncariambilActionPerformed(java.awt.event.ActionEvent evt) {                                              
         String kode = txtambilkode.getText();
-        String nama, harga, stok;
+        String nama, stok;
         
-        boolean found = false;
-        
-         for(int x = 0; x < data.size(); x++) {
-              if (data.get(x).kode.equals(kode)) {
-                txtambilnama.setText(data.get(x).nama);
-                txtambilmengambil.setText(data.get(x).stok);
+        String query = "select*from barang where kode='" + kode + "'";
 
-                txtambilnama.setEnabled(true);
+        try {
+            data = connect.getStatement().executeQuery(query);
+            if (data.next()) {
+                nama = data.getString("nama");
+                stok = data.getString("stok");
+
+                txtambilnama.setText(nama);
+                txtambilmengambil.setText(stok);
+
+                txtambilnama.setEnabled(false);
                 txtambilmengambil.setEnabled(true);
-                found = true;
-              }
-          };
+            } else {
+                JOptionPane.showMessageDialog(null, "data tidak ditemukan");
+            }
+        } catch (SQLException ex) {
 
-          if (!found) {
-              JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-          }
-          
-//        String query = "select*from barang where kode='" + kode + "'";
-//
-//        try {
-//            data = connect.getStatement().executeQuery(query);
-//            if (data.next()) {
-//                nama = data.getString("nama");
-//                harga = data.getString("harga");
-//                stok = data.getString("stok");
-//
-//                txtnamaupdate.setText(nama);
-//                txthargaupdate.setText(harga);
-//                txtstokupdate.setText(stok);
-//
-//                txtnamaupdate.setEnabled(true);
-//                txthargaupdate.setEnabled(true);
-//                txtstokupdate.setEnabled(true);
-//            } else {
-//                JOptionPane.showMessageDialog(null, "data tidak ditemukan");
-//            }
-//        } catch (SQLException ex) {
-//
-//        }
+        }
     }    
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -747,24 +638,15 @@ public class MainForm extends javax.swing.JFrame {
         txthargaupdate.setEnabled(false);
         txtstokupdate.setEnabled(false);
 
-//        String query = "update barang set nama='" + nama + "', harga='" + harga + "',stok='" + stok + "' where kode='" + kode + "'";
-//        try {
-//            connect.getStatement().executeUpdate(query);
-//            JOptionPane.showMessageDialog(null, "update berhasil");
-//        } catch (SQLException ex) {
-//
-//        }
-       
-        
-         for(int x = 0; x < data.size(); x++) {
-              if (data.get(x).kode.equals(kode)) {
-                data.get(x).nama = nama;
-                data.get(x).harga = harga;
-                data.get(x).stok = stok;
-              }
-          };
-          
-          JOptionPane.showMessageDialog(null, "update berhasil");
+        String query = "update barang set nama='" + nama + "', harga='" + harga + "',stok='" + stok + 
+                "' where kode='" + 
+                kode + "'";
+        try {
+            connect.getStatement().executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "update berhasil");
+        } catch (SQLException ex) {
+
+        }
         
         refresh();
     }                                         
