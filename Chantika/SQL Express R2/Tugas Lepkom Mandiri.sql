@@ -2518,10 +2518,39 @@ END
 SELECT * FROM tableTHR_11117320('2000/05/21');
 
 
--- Latihan Login User Role dan Permission
+-- Latihan Login 
+
+CREATE LOGIN CHANTIKAAMANDA WITH PASSWORD = '11117320';
+
+-- Latihan User
+
+CREATE USER CHANTIKAAMANDA11117320 FOR LOGIN CHANTIKAAMANDA;
+
+-- Table BioData
+
+CREATE TABLE BIODATA (
+	NPM NUMERIC(8) PRIMARY KEY,
+	NAMA VARCHAR(50) NOT NULL,
+	KELAS VARCHAR(5) NOT NULL,
+	JURUSAN VARCHAR(30) NOT NULL
+)
 
 
+-- Latihan Role
 
+CREATE ROLE chantikamanda AUTHORIZATION systemadmin
+
+-- Latihan Permission
+
+GRANT SELECT, INSERT, UPDATE, DELETE 
+ON SCHEMA::BIODATA
+TO chantikamanda;
+
+INSERT INTO BIODATA VALUES ('12345678', 'Ani Budi Citra', '2KA05', 'Sistem Informasi')
+INSERT INTO BIODATA VALUES ('56789012', 'Dea Efani Fita Gita', '1IA01', 'Teknik Informatika')
+INSERT INTO BIODATA VALUES ('34567890', 'Hari Irfandi Jonas', '3DB04', 'Manajemen Informatika')
+INSERT INTO BIODATA VALUES ('23456789', 'Kamia Lana Musa', '4KB02', 'Sistem Komputer')
+INSERT INTO BIODATA VALUES ('45678901', 'Nando Oprah Prawira', '2DC03', 'Teknik Komputer')
 
 -- Tugas SQL Injection
 
