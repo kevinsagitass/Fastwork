@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+      <div class="container-fluid" style="justify-content: left !important">
+        <b>
+          <a class="navbar-brand" href="index.html">Home</a>
+          <a class="navbar-brand" href="daily.html">Daily Absence</a>
+          <a class="navbar-brand" href="recap.html">Task Recap</a>
+          <a class="navbar-brand" href="tips.html">Tips and Trick</a>
+        </b>
+      </div>
+    </nav>
+    <div>
+      <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col">
+              <div
+                class="card"
+                id="list1"
+                style="border-radius: 0.75rem; background-color: #eff1f2"
+              >
+                <div class="card-body py-4 px-4 px-md-5">
+                  <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+                    <u>My Todo</u>
+                  </p>
+
+                  <div class="pb-2">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex flex-row align-items-center">
+                          <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            id="todoTitle"
+                            placeholder="Add New..."
+                          />
+                          <input
+                            type="text"
+                            class="form-control form-control-lg mx-2"
+                            id="todoDate"
+                            placeholder="Start Date (dd/MM/yyyy HH:mm:ss)"
+                          />
+                          <div>
+                            <button
+                              type="button"
+                              id="todoAddBtn"
+                              class="btn btn-primary"
+                              onClick="btnAddClick()"
+                            >
+                              Add
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="my-4" />
+
+                  <div
+                    class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3"
+                  >
+                    <p class="small mb-0 me-2 text-muted">Filter</p>
+                    <select id="filter" class="select" onchange="getTodoList()">
+                      <option value="All">All</option>
+                      <option value="Complete">Completed</option>
+                      <option value="Pending">Active</option>
+                    </select>
+                  </div>
+
+                  <div id="box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

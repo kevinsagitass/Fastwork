@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Recap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+      <div class="container-fluid" style="justify-content: left !important">
+        <b>
+          <a class="navbar-brand" href="index.html">Home</a>
+          <a class="navbar-brand" href="daily.html">Daily Absence</a>
+          <a class="navbar-brand" href="recap.html">Task Recap</a>
+          <a class="navbar-brand" href="tips.html">Tips and Trick</a>
+        </b>
+      </div>
+    </nav>
+    <div>
+      <section class="vh-100">
+        <div class="container py-5">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-md-6">
+              <h1>Weekly Recap</h1>
+            </div>
+            <div class="col-md-6">
+              <h1>Monthly Recap</h1>
+            </div>
+          </div>
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-md-6">
+              <div id="weeklyStatus"></div>
+              <div id="weeklyCompliance"></div>
+            </div>
+            <div class="col-md-6">
+              <div id="monthlyStatus"></div>
+              <div id="monthlyCompliance"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="recap.js"></script>
+</html>

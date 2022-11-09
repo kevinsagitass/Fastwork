@@ -17,6 +17,8 @@ int main()
     int kepala = 0, kaki = 0;
     Robot robotA, robotB, robotC;
 
+    bool robotBisaDibuat = false;
+
     cout << "Input Total Robot " << endl;
     cin >> totalRobot;
     cin.ignore(numeric_limits<streamsize>::max(),'\n');
@@ -66,6 +68,7 @@ int main()
                 createdRobot++;
                 totalRobotCount[i]++;
                 isNewRobotGenerated = true;
+                robotBisaDibuat = true;
             }
         }
         if (!isNewRobotGenerated) {
@@ -73,9 +76,13 @@ int main()
         }
     }
 
-    cout << "Total Robot A : " << totalRobotCount[0] << endl;
-    cout << "Total Robot B : " << totalRobotCount[1] << endl;
-    cout << "Total Robot C : " << totalRobotCount[2] << endl;
+    if (robotBisaDibuat) {
+        cout << "Total Robot A : " << totalRobotCount[0] << endl;
+        cout << "Total Robot B : " << totalRobotCount[1] << endl;
+        cout << "Total Robot C : " << totalRobotCount[2] << endl;
+    } else {
+        cout << "DATA SALAH" << endl;
+    }
 
     return 0;
 }
