@@ -1,0 +1,26 @@
+{
+    "25": {
+        "25": "Keep Opening the App and Write all Your Tasks",
+        "50": "Complete More Tasks by Checking the Daily Task page",
+        "75": "Great You Can Start Early for Tasks and Complete them when you Have Time",
+        "100": "You are Efficient on Time you can Use the Extra Time you have and Complete More Tasks"
+    },
+    "50": {
+        "25": "Its a Start But You can do Better Try Opening the Web more Consistently",
+        "50": "Not Bad Theres More to Go make a Time Everyday to Organize and See what Tasks For Today",
+        "75": "You Know how to Manage your Time what you Need is More Focus to Complete Tasks",
+        "100": "You are Great on Time Management than Ever now Start Making more Time to Complete your Tasks"
+    },
+    "75": {
+        "25": "You Completed Most of Your Task But Not On Time you Should Organize More and Do a Time Management",
+        "50": "You Completed Most of Your Task and Is Doing quite Okay on The Time Keep Managing the Time Management and Do a Priority List",
+        "75": "You Completed Most of Your Task and doing Quite Great! Improvement Never Hurts though",
+        "100": "Now What you need is To Complete More Task and You are Going for a Fast Track!"
+    },
+    "100": {
+        "25": "You Completed A Lot of Task Just not On Time :( Maybe You Can Try and Organize your Time do the Important Task First and make it On Time!",
+        "50": "You Completed A Lot of Task Just Not so Effectively Maybe make a Schedule and Book Time to Complete Tasks",
+        "75": "You Completed A Lot of Task And Mostly On Time This is Great but There is Still Some Room for Improvement :)",
+        "100": "You Are Amazing!"
+    }
+}

@@ -2,8 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
+const { application } = require('express');
 
 const app = express();
+
+const tips = require('./tips.json');
 
 let todoList = [
   {
@@ -48,6 +51,16 @@ app.get('/list', (req, res) => {
   }));
 });
 
+
+app.get('/list/:id', (req, res) => {
+  const id = req.params.id;
+
+  res.send(todoList.filter(function (x) {
+    return x.id == id;
+  })[0]);
+});
+
+
 app.get('/list/today', (req, res) => {
 
   const today = new Date();
@@ -68,6 +81,20 @@ app.post('/list', (req, res) => {
     status: "Pending",
     compliance: "Pending"
   });
+
+  res.send("ok");
+});
+
+app.post('/list/:id', (req, res) => {
+  const id = req.params.id;
+  const todo = req.body;
+
+  todoList.forEach((value, index) => {
+    if (value.id == id) {
+      value.title = todo.title;
+      value.date = todo.date;
+    }
+  })
 
   res.send("ok");
 });
@@ -179,6 +206,22 @@ app.get('/recap', (req, res) => {
   }
 
   res.send(result);
+});
+
+app.post('/tips', (req, res) => {
+  const score = req.body;
+
+  for (stats in tips) {
+    if (score.status <= stats) {
+      for(compliance in tips[stats]) {
+        if (score.compliance <= compliance) {
+          res.send(tips[stats][compliance]);
+
+          return;
+        }
+      }
+    }
+  }
 });
 
 app.listen(3001, () => {
