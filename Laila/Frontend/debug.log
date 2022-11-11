@@ -1,3 +1,0 @@
-[1109/145336.686:ERROR:registration_protocol_win.cc(112)] WaitNamedPipe: The system cannot find the file specified. (0x2)
-[1109/145336.680:ERROR:registration_protocol_win.cc(112)] WaitNamedPipe: The system cannot find the file specified. (0x2)
-[1109/145336.687:ERROR:registration_protocol_win.cc(112)] WaitNamedPipe: The system cannot find the file specified. (0x2)
