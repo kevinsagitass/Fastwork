@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const pages = ["index", "todo", "recap", "tips"]
+const pages = ["index", "todo", "recap", "tips", "calendar"]
 
 module.exports = {
   mode: "none",

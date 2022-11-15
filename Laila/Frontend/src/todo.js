@@ -1,3 +1,4 @@
+// Set up DatePicker
 $("#todoDate").datetimepicker({
   format: "DD/MM/YYYY HH:mm:ss",
 });
@@ -5,6 +6,7 @@ $("#editTodoDate").datetimepicker({
   format: "DD/MM/YYYY HH:mm:ss",
 });
 
+// Front End Elements
 const todoContainer = document.getElementById("thingsToDo");
 const doneContainer = document.getElementById("thingsDone");
 const missedContainer = document.getElementById("thingsMissed");
@@ -16,15 +18,61 @@ const editId = document.getElementById("editTodoId");
 const editTitle = document.getElementById("editTodoTitle");
 const editDate = document.getElementById("editTodoDate");
 
+checkLocalItem();
 reminder();
-getAllTodoList();
 
+// Check Local Todos
+function checkLocalItem() {
+  let localTodos = JSON.parse(localStorage.getItem("todos"));
+
+  if (localTodos != null && localTodos != undefined && localTodos.length > 0) {
+    // Set Todos to Backend
+    setTodos(localTodos);
+  }
+
+  getAllTodoList();
+}
+
+// Set todos from LocalStorage to Backend
+function setTodos(localTodo) {
+  fetch(`http://localhost:3001/set-todo`, {
+    method: "POST",
+    headers: {
+      accept: "*/*",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      localTodo: localTodo,
+    }),
+  });
+}
+
+// Check if Notification Permission is Granted if not Request Permission
+if (
+  Notification.permission != "denied" &&
+  Notification.permission != "granted"
+) {
+  Notification.requestPermission().then((permission) => {});
+}
+
+// Function to Show Notification
+function showNotification(title, message) {
+  new Notification(title, {
+    body: message,
+  });
+}
+
+// Function to Get All Todo List 
 function getAllTodoList() {
   fetch(`http://localhost:3001/list?filter=All`)
     .then((response) => response.json())
-    .then((data) => displayTaskProgression(data));
+    .then((data) => {
+      displayTaskProgression(data);
+      localStorage.setItem("todos", JSON.stringify(data));
+    });
 }
 
+// Function to Display List of Todos in Frontend
 function displayTaskProgression(data) {
   todoBox.innerHTML = "";
   doneBox.innerHTML = "";
@@ -51,6 +99,7 @@ function displayTaskProgression(data) {
     const date = dates[0].split("/");
     const time = dates[1].split(":");
 
+    // Get Task's Date
     const todoDate = new Date(
       date[2],
       date[1] - 1,
@@ -65,10 +114,13 @@ function displayTaskProgression(data) {
       // Done Box
       items += `
                <li onClick="btnDeleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
-                   <div class="btn btn-danger rounded-3 d-flex align-items-center">
+                   <div class="btn btn-danger rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
                        <p class="small mb-0">
                            Delete
                        </p>
+                   </div>
+                   <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
+                       <i class="fa fa-solid fa-trash"></i>
                    </div>
                </li>
                `;
@@ -88,18 +140,24 @@ function displayTaskProgression(data) {
                      </div>
                  </li>
                  <li onClick="btnEditClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent mx-3">
-                     <div class="btn btn-warning rounded-3 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#editModal">
+                      <div class="btn btn-warning rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block" data-bs-toggle="modal" data-bs-target="#editModal">
                          <p class="small mb-0">
                              Edit
                          </p>
-                     </div>
+                      </div>
+                      <div class="hidden-md hidden-lg visible-sm-block visible-xs-block" data-bs-toggle="modal" data-bs-target="#editModal">
+                        <i class="fa fa-solid fa-edit"></i>
+                      </div>
                  </li>
                  <li onClick="btnCompleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
-                     <div class="btn btn-primary rounded-3 d-flex align-items-center">
+                     <div class="btn btn-primary rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
                          <p class="small mb-0">
                              Complete
                          </p>
                      </div>
+                     <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
+                        <i class="fa fa-solid fa-check"></i>
+                      </div>
                  </li>`;
 
       missedBox.innerHTML += `<ul class="list-group list-group-horizontal rounded-0 py-3">${items}</ul>`;
@@ -114,18 +172,24 @@ function displayTaskProgression(data) {
                    </div>
                </li>
                <li onClick="btnEditClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent mx-3">
-                   <div class="btn btn-warning rounded-3 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#editModal">
+                   <div class="btn btn-warning rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block" data-bs-toggle="modal" data-bs-target="#editModal">
                        <p class="small mb-0">
                            Edit
                        </p>
                    </div>
+                   <div class="hidden-md hidden-lg visible-sm-block visible-xs-block" data-bs-toggle="modal" data-bs-target="#editModal">
+                    <i class="fa fa-solid fa-edit"></i>
+                  </div>
                </li>
                <li onClick="btnCompleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
-                   <div class="btn btn-primary rounded-3 d-flex align-items-center">
+                   <div class="btn btn-primary rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
                        <p class="small mb-0">
                            Complete
                        </p>
                    </div>
+                   <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
+                      <i class="fa fa-solid fa-check"></i>
+                    </div>
                </li>`;
 
       todoBox.innerHTML += `<ul class="list-group list-group-horizontal rounded-0 py-3">${items}</ul>`;
@@ -133,6 +197,7 @@ function displayTaskProgression(data) {
   });
 }
 
+// Function to Add Todo
 function btnAddClick() {
   let todoTitle = document.getElementById("todoTitle");
   let todoDate = document.getElementById("todoDate");
@@ -169,6 +234,7 @@ function btnAddClick() {
   getAllTodoList();
 }
 
+// Function to Complete Todo
 function btnCompleteClick(id) {
   fetch(`http://localhost:3001/list/${id}`, {
     method: "PUT",
@@ -181,6 +247,7 @@ function btnCompleteClick(id) {
   getAllTodoList();
 }
 
+// Function to Delete Todo by ID
 function btnDeleteClick(id) {
   fetch(`http://localhost:3001/list/${id}`, {
     method: "DELETE",
@@ -193,6 +260,7 @@ function btnDeleteClick(id) {
   getAllTodoList();
 }
 
+// Function to Retrieve Todo Detail
 function btnEditClick(id) {
   fetch(`http://localhost:3001/list/${id}`)
     .then((response) => response.json())
@@ -203,6 +271,7 @@ function btnEditClick(id) {
     });
 }
 
+// Function to Update Todo By ID
 function updateTodo() {
   fetch(`http://localhost:3001/list/${editId.value}`, {
     method: "POST",
@@ -222,6 +291,7 @@ function updateTodo() {
   document.getElementById("modalClose").click();
 }
 
+// When User change The Filter 
 function filterChange() {
   const filterVal = filter.value;
 
@@ -240,6 +310,7 @@ function filterChange() {
   }
 }
 
+// Function to Check if a Todo is Missed or Will Start Soon
 function reminder() {
   fetch(`http://localhost:3001/list?filter=Pending`)
     .then((response) => response.json())
@@ -266,11 +337,12 @@ function reminder() {
           const dif = (todoDate.getTime() - today.getTime()) / 1000;
 
           if (dif <= 300 && today < todoDate && value.status != "Complete") {
-            alert(
+            showNotification(
+              "Reminder",
               `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
             );
           } else if (dif <= 0 && value.status != "Complete") {
-            alert(`You Missed Task ${value.title}`);
+            showNotification("Task Missed", `You Missed Task ${value.title}`);
           }
         }
       });
@@ -301,12 +373,13 @@ function reminder() {
 
             const dif = (todoDate.getTime() - today.getTime()) / 1000;
 
-            if (dif <= 300 && value.status != "Complete") {
-              alert(
+            if (dif <= 300 && today < todoDate && value.status != "Complete") {
+              showNotification(
+                "Reminder",
                 `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
               );
             } else if (dif <= 0 && value.status != "Complete") {
-              alert(`You Missed Task ${value.title}`);
+              showNotification("Task Missed", `You Missed Task ${value.title}`);
             }
           }
         });
@@ -314,6 +387,7 @@ function reminder() {
   }, 300000);
 }
 
+// Export Functions 
 window.btnAddClick = btnAddClick;
 window.btnCompleteClick = btnCompleteClick;
 window.btnDeleteClick = btnDeleteClick;

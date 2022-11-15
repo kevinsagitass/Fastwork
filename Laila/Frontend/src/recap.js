@@ -5,12 +5,14 @@ const monthlyComplianceBox = document.getElementById("monthlyCompliance");
 
 getRecap();
 
+// Get Detail of Recap Data
 function getRecap() {
   fetch(`http://localhost:3001/recap`)
     .then((response) => response.json())
     .then((data) => displayRecap(data));
 }
 
+// Display Detail of Recap Data to Frontend
 function displayRecap(data) {
   // Weekly Recap
   for (var date in data["weekly"]["status"]) {
@@ -21,6 +23,7 @@ function displayRecap(data) {
       completionRate: 0,
     };
 
+    // Calculate Pending, Complete, and Completion Rate by Weekly
     weeklyStatus["totalPending"] += data["weekly"]["status"][date]["Pending"];
     weeklyStatus["totalComplete"] += data["weekly"]["status"][date]["Complete"];
     weeklyStatus["completionRate"] =
@@ -41,6 +44,7 @@ function displayRecap(data) {
       onTimeRate: 0,
     };
 
+    // Calculate Pending, Late, and On Time Rate per Weekly
     weeklyCompliance["totalPending"] +=
       data["weekly"]["compliance"][date]["Pending"];
     weeklyCompliance["totalLate"] += data["weekly"]["compliance"][date]["Late"];
@@ -68,6 +72,7 @@ function displayRecap(data) {
       completionRate: 0,
     };
 
+    // Calculate Pending, Complete, and Completion Rate by Monthly
     monthlyStatus["totalPending"] +=
       data["monthly"]["status"][month]["Pending"];
     monthlyStatus["totalComplete"] +=
@@ -94,6 +99,7 @@ function displayRecap(data) {
       onTimeRate: 0,
     };
 
+    // Calculate Pending, Late, and On Time Rate per Monthly
     monthlyCompliance["totalPending"] +=
       data["monthly"]["compliance"][month]["Pending"];
     monthlyCompliance["totalLate"] +=
@@ -118,6 +124,7 @@ function displayRecap(data) {
   }
 }
 
+// Function to Return Month Name from Month Number
 function getMonthName(monthNumber) {
   const date = new Date();
   date.setMonth(monthNumber - 1);

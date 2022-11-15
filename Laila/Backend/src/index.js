@@ -7,40 +7,19 @@ const app = express();
 
 const tips = require("./tips.json");
 
-let todoList = [
-  {
-    id: 1,
-    title: "Walk the Dog",
-    date: "12/12/2022 15:20:02",
-    status: "Pending",
-    compliance: "Pending",
-  },
-  {
-    id: 2,
-    title: "Grocery Shopping",
-    date: "24/11/2022 23:59:59",
-    status: "Pending",
-    compliance: "Pending",
-  },
-  {
-    id: 3,
-    title: "Buy a New Hat",
-    date: "13/11/2022 14:00:00",
-    status: "Pending",
-    compliance: "Pending",
-  },
-  {
-    id: 4,
-    title: "Clean your Desk",
-    date: "11/11/2022 12:00:00",
-    status: "Pending",
-    compliance: "Pending",
-  },
-];
+let todoList = [];
 
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(cors());
+
+app.post("/set-todo", (req, res) => {
+  const localTodo = req.body.localTodo;
+
+  todoList = [...localTodo];
+
+  res.send("ok");
+});
 
 app.get("/list", (req, res) => {
   const filter = req.query.filter;

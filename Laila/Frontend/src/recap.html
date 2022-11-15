@@ -9,6 +9,17 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 767px) {
+        .navbar-brand {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
@@ -27,21 +38,21 @@
           <div
             class="row d-flex justify-content-center align-items-center h-100"
           >
-            <div class="col-md-6">
+            <div class="col-6">
               <h1>Weekly Recap</h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-6">
               <h1>Monthly Recap</h1>
             </div>
           </div>
           <div
             class="row d-flex justify-content-center align-items-center h-100"
           >
-            <div class="col-md-6">
+            <div class="col-6">
               <div id="weeklyStatus"></div>
               <div id="weeklyCompliance"></div>
             </div>
-            <div class="col-md-6">
+            <div class="col-6">
               <div id="monthlyStatus"></div>
               <div id="monthlyCompliance"></div>
             </div>

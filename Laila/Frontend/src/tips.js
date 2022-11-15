@@ -9,6 +9,7 @@ function getRecap() {
     .then((data) => displayTips(data));
 }
 
+// Function to Display Tips
 async function displayTips(data) {
   let weeklyStatus = {
     totalPending: 0,
@@ -107,6 +108,7 @@ async function displayTips(data) {
         </ul>`;
 }
 
+// Function to Get Tips from Backend with Status and Compliance Send by Weekly and Monthly
 async function getTips(status, compliance) {
   var tips = "";
 
@@ -123,8 +125,6 @@ async function getTips(status, compliance) {
   });
 
   tips = await res.text();
-
-  console.log(tips);
 
   return tips;
 }

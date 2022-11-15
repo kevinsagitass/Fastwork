@@ -1,14 +1,58 @@
 const box = document.getElementById("todaybox");
 
+checkLocalItem();
 reminder();
-getTodayList();
 
+// Check Local Storage for Todo if Exists then Proceed to Set the Todos in Backend
+function checkLocalItem() {
+  let localTodos = JSON.parse(localStorage.getItem("todos"));
+
+  if (localTodos != null && localTodos != undefined && localTodos.length > 0) {
+    // Set Todos to Backend
+    setTodos(localTodos);
+  }
+
+  getTodayList();
+}
+
+// Set Todos in Backend
+function setTodos(localTodo) {
+  fetch(`http://localhost:3001/set-todo`, {
+    method: "POST",
+    headers: {
+      accept: "*/*",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      localTodo: localTodo,
+    }),
+  });
+}
+
+// Check if Notification Permission is Granted if Not Request Permission
+if (Notification.permission != "denied" && Notification.permission != "granted") {
+  Notification.requestPermission().then((permission) => {});
+}
+
+// Function to Show Notification
+function showNotification(title, message) {
+  new Notification(title, {
+    body: message,
+  });
+}
+
+// Get List of Todo that Has Start Date Today
 function getTodayList() {
   fetch(`http://localhost:3001/today`)
     .then((response) => response.json())
     .then((data) => displayTodos(data));
+
+  fetch(`http://localhost:3001/list?filter=All`)
+    .then((response) => response.json())
+    .then((data) => localStorage.setItem("todos", JSON.stringify(data)));
 }
 
+// Display List of Todos to FrontEnd
 function displayTodos(data) {
   box.innerHTML = "";
 
@@ -38,20 +82,26 @@ function displayTodos(data) {
                 </div>
             </li>
             <li onClick="btnCompleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
-                <div class="btn btn-primary rounded-3 d-flex align-items-center">
-                    <p class="small mb-0">
-                        Complete
-                    </p>
-                </div>
+              <div class="btn btn-primary rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
+                  <p class="small mb-0">
+                      Complete
+                  </p>
+              </div>
+              <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
+                <i class="fa fa-solid fa-check"></i>
+              </div>
             </li>`;
     } else {
       items += `
             <li onClick="btnDeleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
-                <div class="btn btn-primary rounded-3 d-flex align-items-center">
-                    <p class="small mb-0">
-                        Delete
-                    </p>
-                </div>
+              <div class="btn btn-danger rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
+                <p class="small mb-0">
+                    Delete
+                </p>
+              </div>
+              <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
+                  <i class="fa fa-solid fa-trash"></i>
+              </div>
             </li>
             `;
     }
@@ -60,6 +110,20 @@ function displayTodos(data) {
   });
 }
 
+// Delete Todo by ID
+function btnDeleteClick(id) {
+  fetch(`http://localhost:3001/list/${id}`, {
+    method: "DELETE",
+    headers: {
+      accept: "*/*",
+      "content-type": "application/json",
+    },
+  });
+
+  getTodayList();
+}
+
+// Change Todo Status to Complete
 function btnCompleteClick(id) {
   fetch(`http://localhost:3001/list/${id}`, {
     method: "PUT",
@@ -72,6 +136,7 @@ function btnCompleteClick(id) {
   getTodayList();
 }
 
+// Setup Interval to Check if a Todo is Missed or Will Soon Start
 function reminder() {
   fetch(`http://localhost:3001/list?filter=Pending`)
     .then((response) => response.json())
@@ -98,11 +163,12 @@ function reminder() {
           const dif = (todoDate.getTime() - today.getTime()) / 1000;
 
           if (dif <= 300 && today < todoDate && value.status != "Complete") {
-            alert(
+            showNotification(
+              "Reminder",
               `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
             );
           } else if (dif <= 0 && value.status != "Complete") {
-            alert(`You Missed Task ${value.title}`);
+            showNotification("Task Missed", `You Missed Task ${value.title}`);
           }
         }
       });
@@ -133,12 +199,13 @@ function reminder() {
 
             const dif = (todoDate.getTime() - today.getTime()) / 1000;
 
-            if (dif <= 300 && value.status != "Complete") {
-              alert(
+            if (dif <= 300 && today < todoDate && value.status != "Complete") {
+              showNotification(
+                "Reminder",
                 `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
               );
             } else if (dif <= 0 && value.status != "Complete") {
-              alert(`You Missed Task ${value.title}`);
+              showNotification("Task Missed", `You Missed Task ${value.title}`);
             }
           }
         });
@@ -148,18 +215,24 @@ function reminder() {
 
 var div = document.getElementById("span");
 
+// Display Timer in Daily Screen
 function time() {
   var d = new Date();
   var s = d.getSeconds();
   var m = d.getMinutes();
   var h = d.getHours();
-  span.textContent =
+
+  span.innerHTML = "";
+
+  span.innerHTML +=
     "Current Time : " +
     ("0" + h).substr(-2) +
     ":" +
     ("0" + m).substr(-2) +
     ":" +
     ("0" + s).substr(-2);
+
+  span.innerHTML += `<a style="float: right" href="calendar.html"><i class="fa fa-solid fa-calendar"></i></a>`;
 }
 
 setInterval(time, 1000);

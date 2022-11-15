@@ -1,0 +1,1924 @@
+  <!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <style type="text/css" media="all">
+   
+   #kontenAlertInformation{
+     font-size: 10px;
+     padding: 0;
+     margin: 0;
+     margin-left: 3%;
+     margin-top: 1%;
+   }
+   
+    .tinggi-konten{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#offcanvasBottomLabel{
+  font-size: 16px;
+  text-align: center;
+  margin-left: 25%;
+  opacity: 0.6;
+  margin-top: -2%;
+}
+.jarakKlik{
+  width: 100%;
+  min-height: 7px;
+  background-color: #000000;
+  opacity: 0.090;
+}
+.dataKlik{
+  width: 102%;
+  height: 200%;
+  background-color: #ffffff;
+  position: absolute;
+  margin-left: -5%;
+  margin-top: -5%;
+  padding-top: 3%;
+}
+.tinggi-konten{
+  margin-top: -90%;
+  height: auto;
+  background-color: #fff;
+}
+.dataKlik h2{
+  margin-left: 5%;
+  font-size: 14px;
+  opacity: 0.8;
+  float: left;
+}
+.dataKlik h3{
+  margin-left: 5%;
+  font-size: 17px;
+  opacity: 0.8;
+}
+.dataKlik h5{
+  font-size: 14px;
+  margin-left: 5%;
+  float: left;
+  border: 1px solid #0D7DA7;
+  padding: 4px;
+  border-radius: 5px;
+  margin-right: 0.5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #0D7DA7;
+}
+.dataKlik h5:hover{
+  background-color: #0D7DA7;
+  color: #fff;
+}
+
+.dataKlik p{
+  margin-left: 5%;
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: right;
+  margin-right: 6%;
+}
+.cleaning{
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+  border: 1px solid #0D7DA7;
+  background-color: #fff;
+  color: #0D7DA7;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 0%;
+}
+.postdata{
+  margin-top: 0%;
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+  border: 1px solid #0D7DA7;
+  background-color: #0D7DA7;
+  color: #ffffff;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-radius: 5px;
+}
+/* CSS HEADER */
+.konten_bg{
+  width: 100%;
+  min-height: 50px;
+  top: 0;
+  left: 0;
+  background-color: #0D7DA7;
+}
+.konten_header{
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: -10%;
+  background-color: #fff;
+}
+
+.input_konten{
+  width: 100%;
+  height: auto;
+  padding-top: 2%;
+}
+.input_konten p{
+  margin-top: 5%;
+  margin-left: 2.5%;
+  opacity: 0.8;
+}
+.input_konten span{
+  margin-left: 2.5%;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.input_konten input{
+  margin-top: -7%;
+  width: 95%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+  margin-left: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  outline: none;
+  font-weight: bold;
+  opacity: 0.9;
+}
+.notice{
+  font-size: 14px;
+  padding-left: 5%;
+  opacity: 0.8;
+  float: left;
+  clear: both;
+}
+#alertWarning{
+  font-size: 12px;
+  z-index: 10;
+}
+#alertWarning h1{
+  font-size: 20px;
+  position: absolute;
+  margin-top: -16%;
+  margin-left: 88%;
+  color: #D10E2F;
+  z-index: 10;
+}
+.notice{
+  font-size: 14px;
+  padding-left: 5%;
+  opacity: 0.8;
+  float: left;
+  clear: both;
+}
+  .alert{
+  font-size: 11px;
+  z-index: 10;
+}
+.btn-close{
+  font-size: 10px;
+  position: absolute;
+  margin-top: -5%;
+  margin-right: -2%;
+  opacity:0.5;
+  z-index: 10;font-weight:bold;
+}
+#img_operator{
+  position: absolute;
+  width: 7%;
+  height: auto;
+  margin-left: -16%;
+  z-index: 4;
+}
+.img_kontak{
+  position: absolute;
+  width: 6%;
+  height: auto;
+  margin-left: -6%;
+  z-index: 5;
+}
+
+.produk_pulsa{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid#ddd;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 3%;
+  box-shadow: rgba(0,0,0,0.1) 0px 0px 8px;
+}
+.produk_pulsa h2{
+  font-size: 14px;
+  margin-left: 5%;
+  margin-top: 3%;
+  margin-bottom: 1%;
+}
+.produk_pulsa img{
+  width: 12%;
+  margin-left: 5%;
+  margin-top: -10%;
+  
+}
+.produk_pulsa p{
+  width:90%;
+  font-size: 11px;
+  margin-left: 5%;
+  margin-top: 0%;
+  margin-bottom: 4%;
+  opacity: 0.7;
+}
+.produk_pulsa h3{
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 5%;
+  color:#0D7DA7;
+  margin-top: 1% ;
+  margin-bottom: 2%;
+}
+#pulsa_indosat, #pulsa_simpati, #pulsa_xl,#pulsa_axis,#pulsa_tri,#pulsa_smartfren{
+  display: none;
+}
+#spinner_load{
+  opacity: 0.6;
+}
+#alertNomor{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  opacity: 1;
+  background-color: #ffffff;
+  margin-top: -45%;
+  z-index: 10;
+  display: none;
+} 
+#overlay { 
+  position: fixed; 
+  display: none; 
+  width: 100%; 
+  height: 100%; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background-color: rgba(0,0,0,0.0); 
+  z-index: 2; 
+  cursor: context-menu; 
+
+} .modal{ 
+  pointer-events:none text-align: center; 
+  background-color: #fff; 
+  position: fixed; 
+  left: 0;
+  float:center;
+  width:100%;
+  border:2px solid#f1f1f1; 
+  margin-top:105px ; 
+  padding: 100px auto; 
+  display: none; 
+  color: #000; 
+  z-index: 9; 
+  border-radius:1px; 
+  animation: slide_up 0.2s ease; 
+} 
+ .modal .header p{ 
+   font-size: 24px; 
+   
+} .modal .header .close{ 
+   font-size: 25px;
+   font-weight:bold;
+   color:#D10E2F;
+   text-align:center; 
+   cursor: pointer; 
+   float:right;
+   width:34px;
+   margin-top:0.5%; 
+   position: relative; 
+   margin-right: 2px;
+   background-color:#dfdfdf;
+   border-radius:50px; 
+     
+} .modal .header .close i:hover{ 
+   border-radius: 50%; 
+   color: #000; 
+
+} .modal .body{ 
+   margin-top:30px; 
+   
+} .modal .body img{ 
+   max-width:70%; 
+   
+} .modal .body p1{ 
+   font-size: 12px; 
+   margin: auto 5%; 
+   padding-bottom: 10px; 
+   text-align:justify; 
+
+}.kategori_pulsa{
+  width: 100%;
+  height: 55px;
+  border-radius: 8px;
+  border: 1px solid#ddd;
+  float: left;
+  margin-left:0;
+  margin-right:0;
+  margin-bottom: 3%;
+  box-shadow: rgba(0,0,0,0.1) 0px 0px 3px;
+
+}.kategori_pulsa h2{
+  font-size: 14px;
+  margin-left: 20%;
+  margin-top: -6%;
+  margin-bottom: 5%;
+  opacity: 0.8;
+  font-weight:bold;
+}
+.kategori_pulsa img{
+  width: 8%;
+  margin-left: 5%;
+  margin-top: 3.7%;
+  
+}
+.kategori_pulsa h3{
+  font-size: 20px;
+  margin-left: 25%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  opacity: 0.9;
+}
+.kategori_pulsa h5{
+  clear: both;
+  font-size: 35px;
+  text-align: center;
+  position: absolute;
+  margin-left: 80%;
+  margin-top: -12%;
+  opacity: 0.7;
+  font-weight: normal;
+}
+ #text{ 
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  font-size: 50px; 
+  color: #000000; 
+  transform: translate(-50%,-50%); 
+  -ms-transform: translate(-50%,-50%); 
+
+} @keyframes slide_up{ 0%{ transform: translateY(500px); } 100%{ transform: translateY(0px); } }
+
+       </style>
+       
+   <title> Paket Internet</title>
+    
+    
+    <body>
+   <!-- BAGIAN HEADER --> 
+   <div class="konten_bg">
+   </div>
+   <div class="container konten_header">
+   <form class="input_konten" action="" method="get" accept-charset="utf-8">
+   <p>Masukkan Nomor Tujuan</p>
+   <input onkeyup="alertInfoNews()" type="number" name="nomor" id="nomor" placeholder="08XXXXXX"  oninput="cekNomorTelponUser()" value=""  />
+   <img id="img_operator" src="" alt="" />
+   <a href="#">
+   <img class="img_kontak" src="https://i.ibb.co/tLCBLp0/SGN-08-12-2022-1660262182661.png" alt="icon kontak" />
+   </a>
+   <p id="kontenAlertInformation"></p>
+         <span id="operatorPulsa">OPERATOR</span>
+   </form>
+   </div>
+   </br >
+   </div>
+   </div>
+
+
+   <!-- AREA DATA PRODUK INDOSAT --> 
+   <section id="pulsa_indosat">
+   <!-- DATA INDOSAT 1-->
+   <div id="overlay" onclick="off()"> </div>
+	 <!-- AREA PRODUK DATA FREEDOM -->
+	 <div class="modal" id="freedomcombo"> 
+	 <div class="header" id="header"> 
+	 <span id="freedomcombo" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">				
+	 <div class="produk_pulsa" onclick="kirimData('https://galashop.bukaolshop.site/produk/indosat-freedom-combo-6gb-1468960')">
+     <!-- PRODUK 1 -->
+     <h2>FREEDOM COMBO 6GB</h2>
+     <p>2GB Utama + 2GB Lokal 2GB Malam 30hr</p>
+     <p>Jumlah kouta berdasarkan lokasi dan bisa berubah sesuai kebijakan Indosat. Info detail https://indosatooredoo.com/portal/id/psfreedomcombo</p>
+     <h3>Rp30.950</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 2-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 2 -->
+     <h2 >FREEDOM COMBO 8GB</h2>
+     <p>2gb Utama + 2gb Lokal+2gb Malam + 5 Menit Tlp Semua (30 hari)
+     <h3 >Rp32.000</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 3-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 3 -->
+     <h2 >FREEDOM COMBO 14GB</h2>
+     <p>4gb Utama + 2gb Lokal + 2gb Malam + 20 Menit Tlp Semua (30 hari)
+     <h3 >Rp38.000</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 4-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2 >FREEDOM COMBO 20GB</h2>
+     <p>7,5gb Utama + 3,5gb Lokal+3gb Malam + 30 Menit Tlp Semua (30 hari)
+     <h3 >Rp53.500</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 5-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 5 -->
+     <h2>FREEDOM COMBO 30GB</h2>
+     <p>11gb Utama + 5gb Lokal, 4gb Malam+40 Menit Tlp Semua (30 hari)
+     <h3>Rp67.700</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 5 -->
+     <h2>FREEDOM COMBO 50GB</h2>
+     <p>11gb Utama + 5gb Lokal, 4gb Malam+40 Menit Tlp Semua (30 hari)
+     <h3>Rp67.700</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+	<!-- A --><!-- K --><!-- H --><!-- I --><!-- R -->
+	 
+	 <!-- AREA DATA FREEDOM U --> 
+	 <div class="modal" id="freedom u"> 
+	 <div class="header" id="header"> 
+   <span id="freedom u" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div></br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">		
+	 
+	 <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 1 -->
+     <h2>FREEDOM U 1GB</h2>
+     <p>1GB + 4.5GB Apps Unlimited 30 hari</p>
+     <h3>Rp25.550</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 2-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 2 -->
+     <h2>FREEDOM U 1GB</h2>
+     <p>2GB + 7.5GB Apps Unlimited 30 hari</p>
+     <h3>Rp39.750</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 3-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 3 -->
+     <h2>FREEDOM U 2GB</h2>
+     <p>3GB + 15gb Apps Unlimited 30 hari</p>
+     <h3 >Rp59.000</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 4-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>FREEDOM U 7GB</h2>
+     <p>7GB + 20gb Apps Unlimited 30 hari</p>
+     <h3>Rp77.500</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 5-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>FREEDOM U 10GB</h2>
+     <p>7GB + 20gb Apps Unlimited 30 hari</p>
+     <h3>Rp77.500</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+   <!--A --><!-- K --><!-- H --><!-- I --><!-- R -->
+   
+   <!-- AREA DATA FREEDOM INTERNET -->
+   <div class="modal" id="freedom internet"> 
+	 <div class="header" id="header"> 
+   <span id="freedom internet" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div></br>
+	 
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">							 				 
+   <!-- PRODUK 1 -->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 1 -->
+     <h2>Indosat Freedom 10GB</h2>
+     <p>Internet 5 hari</p>
+     <h3>Rp12.000</h3>
+      </div>
+    
+   <!-- PULSA INDOSAT 2-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 2 -->
+     <h2>Indosat Freedom 4GB</h2>
+     <p>Internet 30 hari</p>
+     <h3>Rp16.700</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 3-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 3 -->
+     <h2>Indosat Freedom 1.5GB</h2>
+     <p>Internet 30 hari</p>
+     <h3>Rp26.000</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 4-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>Indosat Freedom 25GB</h2>
+     <p>Internet 30 hari</p>
+     <h3>Rp37.500</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     <!--  --><!--  --><!--  --><!--  --><!--  -->
+     
+   <!-- AREA PRODUK DATA YELLOW -->   
+   <div class="modal" id="yellow"> 
+	 <div class="header" id="header"> 
+   <span id="yellow" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div></br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">		
+				
+	 <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 1 -->
+     <h2>YELLOW 1GB</h2>
+     <p> 1GB  Kuota Utama + masa aktif 1 Hari </p>
+     <h3>Rp4.500</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 2-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 2 -->
+     <h2>YELLOW 1GB</h2>
+     <p>1GB  Kuota Utama + masa aktif 3 Hari </p>
+     <h3>Rp6.000</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 3-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 3 -->
+     <h2>YELLOW 1GB</h2>
+     <p>1GB  Kuota Utama + masa aktif 7 Hari</p>
+     <h3>Rp10.500</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 4-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>YELLOW 1GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 5-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>YELLOW 1GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>YELLOW 500MB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+   <!--  --><!--  --><!--  --><!--  --><!--  -->
+   
+     
+   <!-- AREA PRODUK INDOSAT DATA GIFT-->
+   <div class="modal" id="gift"> 
+	 <div class="header" id="header"> 
+   <span id="gift" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div></br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">		
+	 
+	 <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 1 -->
+     <h2>FREEDOM HARIAN 7 GB</h2>
+     <p>CEK KUOTA DATA *123*758*1#</p>
+     <h3>Rp16.500</h3>
+     </div>
+     
+     <!-- PULSA INDOSAT 2-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 2 -->
+     <h2>FREEDOM HARIAN 14 GB</h2>
+     <p>CEK KUOTA DATA *123*758*1#</p>
+     <h3>Rp24.400</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 3-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 3 -->
+     <h2>FREEDOM HARIAN 25 GB</h2>
+     <p>CEK KUOTA DATA *123*758*1#</p>
+     <h3>Rp32.000</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     <!-- AREA PRODUK DATA YELLOW -->  
+     
+ 
+   <div class="modal" id="registrasi 30 hari"> 
+	 <div class="header" id="header"> 
+   <span id="yellow" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div></br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">		
+	 
+	 <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 1 -->
+     <h2>REGIS 500MB</h2>
+     <p> 1GB  Kuota Utama + masa aktif 1 Hari </p>
+     <h3>Rp4.500</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 2-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 2 -->
+     <h2>REGIS 1GB</h2>
+     <p>1GB  Kuota Utama + masa aktif 3 Hari </p>
+     <h3>Rp6.000</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 3-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 3 -->
+     <h2>REGIS 2GB</h2>
+     <p>1GB  Kuota Utama + masa aktif 7 Hari</p>
+     <h3>Rp10.500</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 4-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 3GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 5-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 4GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 5GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 6GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 7GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 8GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     
+   <!-- PULSA INDOSAT 6-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 4 -->
+     <h2>REGIS 10GB</h2>
+     <p>1GB Kuota Utama + masa aktif 15 Hari </p>
+     <h3>Rp13.900</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+	
+		      
+	 <h5 style="margin-left:18px;">Pilih Produk</h5> 
+		      
+   <div class="container" style="border: 0px solid #ddd; height: auto; overflow: auto; padding: 20px; width: auto;">
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="freedomcombo" onclick="on(this.id)"><img src="https://i.ibb.co/nQBpY5T/SGN-08-13-2022-1660365093366.png" alt="">
+		 <h2>INDOSAT DATA FREEDOM COMBO</h2>
+		 <h5>›</h5>
+		 </div></div>
+								 
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="freedom u" onclick="on(this.id)"><img src="https://i.ibb.co/nQBpY5T/SGN-08-13-2022-1660365093366.png" alt="">
+		 <h2>INDOSAT DATA FREEDOM U</h2>
+		 <h5>›</h5>
+		 </div></div> 
+								 				 
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="freedom internet" onclick="on(this.id)"><img src="https://i.ibb.co/nQBpY5T/SGN-08-13-2022-1660365093366.png" alt="">
+		 <h2>INDOSAT DATA FREEDOM INTERNET</h2>
+		 <h5>›</h5>
+		 </div></div>
+								 
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="yellow" onclick="on(this.id)"><img src="https://i.ibb.co/nQBpY5T/SGN-08-13-2022-1660365093366.png" alt="">
+		 <h2>INDOSAT DATA YELLOW</h2>
+		 <h5>›</h5>
+		 </div></div> 	
+								 
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="gift" onclick="on(this.id)"><img src="https://i.ibb.co/nQBpY5T/SGN-08-13-2022-1660365093366.png" alt="">
+		 <h2>INDOSAT DATA FREEDOM HARIAN</h2>
+		 <h5>›</h5>
+	   </div></div> 		
+
+   <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="registrasi 30 hari" onclick="on(this.id)"><img src="https://i.ibb.co/nQBpY5T/SGN-08-13-2022-1660365093366.png" alt="">
+		 <h2>INDOSAT DATA REGISTRASI 30 HARI</h2>
+		 <h5>›</h5>
+		 </div></div> 		
+	 				
+     </section>
+   <!-- END AREA DATA PRODUK INDOSAT -->
+   
+   
+   
+   <!-- AREA DATA PRODUK SIMPATI --> 
+   <section id="pulsa_simpati">
+   <!-- PULSA TELKOMSEL 1-->
+    <div id="overlay" onclick="off()"> </div>
+	 <!-- AREA PRODUK DATA  -->
+	 <div class="modal" id="tselomg"> 
+	 <div class="header" id="header"> 
+	 <span id="tselomg" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">	
+   <!--  TELKOMSEL DATA FLASH-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 50MB 7Hari</h2>
+     <p>50MB 7Hari</p>
+     <h3>Rp30.900</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 100MB 7Hari</h2>
+     <p>100MB 7Hari</p>
+     <h3>Rp50.900</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 1GB 30Hari</h2>
+     <p>1GB 30Hari</p>
+     <h3>Rp74.980</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 2GB 30Hari</h2>
+     <p>2GB 30Hari</p>
+     <h3>Rp106.200</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 3GB 30Hari</h2>
+     <p>3GB 30Hari</p>
+     <h3>Rp106.200</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 4GB 30Hari</h2>
+     <p>4GB 30Hari</p>
+     <h3>Rp106.200</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 5GB 30Hari</h2>
+     <p>5GB 30Hari</p>
+     <h3>Rp106.200</h3>
+     </div>
+          
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Flash 8GB 30Hari</h2>
+     <p>8GB 30Hari</p>
+     <h3>Rp106.200</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+   <div class="modal" id="combo sakti"> 
+	 <div class="header" id="header"> 
+	 <span id="tselbulk" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">	
+   <!--  TELKOMSEL DATA BULK-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>COMBO SAKTI 1.5 GB</h2>
+     <p>Telkomsel Data Bulk 1 GB / 30 Hari</p>
+     <h3>Rp21.500</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>COMBO SAKTI 10 GB</h2>
+     <p>Telkomsel Data Bulk 3 GB / 30 Hari</p>
+     <h3>Rp56.500</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>COMBO SAKTI 15 GB</h2>
+     <p>Telkomsel Data Bulk 4.5 GB / 30 Hari</p>
+     <h3>Rp71.000</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+   <div class="modal" id="tselgigamax"> 
+	 <div class="header" id="header"> 
+	 <span id="tselgigamax" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">	  
+   <!--  TELKOMSEL DATA COMBO SAKTI-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>UnlimitedMAX 12 GB </h2>
+     <p>DATA TELKOMSEL 1GB INTERNET + 5GB MAXSTREAM LANGGANAN BASIC 30 HARI</p>
+     <h3>Rp25.100</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>UnlimitedMAX 35 GB</h2>
+     <p>DATA TELKOMSEL 3GB INTERNET + 12GB MAXSTREAM LANGGANAN BASIC 30 HARI</p>
+     <h3>Rp48.900</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>UnlimitedMAX 51 GB</h2>
+     <p>DATA TELKOMSEL 7GB INTERNET + 28GB MAXSTREAM LANGGANAN BASIC 30 HARI</p>
+     <h3>Rp99.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>UnlimitedMAX 70 GB</h2>
+     <p>DATA TELKOMSEL 15GB INTERNET + 40GB MAXSTREAM LANGGANAN BASIC 30 HARI</p>
+     <h3>Rp145.000</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+   <div class="modal" id="tselunlimax"> 
+	 <div class="header" id="header"> 
+	 <span id="tselunlimax" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 10px; width: auto;">	
+	 <!--  TELKOMSEL DATA FLASH-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 1 GB</h2>
+     <p>UnlimitedMAX 7GB (0,5GB + 3,5GB Lokal + 3GB Chat) 30 Hari</p>
+     <h3>Rp26.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 2 GB</h2>
+     <p>UnlimitedMAX 12GB (1GB + 6GB Lokal + 5GB Sosmed) 30 Hari</p>
+     <h3>Rp36.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 5 GB</h2>
+     <p>UnlimitedMAX 22GB (2GB + 13GB Lokal + 7GB Sosmed) 30 Hari</p>
+     <h3>Rp56.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 10 GB </h2>
+     <p>UnlimitedMAX 35GB (2GB + 23GB Lokal + 10GB Non-ton-) DisneyHotstar 30 Hari</p>
+     <h3>Rp76.000</h3>
+     </div>
+		 </div>
+	   </div>
+		 </div>
+			
+     
+   <h5 style="margin-left:18px;">Pilih Produk</h5> 
+		      
+   <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 20px; width: auto;">
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="tselomg" onclick="on(this.id)"><img src="https://i.ibb.co/7kyjd6G/1659142871825.png" alt="">
+		 <h2>DATA FLASH</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div>
+								 
+								  
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="combo sakti" onclick="on(this.id)"><img src="https://i.ibb.co/7kyjd6G/1659142871825.png" alt="">
+		 <h2>COMBO SAKTI</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 
+								 				 
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="tselgigamax" onclick="on(this.id)"><img src="https://i.ibb.co/7kyjd6G/1659142871825.png" alt="">
+		 <h2>UNLIMITED MAX</h2>
+		 <h5>›</h5>
+		 </div></div>
+								 
+								  
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="tselunlimax" onclick="on(this.id)"><img src="https://i.ibb.co/7kyjd6G/1659142871825.png" alt="">
+		 <h2>MINI</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 			 				
+		 </div>
+     </section>
+   <!-- END AREA DATA PRODUK SIMPATI -->
+
+
+   <!-- AREA DATA PRODUK XL --> 
+   <section id="pulsa_xl">
+   <!-- PULSA XL 1-->
+    <div id="overlay" onclick="off()"> </div>
+	 <!-- AREA PRODUK DATA  -->
+   <div class="modal" id="xtraon"> 
+	 <div class="header" id="header"> 
+	 <span id="xtraon" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 10px; width: auto;">	
+   <!--  XL DATA HOTROD-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>HOTROD 1.5 GB</h2>
+     <p>XL XTRA on- 1GB 60 HARI</p>
+     <h3>Rp17.500</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>HOTROD 3 GB</h2>
+     <p>XL XTRA on- 2GB 60 HARI</p>
+     <h3>Rp26.600</h3>
+     </div>
+     
+  <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+    <!-- PRODUK 8 -->
+    <h2>HOTROD 6 GB</h2>
+    <p>XL XTRA on- 2GB 60 HARI</p>
+    <h3>Rp26.600</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>HOTROD 8 GB</h2>
+     <p>XL XTRA on- 2GB 60 HARI</p>
+     <h3>Rp26.600</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+   <div class="modal" id="xlcombo"> 
+	 <div class="header" id="header"> 
+	 <span id="xlcombo" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">	
+	 <!--  XL DATA COMBO-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI HOTROD 1 GB</h2>
+     <p>1 GB Utama + 1 GB Youtube + 5 GB 106 kota + 4,5 GB 33 kota + 1 GB Youtube 106 kota + 5 menit semua operator</p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI HOTROD 1.5 GB</h2>
+     <p>2 GB Utama + 2 GB Youtube + 8 GB 106 kota + 7 GB 33 kota + 2 GB Youtube 106 kota + 5 menit semua operator</p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI HOTROD 2.5 GB</h2>
+     <p>5GB (2G/3G/4G) + Nelp Anynet 20 mins. Youtube 24 Jam 10GB. Youtube 01:00-06:00 Tanpa kuota Unlimited.</p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI HOTROD 4 GB</h2>
+     <p>10GB (2G/3G/4G) + Nelp Anynet 30 mins. Youtube 24 Jam 20GB. Youtube 01:00-06:00 Tanpa kuota Unlimited.</p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI HOTROD 6 GB</h2>
+     <p>15GB (2G/3G/4G) + Nelp Anynet 40 mins. Youtube 24 Jam 30GB. Youtube 01:00-06:00 Tanpa kuota Unlimited.</p>
+     <h3>Gangguan</h3>
+     </div>
+		 </div>
+		 </div>
+		 </div>
+		 </div>
+     
+   <div class="modal" id="combolite"> 
+	 <div class="header" id="header"> 
+	 <span id="combolite" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">	
+   <!--  XL DATA EXTRA COMBO LITE-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>XL Combo Lite S</h2>
+     <p>XL Combo Lite (S) 1,5GB ALL + 1,5GB MALAM 00-06 + UNL WA/LINE/GOJEK LOKAL SESUAI Zon-A</p>
+     <h3>Rp22.100</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>XL Combo Lite M</h2>
+     <p>XL Combo Lite (M) 2,5GB ALL + 2GB MALAM 00-06 + UNL WA/LINE/GOJEK LOKAL SESUAI Zon-A</p>
+     <h3>Rp28.400</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>XL Combo Lite L</h2>
+     <p>XL Combo Lite (L) 6GB ALL + 1GB MALAM 00-06 + UNL WA/LINE/GOJEK LOKAL SESUAI Zon-A</p>
+     <h3>Rp38.550</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>XL Combo Lite XL</h2>
+     <p>XL Combo Lite (XL) 13GB ALL + UNL WA/LINE/GOJEK LOKAL SESUAI Zon-A</p>
+     <h3>Rp61.900</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>XL Combo Lite XXL</h2>
+     <p>XL Combo Lite (XXL) 25GB ALL + UNL WA/LINE/GOJEK LOKAL SESUAI Zon-A</p>
+     <h3>Rp96.700</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>XL Combo Lite XXXL</h2>
+     <p>XL Combo Lite (XXXL) 37GB ALL + UNL WA/LINE/GOJEK LOKAL SESUAI Zon-A</p>
+      <h3>Rp120.100</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+     
+   <h5 style="margin-left:18px;">Pilih Produk</h5> 
+		      
+   <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 20px; width: auto;">
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="xtraon" onclick="on(this.id)"><img src="https://i.postimg.cc/nLNZBNw3/Logopit_1626561744545.png" alt="">
+	   <h2>XL DATA HOTROD </h2>
+		 <h5>›</h5>
+		 </div>
+		 </div>
+								 
+								  
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="xlcombo" onclick="on(this.id)"><img src="https://i.postimg.cc/nLNZBNw3/Logopit_1626561744545.png" alt="">
+		 <h2>XL DATA MINI</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 
+								 				 
+					
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="combolite" onclick="on(this.id)"><img src="https://i.postimg.cc/nLNZBNw3/Logopit_1626561744545.png" alt="">
+		 <h2>XL DATA EXTRA COMBO LITE</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 			 				
+		 </div>
+     </div>
+     </section>
+   <!-- END AREA DATA PRODUK XL -->
+   
+   
+   <!-- AREA DATA PRODUK TRI -->
+   <section id="pulsa_tri">
+   <!-- PULSA TRI 1 --> 
+   <div id="overlay" onclick="off()"> </div>
+	 <!-- AREA PRODUK DATA  -->
+	 <div class="modal" id="trimini"> 
+	 <div class="header" id="header"> 
+	 <span id="trimini" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto;padding-bottom: 100px; width: auto;">	
+   <!--  TRI DATA MINI-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 1.5 GB</h2>
+     <p>1 GB Nasional, Pulsa 2K, 5 Hari</p>
+     <h3>Rp8.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 2 GB</h2>
+     <p>1.5 GB Nasional, Pulsa 2K, 5 Hari</p>
+     <h3>Rp13.300</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 3 GB</h2>
+     <p>1.5 GB Nasional, Pulsa 2K, 7 Hari</p>
+     <h3>Rp18.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 6 GB</h2>
+     <p>2.5 GB Nasional, 2.5 GB (01.00 - 09.00), 7 Hari</p>
+     <h3>Rp17.000</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 8 GB</h2>
+     <p>2.5 GB Nasional, 2.5 GB (01.00 - 09.00), 7 Hari</p>
+     <h3>Rp17.000</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 16 GB</h2>
+     <p>2.5 GB Nasional, 2.5 GB (01.00 - 09.00), 7 Hari</p>
+     <h3>Rp17.000</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 50 GB</h2>
+     <p>2.5 GB Nasional, 2.5 GB (01.00 - 09.00), 7 Hari</p>
+     <h3>Rp17.000</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>AON 80 GB</h2>
+     <p>2.5 GB Nasional, 2.5 GB (01.00 - 09.00), 7 Hari</p>
+     <h3>Rp17.000</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+   
+   <div class="modal" id="trilokal"> 
+	 <div class="header" id="header"> 
+	 <span id="trilokal" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 10px; width: auto;">	  
+   <!--  TRI DATA ALWAYS ON-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 1 GB</h2>
+     <p>THREE JABODETABEKSER Kuota Happy 1GB 5 hari + Youtube 1GB 2 hari</p>
+     <h3>Rp8.800</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 1.5 GB</h2>
+     <p>THREE JABODETABEKSER Kuota Happy 1.5GB 7 hari + Youtube 1.5GB 3 hari</p>
+     <h3>Rp12.800</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 1.5 GB 7 HARI</h2>
+     <p>Kuota Lokal 500MB hanya bisa dipakai untuk area JABODETABEK</p>
+     <h3>Rp15.600</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>MINI 5 GB</h2>
+     <p>Kuota Lokal 500MB hanya bisa dipakai untuk area JABODETABEK</p>
+     <h3>Rp19.999</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+    
+
+   <div class="modal" id="trihappy"> 
+   <div class="header" id="header"> 
+	 <span id="trihappy" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 10px; width: auto;">	
+   <!--  TRI DATA HAPPY-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 1 GB / 3 Hari</h2>
+     <p>Tri Data Happy 1 GB / 1 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 3 GB / 3 Hari</h2>
+     <p>Tri Data Happy 1 GB / 3 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 3.5 GB / 5 Hari</h2>
+     <p>Tri Data Happy 3 GB / 3 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 6 GB / 5 Hari</h2>
+     <p>Tri Data Happy 2 GB / 5 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 5 GB / 7 Hari</h2>
+     <p>Tri Data Happy 3.5 GB / 5 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 12 GB / 30 Hari</h2>
+     <p>Tri Data Happy 6 GB / 5 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 18 GB / 30 Hari</h2>
+     <p>Tri Data Happy 5 GB / 7 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Tri Data Happy 25 GB / 30 Hari</h2>
+     <p>Tri Data Happy 9 GB / 10 Hari</p>
+     <h3>Gangguan</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+ 
+ 
+   <h5 style="margin-left:18px;">Pilih Produk</h5> 
+		      
+   <div class="container" style="border: 0px solid #ddd;  padding: 20px; width: auto;">
+	 <div style=" animation: slide_up 0.0s ease;"> 
+ 	 <div class="kategori_pulsa" id="trimini" onclick="on(this.id)"><img src="https://i.postimg.cc/m2T4YY8W/Logopit_1626561764203.png" alt="">
+		  <h2>TRI DATA AON</h2>
+		  <h5>›</h5>
+		  </div>
+		  </div>
+								 
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="trilokal" onclick="on(this.id)"><img src="https://i.postimg.cc/m2T4YY8W/Logopit_1626561764203.png" alt="">
+		 <h2>TRI DATA MINI AON</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 
+								 				 
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="trihappy" onclick="on(this.id)"><img src="https://i.postimg.cc/m2T4YY8W/Logopit_1626561764203.png" alt="">
+		 <h2>TRI DATA HAPPY</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 			 				
+		 </div>
+     </div>
+     </section>
+   <!-- END AREA DATA PRODUK TRI -->
+   
+   
+   <!-- AREA DATA PRODUK AXIS --> 
+   <section id="pulsa_axis">
+     <!-- PULSA AXIS 1-->
+   <div id="overlay" onclick="off()"> </div>
+	 <!-- AREA PRODUK DATA  -->
+   <div class="modal" id="axismini"> 
+	 <div class="header" id="header"> 
+	 <span id="axismini" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto;padding-bottom: 100px; width: auto;">	
+   <!--  AXIS DATA MINI-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+    <h2>Axis Data Mini 3 GB / 15 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 2 GB / 7 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 5 GB / 15 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('#')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 1.5 GB / 5 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 1.5 GB / 3 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 4 GB / 3  Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 1 GB / 5 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 1.5 GB / 5 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 2 GB / 5 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 3 GB / 5 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Axis Data Mini 5 GB / 5 Hari</h2>
+     <p></p>
+     <h3>Gangguan</h3>
+     </div>
+     </div>
+     </div>
+     </div> 
+     </div>
+   
+   <div class="modal" id="bronet"> 
+	 <div class="header" id="header"> 
+	 <span id="bronet" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding: 10px; width: auto;">	  
+   <!--  AXIS DATA BRONET-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+    <h2>BRONET 1.5 GB / 7 Hari</h2>
+     <p>BRONET 1 GB / 30 Hari</p>
+     <h3>Rp17.990</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 2 GB / 7 Hari</h2>
+     <p>BRONET 2 GB / 30 Hari</p>
+     <h3>Rp26.700</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 1 GB / 30 Hari</h2>
+     <p>BRONET 5 GB / 30 Hari</p>
+     <h3>Rp42.250</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 2 GB / 30 Hari</h2>
+     <p>BRONET 10 GB / 30 hari</p>
+     <h3>Rp56.675</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 3 GB / 30 Hari</h2>
+     <p>BRONET 15 GB / 30 hari</p>
+     <h3>Rp74.350</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 5 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     
+   <div class="produk_pulsa"  onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 8 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 10 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 12 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 15 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 25 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>BRONET 50 GB / 30 Hari</h2>
+     <p>BRONET 25 GB / 30 hari</p>
+     <h3>Rp88.450</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+   <div class="modal" id="owsem"> 
+	 <div class="header" id="header"> 
+	 <span id="owsem" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto; padding-bottom: 100px; width: auto;">	
+    <!--  AXIS DATA OWSEM-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>OWSEM 1 GB + 1 GB 4G / 30 Hari</h2>
+     <p>BRONET 4G OWSEM 1GB+1GB(4G)+2GB Aplikasi, 24 jam 30HR</p>
+     <h3>Rp18.700</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>OWSEM 1 GB + 3 GB 4G / 30 Hari</h2>
+     <p>BRONET 4G OWSEM 1GB+3GB(4G)+4GB Aplikasi, 24 jam 30HR</p>
+     <h3>Rp35.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>OWSEM 2 GB + 6 GB 4G / 30 Hari</h2>
+     <p>BRONET 4G OWSEM 2GB+6GB(4G)+8GB Aplikasi, 24 jam 30HR</p>
+     <h3>Rp47.600</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>OWSEM 3 GB + 9 GB 4G / 30 Hari</h2>
+     <p>BRONET 4G OWSEM 3GB+9GB(4G)+12GB Aplikasi, 24 jam 30HR</p>
+     <h3>Rp62.000</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+     
+   <h5 style="margin-left:18px;">Pilih Produk</h5> 
+		      
+   <div class="container" style="border: 0px solid #ddd;  padding: 20px; width: auto;">
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="axismini" onclick="on(this.id)"><img src="https://i.postimg.cc/0QmvfZTP/Logopit_1626561723829.png" alt="">
+		 <h2>AXIS DATA MINI</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div>
+								 
+	 <div style="animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="bronet" onclick="on(this.id)"><img src="https://i.postimg.cc/0QmvfZTP/Logopit_1626561723829.png" alt="">
+	   <h2>AXIS DATA BRONET</h2>
+		 <h5>›</h5>
+	   </div>
+		 </div> 
+								 				 
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="owsem" onclick="on(this.id)"><img src="https://i.postimg.cc/0QmvfZTP/Logopit_1626561723829.png" alt="">
+		 <h2>AXIS DATA OWSEM</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div> 		
+     </div>
+     </div>
+     </section>
+   <!-- END AREA DATA PRODUK AXIS -->
+   
+   
+    <!-- AREA DATA PRODUK SMARTFREN -->
+   <section id="pulsa_smartfren">
+   <!-- PULSA SMARTFREN 1-->
+   <div id="overlay" onclick="off()"> </div>
+	 <!-- AREA PRODUK DATA  -->
+	 <div class="modal" id="volume"> 
+	 <div class="header" id="header"> 
+	 <span id="volume" class="close" onclick="off(this.id)">x<i class="fas fa-times-circle"></i></span> </div> </br>
+	 <div class="body" id="body">
+	 <div class="container" style="border: 0px solid #ddd; height: 500px; overflow: auto;padding-bottom: 100px; width: auto;">	
+   <!--  SMARTFREN DATA VOLUME-->
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Smart 2 GB 24 Jam + 3 GB Malam + 1 GB Chat</h2>
+     <p> 500MB 24 jam + 1,5GB malam + 500MB chat + gratis nelpon sesama, 3 Hari</p>
+     <h3>Rp7.000</h3>
+     </div>
+
+   <div class="produk_pulsa"onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Smart 1.25 GB 24 Jam + 1.75 GB Malam + 1 GB Chat</h2>
+     <p> 1,25GB 24 jam + 1,75GB malam + 1GB chat + gratis nelpon sesama, 7 Hari</p>
+     <h3>Rp12.000</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Smart 4 GB 24 Jam + 4 GB Malam + 2 GB Chat</h2>
+     <p> 2GB 24 jam + 3GB malam + 1GB chat + gratis nelpon sesama, 30 Hari</p>
+     <h3>Rp20.500</h3>
+     </div>
+
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Smart 10 GB 24 Jam + 20 GB Malam </h2>
+     <p> 4GB 24 jam + 4GB malam + 2GB chat + gratis nelpon sesama, 30 Hari</p>
+     <h3>Rp28.700</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Smart 20 GB 24 Jam + 40 GB Malam </h2>
+     <p> 4GB 24 jam + 4GB malam + 2GB chat + gratis nelpon sesama, 30 Hari</p>
+     <h3>Rp28.700</h3>
+     </div>
+     
+   <div class="produk_pulsa" onclick="kirimData('tempelkanlinkdisini')">
+     <!-- PRODUK 8 -->
+     <h2>Smart 10 GB 30 Jam + 60 GB Malam </h2>
+     <p> 4GB 24 jam + 4GB malam + 2GB chat + gratis nelpon sesama, 30 Hari</p>
+     <h3>Rp28.700</h3>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     
+      
+   <h5 style="margin-left:18px;">Pilih Produk</h5> 
+		      
+   <div class="container" style="border: 0px solid #ddd;  padding: 20px; width: auto;">
+	 <div style=" animation: slide_up 0.0s ease;"> 
+	 <div class="kategori_pulsa" id="volume" onclick="on(this.id)"><img src="https://i.postimg.cc/d3jYM3Qf/Logopit_1626561689694.png" alt="">
+		 <h2>SMARTFREN DATA COMBO</h2>
+		 <h5>›</h5>
+		 </div>
+		 </div>
+		 </div>
+     </div>
+     </div>
+     </section>
+   <!-- END AREA DATA PRODUK SMARTFREN -->
+
+  <script>var id_aktif; function on(clicked_id) { document.getElementById("overlay").style.display = "block"; document.getElementById(clicked_id).style.display = "block"; id_aktif = clicked_id; } function off() { document.getElementById("overlay").style.display = "none"; document.getElementById(id_aktif).style.display = "none"; }</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script type="text/javascript" charset="utf-8">
+      
+
+  // CEK NOMOR TELEPON
+  function cekNomorTelponUser(){
+  
+  // loading
+  var loading = document.getElementById("spinner_load");
+
+  // operator
+  let operatorPulsa = document.getElementById("operatorPulsa");
+  
+  // input user
+  let b = document.getElementById("nomor").value;
+  
+  // img operator
+  let imgOperator = document.getElementById("img_operator");
+  
+  // pulsa Indosat
+  let pulsaIndosat = document.getElementById("pulsa_indosat");
+  
+   // pulsa Simpati
+  let pulsaSimpati = document.getElementById("pulsa_simpati");
+  
+   // pulsa Simpati
+  let pulsaXl = document.getElementById("pulsa_xl");
+  
+   // pulsa Simpati
+  let pulsaAxis = document.getElementById("pulsa_axis");
+  
+   // pulsa Simpati
+  let pulsaTri = document.getElementById("pulsa_tri");
+  
+   // pulsa Simpati
+  let pulsaSmartfren = document.getElementById("pulsa_smartfren");
+  
+  let x = b.replace(/[^0-9]/g).substring(0, 4);
+  
+  let textAlertInfo = "Masukkan Nomor Telpon 10-13 karakter";
+  
+  if (x == null || x == ' ' || x < 4  || x == "" ) {
+    operatorPulsa.innerHTML = "OPERATOR";
+    pulsaIndosat.style.display = "none";
+    pulsaSimpati.style.display = "none";
+    pulsaXl.style.display = "none";
+    pulsaAxis.style.display = "none";
+    pulsaTri.style.display = "none";
+    pulsaSmartfren.style.display = "none";
+
+    // CEK  NOMOR
+  }else if(x == 08){
+    operatorPulsa.innerHTML = "OPERATOR";
+    imgOperator.src = "";
+    pulsaIndosat.style.display = "none";
+    pulsaSimpati.style.display = "none";
+    pulsaXl.style.display = "none";
+    pulsaAxis.style.display = "none";
+    pulsaTri.style.display = "none";
+    pulsaSmartfren.style.display = "none";
+    
+    // NOMOR TRI
+  }else if(x == 0895 || x == 0896 || x == 0897 || x == 0898 || x == 0899){
+    operatorPulsa.innerHTML = "TRI";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/742137058d.jpg";
+    pulsaTri.style.display = "block";
+    
+    // NOMOR AXIS
+  }else if(x == 0838 || x == 0831 || x == 0832 || x == 0833){
+    operatorPulsa.innerHTML = "AXIS";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/810219098e.jpg";
+    pulsaAxis.style.display = "block";
+  
+  
+  // NOMOR INDOSAT
+ } else if(x == 0814 || x == 0815 || x == 0816 || x == 0855 || x == 0856 || x == 0857 || x == 0858){
+    operatorPulsa.innerHTML = "INDOSAT";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/859438076d.jpg";
+    pulsaIndosat.style.display = "block";
+    
+    // NOMOR XL
+  }else if (x == 0818 || x == 0817 || x == 0819 || x == 0859 || x == 0877 || x == 0878) {
+    operatorPulsa.innerHTML = "XL";
+    imgOperator.src = "https://i.postimg.cc/nLNZBNw3/Logopit_1626561744545.png";
+    pulsaXl.style.display = "block";
+
+    // NOMOR SMARTFREN
+  }else if(x == 0881 || x == 0882 || x == 0883 || x == 0884 || x == 0885 || x == 0886 || x == 0887 || x == 0888 || x == 0889){
+   operatorPulsa.innerHTML = "SMARTFREN";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/560788348y.jpg";
+    pulsaSmartfren.style.display = "block";
+    
+    //  NOMOR TELKOMSEL
+  }else if (x == 0811 || x == 0812 || x == 0813 || x == 0821 || x == 0822 || x == 0852 || x == 0853 || x == 0823 || x == 0851 || x == 0835) {
+   operatorPulsa.innerHTML = "TELKOMSEL";
+    imgOperator.src = "https://i.ibb.co/7kyjd6G/1659142871825.png"; 
+    pulsaSimpati.style.display = "block";
+  }
+}
+// bersihkan konten alert saat diklik oleh user
+function clearData(e) {
+  document.getElementById('alertWarning').style.display = "none";
+}
+
+// SIMPAN SEMUA HASIL CETAKAN DARI SEMUA FUNCTION KESINI
+// CETAK NAMA BARANG
+ let cetakNama = document.getElementById("beliPulsa");
+ // CETAK HARGA BARANG
+ let cetakHarga = document.getElementById("HargaBarang");
+// CETAK URL BARANG
+let url = document.getElementById("linkUrl");
+// CETAK NOMOR TUJUAN
+ let nomorTujuan = document.getElementById("noTujuan");
+ let nomorInputan = document.getElementById("nomor");
+ 
+ // TOTAL PEMBAYARAN USER
+ let totalTagihan = document.getElementById("totalTagihan");
+ 
+ // CETAK OPERATOR PULSA
+ let cetak_operator = document.getElementById("cetakOperator");
+   
+ // cetak produk yang  manapun dan keluarkan hanya produk yang diklik oleh user dan ambil semua data dari html
+ 
+ // ############# KALAU KAMU PAKAI HOSTING GK PERLU LAKUKAN INI, CUKUP BIKIN CLASS UNTUK QUERY DATABASE KAMU #############
+ 
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data() {
+   nama = document.getElementById("nama_barang").innerHTML;
+   harga = document.getElementById("harga_barang").innerHTML;
+   url_barang = document.getElementById("url_barang").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+function alertInfoNews(){
+  let a = document.getElementById("nomor").value;
+  let textAlertInfo = "Masukkan Nomor Telepon 10-13 karakter";
+  let kontenAlert = document.getElementById('kontenAlertInformation');
+  if(a == 0 || a == [] || a == null || a == " " || a == ""){
+  kontenAlert.style.display = "none";
+  
+}else if(a.length < 10){
+  kontenAlert.innerHTML = textAlertInfo;
+  kontenAlert.style = "color:red;";
+}else if(a > 10){
+  kontenAlert.style.display = "none";
+}
+}
+// SEBELUM KIRIM DATA NOMOR TUJUAN PERIKSA DAN HILANGKAN SEMUA SIMBOL SIMBOL DAN HURUF, CETAK HANYA ANGKA SAJA DAN BERIKAN SPASI DI INPUTAN
+// hasil inputan tidak boleh lebih dari 13 karakter
+document.getElementById('nomor').addEventListener('input', function (e) {
+ e.target.value = e.target.value.replace(/[^0-9]/g,'').substring(0, 13).trim();
+});
+
+  // loading
+var loading = document.getElementById("spinner_load");
+// url tujuan
+            var countuu = 0.5; // dalam detik
+            function countDown() {
+                if (countuu > 0) {
+                    countuu--;
+                    setTimeout("countDown()", 1000);
+                } else {
+                    loading.style.display="none";
+                }
+            }
+            countDown();
+ 
+ //buat fungsi untuk kirim produk yg dipilih user ke bukaolshop
+ function kirimData(urlLink) {
+   // masukkan catatan parameter dari bukaolshop
+   const catatan = "?catatan=";
+  // ambil nomor dari hasil inputan user dan hilangkan semua karakter selain ANGKA
+  const nomor = document.getElementById('nomor').value;
+  // sebelum mengirimkan data 
+  //periksa dulu apakah nomor tujuan sudah di isi
+  //periksa juga produk user dan periksa harga produk
+  if (nomor == null || nomor == "0858" || nomor.length < 10 || nomor == "" || nomor == "0" || nomor == "none") {
+    // jika nomor kosong jangan kirimkan data nomor harus lebih dari 10 karakter dan beri peringatan ke user
+    alert('periksa kembali nomor tujuan Anda!!');
+  }else{
+  // jika nomor ada isinya dan isinya lebih dari 10 karakter kirimkan data ke bukaolshop
+  window.location.href=urlLink+catatan+nomor;
+ }}
+    </script>
+  </body>
+</html>

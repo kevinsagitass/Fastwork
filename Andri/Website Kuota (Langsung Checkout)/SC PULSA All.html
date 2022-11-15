@@ -1,0 +1,4158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       <link rel="stylesheet" href="pulsa.css" type="text/css" media="all" />
+       
+       <style type="text/css" media="all">
+         .tinggi-konten{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 50px;
+}
+#offcanvasBottomLabel{
+  font-size: 16px;
+  text-align: center;
+  margin-left: 25%;
+  opacity: 0.6;
+  margin-top: -2%;
+}
+.jarakKlik{
+  width: 100%;
+  min-height: 7px;
+  background-color: black;
+  opacity: 0.090;
+}
+.dataKlik{
+  width: 102%;
+  height: 200%;
+  background-color: white;
+  position: absolute;
+  margin-left: -5%;
+  margin-top: -5%;
+  padding-top: 3%;
+}
+.tinggi-konten{
+  margin-top: -90%;
+  height: auto;
+  background-color: #fff;
+}
+.dataKlik list{
+  margin-left: 5%;
+  font-size: 14px;
+  opacity: 0.8;
+  float: left;
+}
+.dataKlik harga{
+  margin-left: 5%;
+  font-size: 17px;
+  opacity: 0.8;
+}
+.dataKlik h5{
+  font-size: 14px;
+  margin-left: 5%;
+  float: left;
+  border: 1px solid #673ab7;
+  padding: 4px;
+  border-radius: 5px;
+  margin-right: 0.5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #26A795;
+}
+.dataKlik h5:hover{
+  background-color: #673ab7;
+  color: #673ab7;
+}
+
+.dataKlik p{
+  margin-left: 5%;
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: right;
+  margin-right: 6%;
+}
+.cleaning{
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+  border: none;
+  background-color: #f00000;
+  color: white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 2%;
+}
+.postdata{
+  margin-top: 2%;
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+  border: none;
+  background-color: #673ab7;
+  color: white;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-radius: 5px;
+}
+/* CSS HEADER */
+.konten_bg{
+  width: 100%;
+  min-height: 70px;
+  top: 0;
+  left: 0;
+  background-color: #673ab7;
+}
+.konten_header{
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-top: -15%;
+  background-color: #673ab7;
+}
+
+.input_konten{
+  width: 100%;
+  height: auto;
+  padding-top: 2%;
+}
+.input_konten p{
+  margin-top: 5%;
+  margin-left: 2.5%;
+  font-weight:bold;
+  color:#fff;
+}
+.input_konten span{
+  margin-left:3.5%;
+  font-size: 13px;
+  font-weight:bold;
+  color: #fff;
+}
+
+.input_konten input{
+  margin-top: -7%;
+  width: 95%;
+  border-radius: 20px;
+  border-color: #fff;
+  font-size: 15px;
+  margin-left: 2.5%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  outline: none;
+  font-weight: bold;
+  font-color:#673ab7;
+  background-color: #fff;
+}
+.notice{
+  font-size: 14px;
+  padding-left: 5%;
+  opacity: 0.8;
+  float: left;
+  clear: both;
+}
+#alertWarning{
+width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+#alertWarning h1{
+  font-size: 20px;
+  position: absolute;
+  margin-top: -16%;
+  margin-left: 88%;
+  color: red;
+  z-index: 20;
+}
+#img_operator{
+  position: absolute;
+  width: 5%;
+  height: auto;
+  margin-left: -18%;
+  z-index: 4;
+}
+.img_kontak{
+  position: absolute;
+  width: 7%;
+  height: auto;
+  margin-left: -6%;
+  z-index: 5;
+}
+.kiosscript{
+  height: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+  padding-top:5px;
+background-image:linear-gradient(#ffffff,#ffffff);border:1px solid #e8e8e8;border-radius:10px;font-family:serif;box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.kiosscript list{
+  margin-left:5px;
+  font-weight: 800;
+  font-family: 'Urbanist', sans-serif;
+  color: #000000;
+  margin-top: 7px;
+  font-size: 15px;
+  display: inline;
+  background: transparent;
+  position: absolute;
+}
+.kiosscript p{
+  font-size: 10px;
+  margin-left: 80%;
+  margin-bottom: 2%;
+  
+}
+.kiosscript harga{
+  margin-left:12px;
+  font-weight: bold;
+  font-family: 'Urbanist', sans-serif;
+  margin-top: 8px;
+  right: 32px;
+  color: #000000;
+  font-size: 12px;
+  display: inline;
+  background: transparent;
+  position: absolute;
+}
+#pulsa_indosat, #pulsa_simpati, #pulsa_xl,#pulsa_axis,#pulsa_tri,#pulsa_smartfren{
+  display: none;
+}
+#spinner_load{
+  opacity: 0.6;
+}
+#alertNomor{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  opacity: 1;
+  background-color: white;
+  margin-top: -45%;
+  z-index: 10;
+  display: none;
+}
+.body-konten{
+  width: 100%;
+  height: auto;
+}
+.container-body{
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+}
+.container-body img{
+  width: 50%;
+  height: auto;
+}
+.container-body h2{
+  font-size: 1rem;
+  opacity: 0.9;
+  color: #595959;
+  font-weight: bold;
+}
+.container-body p{
+  font-size: 0.8rem;
+  opacity: 0.7;
+  color: #595959;
+  margin-bottom: -1%;
+}
+
+
+       </style>
+       
+    <title>Isi Ulang Pulsa</title>
+    
+    
+    
+    <body>
+  <!-- BAGIAN HEADER --> 
+   <div class="konten_bg">
+   </div>
+        <div class="container konten_header">
+       <form class="input_konten" action="" method="get" accept-charset="utf-8">
+         <p>Masukkan Nomor Tujuan</p>
+         <input type="number" name="nomor" id="nomor" value="" placeholder="Contoh : 08XX XXXX" oninput="cekNomorTelponUser()"/>
+          <img id="img_operator" src="https://upload.cc/i4/q3OlX.gif" alt="" />
+          <a href="#">
+          <img class="img_kontak" src="#" alt="" />
+          </a>
+         <span id="operatorPulsa">OPERATOR</span>
+       </form>
+     </div>
+     <br />
+ 
+    <!-- END HEADER --> 
+
+
+  <div id="spinner_load" class="text-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading Data...</span>
+  </div>
+</div>
+
+    
+ <!-- THIS IS A BODY -->
+   <section id="E500" class="body-konten">
+     <div class="container-body">
+       
+       <h2>Tidak Ada Data</h2>
+       <p>masukkan nomor telpon tujuan</p>
+       <p>terlebih dahulu!</p>
+     </div>
+   </section>
+
+
+   <!-- AREA DATA PRODUK --> 
+   <!-- AREA DATA PRODUK INDOSAT --> 
+   <section id="pulsa_indosat">
+   <!-- PULSA INDOSAT 1-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data()">
+     <!-- PRODUK 1 --> 
+      <list id="nama_barang">Pulsa 5.000</list>
+      <harga id="harga_barang">Rp. 6.240</harga>
+      <a id="url_barang" href="https://gltpulsa.bukaolshop.site/produk/indosat-5rb-1449427"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 2-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data1()">
+     <!-- PRODUK 2 --> 
+      <list id="nama_barang1">Pulsa 5.000 alternatif</list>
+      <harga id="harga_barang1">Rp 6.260</harga>
+      <a id="url_barang1" href="https://gltpulsa.bukaolshop.site/produk/indosat-5rb-alternatif-1449429"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 3-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data2()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang2">Pulsa 10.000</list>
+      <harga id="harga_barang2">Rp 11.205</harga>
+      <a id="url_barang2" href="https://gltpulsa.bukaolshop.site/produk/indosat-10rb-1450217"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 4-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data3()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang3">Pulsa 10.000 alternatif</list>
+      <harga id="harga_barang3">Rp 11.215 </harga>
+      <a id="url_barang3" href="https://gltpulsa.bukaolshop.site/produk/indosat-10rb-alternatif-1450220"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 5-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data4()">
+     <!-- PRODUK 5 --> 
+      <list id="nama_barang4">Pulsa 12.000</list>
+      <harga id="harga_barang4">Rp 12.850</harga>
+      <a id="url_barang4" href="https://gltpulsa.bukaolshop.site/produk/indosat-12rb-1450233"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 6-->
+       <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data5()">
+     <!-- PRODUK 6 --> 
+      <list id="nama_barang5">Pulsa 12.000 alternatif</list>
+      <harga id="harga_barang5">Rp 12.875</harga>
+      <a id="url_barang5" href="https://gltpulsa.bukaolshop.site/produk/indosat-12rb-alternatif-1450234"></a>
+     </div>
+   
+     <!-- PULSA INDOSAT 7-->
+     <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data6()">
+     <!-- PRODUK 6 --> 
+      <list id="nama_barang6">Pulsa 15.000</list>
+      <harga id="harga_barang6">Rp 16.050</harga>
+      <a id="url_barang6" href="https://gltpulsa.bukaolshop.site/produk/indosat-15rb-1450241"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 8-->
+        <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data7()">
+     <!-- PRODUK 8 --> 
+      <list id="nama_barang7">Pulsa 15.000 alternatif</list>
+      <harga id="harga_barang7">Rp 16.075</harga>
+      <a id="url_barang7" href="https://gltpulsa.bukaolshop.site/produk/indosat-15rb-alternatif-1450242"></a>
+     </div>
+  
+     <!-- PULSA INDOSAT 9-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data8()">
+     <!-- PRODUK 9 --> 
+      <list id="nama_barang8">Pulsa 20.000</list>
+      <harga id="harga_barang8">Rp 20.955</harga>
+      <a id="url_barang8" href="https://gltpulsa.bukaolshop.site/produk/indosat-20rb-1450347"></a>
+     </div>
+     
+     <!-- PULSA INDOSAT 10-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data9()">
+     <!-- PRODUK 10 --> 
+      <list id="nama_barang9">Pulsa 20.000 alternatif</list>
+      <harga id="harga_barang9">Rp. 20.975</harga>
+      <a id="url_barang9" href="https://gltpulsa.bukaolshop.site/produk/indosat-20rb-alternatif-1450351"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 11-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data10()">
+     <!-- PRODUK 11 --> 
+      <list id="nama_barang10">Pulsa 25.000</list>
+      <harga id="harga_barang10">Rp. 25.750</harga>
+      <a id="url_barang10" href="https://gltpulsa.bukaolshop.site/produk/indosat-25rb-1450416"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 12-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data11()">
+     <!-- PRODUK 12 --> 
+      <list id="nama_barang11">Pulsa 25.000 alternatif</list>
+      <harga id="harga_barang11">Rp 25.775</harga>
+      <a id="url_barang11" href="https://gltpulsa.bukaolshop.site/produk/indosat-25rb-alternatif-1450418"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 13-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data12()">
+     <!-- PRODUK 13 --> 
+      <list id="nama_barang12">Pulsa 30.000</list>
+      <harga id="harga_barang12">Rp. 30.825</harga>
+      <a id="url_barang12" href="https://gltpulsa.bukaolshop.site/produk/indosat-30rb-1450439"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 14-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data13()">
+     <!-- PRODUK 14 --> 
+      <list id="nama_barang13">Pulsa 30.000 alternatif</list>
+      <harga id="harga_barang13">Rp. 30.850</harga>
+      <a id="url_barang13" href="https://gltpulsa.bukaolshop.site/produk/indosat-30rb-alternatif-1450440"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 15-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data14()">
+     <!-- PRODUK 15 --> 
+      <list id="nama_barang14">Pulsa 40.000</list>
+      <harga id="harga_barang14">Rp. 40.550</harga>
+      <a id="url_barang14" href="https://gltpulsa.bukaolshop.site/produk/indosat-40rb-1450460"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 16-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data15()">
+     <!-- PRODUK 16 --> 
+      <list id="nama_barang15">Pulsa 40.000 alternatif</list>
+      <harga id="harga_barang15">Rp. 40.560</harga>
+      <a id="url_barang15" href="https://gltpulsa.bukaolshop.site/produk/indosat-40rb-alternatif-1450462"></a>
+     </div>
+     
+          <!-- PULSA INDOSAT 17-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data16()">
+     <!-- PRODUK 16 --> 
+      <list id="nama_barang16">Pulsa 50.000</list>
+      <harga id="harga_barang16">Rp. 49.950</harga>
+      <a id="url_barang16" href="https://gltpulsa.bukaolshop.site/produk/indosat-50rb-1450492"></a>
+     </div>
+
+          <!-- PULSA INDOSAT 18-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data17()">
+     <!-- PRODUK 18 --> 
+      <list id="nama_barang17">Pulsa 50.000 alternatif</list>
+      <harga id="harga_barang17">Rp. 49.975</harga>
+      <a id="url_barang17" href="https://gltpulsa.bukaolshop.site/produk/indosat-50rb-alternatif-1450493"></a>
+     </div>
+
+          <!-- PULSA INDOSAT 19-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data18()">
+     <!-- PRODUK 19 --> 
+      <list id="nama_barang18">Pulsa 60.000</list>
+      <harga id="harga_barang18">Rp. 59.925</harga>
+      <a id="url_barang18" href="https://gltpulsa.bukaolshop.site/produk/indosat-60rb-1450500"></a>
+     </div>
+
+         <!-- PULSA INDOSAT 20-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data19()">
+     <!-- PRODUK 20 --> 
+      <list id="nama_barang19">Pulsa 60.000 alternatif</list>
+      <harga id="harga_barang19">Rp. 59.950</harga>
+      <a id="url_barang19" href="https://gltpulsa.bukaolshop.site/produk/indosat-60rb-alternatif-1450503"></a>
+     </div>
+     
+    <!-- PULSA INDOSAT 21-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data20()">
+     <!-- PRODUK 21 --> 
+      <list id="nama_barang20">Pulsa 80.000</list>
+      <harga id="harga_barang20">Rp. 79.300</harga>
+      <a id="url_barang20" href="https://gltpulsa.bukaolshop.site/produk/indosat-80rb-1450507"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 22-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data21()">
+     <!-- PRODUK 20 --> 
+      <list id="nama_barang21">Pulsa 80.000 alternatif</list>
+      <harga id="harga_barang21">Rp. 79.350</harga>
+      <a id="url_barang21" href="https://gltpulsa.bukaolshop.site/produk/indosat-80rb-alternatif-1450512"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 23-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data22()">
+     <!-- PRODUK 20 --> 
+      <list id="nama_barang22">Pulsa 100.000</list>
+      <harga id="harga_barang22">Rp. 99.200</harga>
+      <a id="url_barang22" href="https://gltpulsa.bukaolshop.site/produk/indosat-100rb-1451341"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 24-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data23()">
+     <!-- PRODUK 20 --> 
+      <list id="nama_barang23">Pulsa 100.000 alternatif</list>
+      <harga id="harga_barang23">Rp. 99.250</harga>
+      <a id="url_barang23" href="https://gltpulsa.bukaolshop.site/produk/indosat-100rb-alternatif-1451342"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 25-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data24()">
+     <!-- PRODUK 25 --> 
+      <list id="nama_barang24">Pulsa 150.000</list>
+      <harga id="harga_barang24">Rp. 148.000</harga>
+      <a id="url_barang24" href="https://gltpulsa.bukaolshop.site/produk/indosat-150rb-1451353"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 26-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data25()">
+     <!-- PRODUK 26 --> 
+      <list id="nama_barang25">Pulsa 150.000 alternatif</list>
+      <harga id="harga_barang25">Rp. 148.200</harga>
+      <a id="url_barang25" href="https://gltpulsa.bukaolshop.site/produk/indosat-150rb-alternatif-1451354"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 27-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data26()">
+     <!-- PRODUK 27 --> 
+      <list id="nama_barang26">Pulsa 200.000</list>
+      <harga id="harga_barang26">Rp. 195.000</harga>
+      <a id="url_barang26" href="https://gltpulsa.bukaolshop.site/produk/indosat-200rb-1451359"></a>
+     </div> 
+
+<!-- PULSA INDOSAT 28-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data27()">
+     <!-- PRODUK 28 --> 
+      <list id="nama_barang27">Pulsa 200.000 alternatif</list>
+      <harga id="harga_barang27">Rp. 195.100</harga>
+      <a id="url_barang27" href="https://gltpulsa.bukaolshop.site/produk/indosat-200rb-alternatif-1451360"></a>
+     </div> 
+    
+     </section>
+   <!-- END AREA DATA PRODUK INDOSAT -->
+   
+   
+     <!-- AREA DATA PRODUK SIMPATI --> 
+   <section id="pulsa_simpati">
+   <!-- PULSA simpati 1-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data28()">
+     <!-- PRODUK 1 --> 
+      <list id="nama_barang28">Pulsa 5.000</list>
+      <harga id="harga_barang28">Rp 6.105</harga>
+      <a id="url_barang28" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-5rb-1438866"></a>
+     </div>
+
+   <!-- PULSA simpati 2-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data29()">
+     <!-- PRODUK 2 --> 
+      <list id="nama_barang29">Pulsa 5.000 alternatif</list>
+      <harga id="harga_barang29">Rp 6.165</harga>
+      <a id="url_barang29" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-5rb-alternatif-1448707"></a>
+     </div>
+     
+     <!-- PULSA SIMPATI 3-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data30()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang30">Pulsa 10.000</list>
+      <harga id="harga_barang30">Rp 11.305</harga>
+      <a id="url_barang30" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-10rb-1448786"></a>
+     </div>
+     
+<!-- PULSA SIMPATI 4-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data31()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang31">Pulsa 10.000 alternatif</list>
+      <harga id="harga_barang31">Rp 11.250</harga>
+      <a id="url_barang31" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-10rb-alternatif-1448788"></a>
+     </div>     
+          
+     <!-- PULSA SIMPATI 5-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data32()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang32">Pulsa 15.000</list>
+      <harga id="harga_barang32">Rp 16.105</harga>
+      <a id="url_barang32" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-15rb-1448801"></a>
+     </div>
+
+<!-- PULSA SIMPATI 6-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data33()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang33">Pulsa 15.000 alternatif</list>
+      <harga id="harga_barang33">Rp 16.155</harga>
+      <a id="url_barang33" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-15rb-alternatif-1448804"></a>
+     </div>
+     
+     <!-- PULSA SIMPATI 7-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data34()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang34">Pulsa 20.000</list>
+      <harga id="harga_barang34">Rp 21.060</harga>
+      <a id="url_barang34" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-20rb-1448807"></a>
+     </div>
+
+<!-- PULSA SIMPATI 8-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data35()">
+     <!-- PRODUK 8 --> 
+     <list id="nama_barang35">Pulsa 20.000 alternatif</list>
+      <harga id="harga_barang35">Rp 21.110</harga>
+      <a id="url_barang35" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-20rb-alternatif-1448809"></a>
+     </div>
+     
+     <!-- PULSA SIMPATI 9-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data36()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang36">Pulsa 25.000</list>
+      <harga id="harga_barang36">Rp 26.050</harga>
+      <a id="url_barang36" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-25rb-1448835"></a>
+     </div>
+
+ <!-- PULSA SIMPATI 10-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data37()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang37">Pulsa 25.000 alternatif</list>
+      <harga id="harga_barang37">Rp 26.125</harga>
+      <a id="url_barang37" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-25rb-alternatif-1448837"></a>
+     </div>
+     
+     <!-- PULSA Simpati 11-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data38()">
+     <!-- PRODUK 11 --> 
+      <list id="nama_barang38">Pulsa 30.000</list>
+      <harga id="harga_barang38">Rp 30.950</harga>
+      <a id="url_barang38" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-30rb-1448840"></a>
+     </div>
+
+ <!-- PULSA Simpati 12-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data39()">
+     <!-- PRODUK 12 --> 
+     <list id="nama_barang39">Pulsa 30.000 alternatif</list>
+      <harga id="harga_barang39">Rp 31.040</harga>
+      <a id="url_barang39" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-30rb-alternatif-1448841"></a>
+     </div>
+     
+     <!-- PULSA SIMPATI 13-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data40()">
+     <!-- PRODUK 12 --> 
+     <list id="nama_barang40">Pulsa 40.000</list>
+      <harga id="harga_barang40">Rp 41.050</harga>
+      <a id="url_barang40" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-40rb-1448846"></a>
+     </div>
+
+<!-- PULSA SIMPATI 14-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data41()">
+     <!-- PRODUK 14 --> 
+     <list id="nama_barang41">Pulsa 40.000 alternatif</list>
+      <harga id="harga_barang41">Rp 41.070</harga>
+      <a id="url_barang41" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-40rb-alternatif-1448848"></a>
+     </div>   
+     
+     <!-- PULSA SIMPATI 15-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data42()">
+     <!-- PRODUK 15--> 
+      <list id="nama_barang42">Pulsa 50.000</list>
+      <harga id="harga_barang42">Rp 51.125</harga>
+      <a id="url_barang42" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-50rb-1448857"></a>
+     </div>
+     
+     <!-- PULSA SIMPATI 16-->
+ <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data43()">
+     <!-- PRODUK 16--> 
+      <list id="nama_barang43">Pulsa 50.000 alternatif</list>
+       <harga id="harga_barang43">Rp 51.125</harga>
+      <a id="url_barang43" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-50rb-alternatif-1448859"></a>
+     </div>
+  
+     <!-- PULSA SIMPATI 17-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data44()">
+     <!-- PRODUK 17 --> 
+      <list id="nama_barang44">Pulsa 75.000</list>
+      <harga id="harga_barang44">Rp 75.975</harga>
+      <a id="url_barang44" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-75rb-1448877"></a>
+     </div>
+     
+<!-- PULSA SIMPATI 18-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data45()">
+     <!-- PRODUK 18 --> 
+      <list id="nama_barang45">Pulsa 75.000 alternatif</list>
+      <harga id="harga_barang45">Rp 76.010</harga>
+      <a id="url_barang45" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-75rb-alternatif-1448878"></a>
+     </div>
+
+<!-- PULSA SIMPATI 19-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data46()">
+     <!-- PRODUK 19 --> 
+      <list id="nama_barang46">Pulsa 80.000</list>
+      <harga id="harga_barang46">Rp 80.850</harga>
+      <a id="url_barang46" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-80rb-1459799"></a>
+     </div>
+
+<!-- PULSA SIMPATI 20-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data47()">
+     <!-- PRODUK 20 --> 
+      <list id="nama_barang47">Pulsa 80.000 alternatif</list>
+      <harga id="harga_barang47">Rp 81.000</harga>
+      <a id="url_barang47" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-80rb-alternatif-1459800"></a>
+     </div>
+
+<!-- PULSA SIMPATI 21-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data48()">
+     <!-- PRODUK 21 --> 
+      <list id="nama_barang48">Pulsa 100.000</list>
+      <harga id="harga_barang48">Rp 100.750</harga>
+      <a id="url_barang48" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-100rb-1448886"></a>
+     </div>
+
+<!-- PULSA SIMPATI 22-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data49()">
+     <!-- PRODUK 22 --> 
+      <list id="nama_barang49">Pulsa 100.000 alternatif</list>
+      <harga id="harga_barang49">Rp 100.850</harga>
+      <a id="url_barang49" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-100rb-alternatif-1448890"></a>
+     </div>
+
+<!-- PULSA SIMPATI 23-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data50()">
+     <!-- PRODUK 23 --> 
+      <list id="nama_barang50">Pulsa 150.000</list>
+      <harga id="harga_barang50">Rp 150.500</harga>
+      <a id="url_barang50" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-150rb-1459841"></a>
+     </div>
+
+<!-- PULSA SIMPATI 24-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data51()">
+     <!-- PRODUK 24 --> 
+      <list id="nama_barang51">Pulsa 150.000 alternatif</list>
+      <harga id="harga_barang51">Rp 150.900</harga>
+      <a id="url_barang51" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-150rb-alternatif-1459844"></a>
+     </div>
+
+<!-- PULSA SIMPATI 25-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data52()">
+     <!-- PRODUK 25 --> 
+      <list id="nama_barang52">Pulsa 200.000</list>
+      <harga id="harga_barang52">Rp 199.500</harga>
+      <a id="url_barang52" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-200rb-1459854"></a>
+     </div>
+
+<!-- PULSA SIMPATI 26-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data53()">
+     <!-- PRODUK 26 --> 
+      <list id="nama_barang53">Pulsa 200.000 alternatif</list>
+      <harga id="harga_barang53">Rp 199.700</harga>
+      <a id="url_barang53" href="https://gltpulsa.bukaolshop.site/produk/telkomsel-200rb-alternatif-1459856"></a>
+     </div>
+     
+     </section>
+   <!-- END AREA DATA PRODUK SIMPATI -->
+
+
+     <!-- AREA DATA PRODUK XL --> 
+   <section id="pulsa_xl">
+
+   <!-- PULSA XL1-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data54()">
+     <!-- PRODUK 1 --> 
+      <list id="nama_barang54">Pulsa 5.000</list>
+      <harga id="harga_barang54">Rp 6.650</harga>
+      <a id="url_barang54" href="https://gltpulsa.bukaolshop.site/produk/xl-5rb-1451373"></a>
+     </div>
+
+   <!-- PULSA XL 2-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data55()">
+     <!-- PRODUK 2 --> 
+      <list id="nama_barang55">Pulsa 5.000 alternatif</list>
+      <harga id="harga_barang55">Rp 6.700</harga>
+      <a id="url_barang55" href="https://gltpulsa.bukaolshop.site/produk/xl-5rb-alternatif-1460835"></a>
+     </div>
+     
+     <!-- PULSA XL 3-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data56()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang56">Pulsa 10.000</list>
+      <harga id="harga_barang56">Rp 11.615</harga>
+      <a id="url_barang56" href="https://gltpulsa.bukaolshop.site/produk/xl-10rb-1451387"></a>
+     </div>
+
+     <!-- PULSA XL 4-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data57()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang57">Pulsa 10.000 alternatif</list>
+      <harga id="harga_barang57">Rp 11.650</harga>
+      <a id="url_barang57" href="https://gltpulsa.bukaolshop.site/produk/xl-10rb-alternatif-1460836"></a>
+     </div>
+     
+     <!-- PULSA XL 5-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data58()">
+     <!-- PRODUK 5 --> 
+      <list id="nama_barang58">Pulsa 15.000</list>
+      <harga id="harga_barang58">Rp 16.205</harga>
+      <a id="url_barang58" href="https://gltpulsa.bukaolshop.site/produk/xl-15rb-1451481"></a>
+     </div>
+
+     <!-- PULSA XL 6-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data59()">
+     <!-- PRODUK 6 --> 
+      <list id="nama_barang59">Pulsa 15.000 alternatif</list>
+      <harga id="harga_barang59">Rp 16.250</harga>
+      <a id="url_barang59" href="https://gltpulsa.bukaolshop.site/produk/xl-15rb-alternatif-1460838"></a>
+     </div>
+     
+     <!-- PULSA XL 7-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data60()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang60">Pulsa 25.000</list>
+      <harga id="harga_barang60">Rp. 26.150</harga>
+      <a id="url_barang60" href="https://gltpulsa.bukaolshop.site/produk/xl-25rb-1451486"></a>
+     </div>
+
+     <!-- PULSA XL 8-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data61()">
+     <!-- PRODUK 8 --> 
+      <list id="nama_barang61">Pulsa 25.000 alternatif</list>
+      <harga id="harga_barang61">Rp. 26.200</harga>
+      <a id="url_barang61" href="https://gltpulsa.bukaolshop.site/produk/xl-25rb-alternatif-1460839"></a>
+     </div>
+     
+     <!-- PULSA XL 9-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data62()">
+     <!-- PRODUK 9 --> 
+      <list id="nama_barang62">Pulsa 30.000</list>
+      <harga id="harga_barang62">Rp 30.925</harga>
+      <a id="url_barang62" href="https://gltpulsa.bukaolshop.site/produk/xl-30rb-1451492"></a>
+     </div>
+
+     <!-- PULSA XL 10-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data63()">
+     <!-- PRODUK 10 --> 
+      <list id="nama_barang63">Pulsa 30.000 alternatif</list>
+      <harga id="harga_barang63">Rp 30.950</harga>
+      <a id="url_barang63" href="https://gltpulsa.bukaolshop.site/produk/xl-30rb-alternatif-1460840"></a>
+     </div>
+
+     <!-- PULSA XL 11-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data64()">
+     <!-- PRODUK 11--> 
+      <list id="nama_barang64">Pulsa 50.000</list>
+      <harga id="harga_barang64">Rp 51.275</harga>
+      <a id="url_barang64" href="https://gltpulsa.bukaolshop.site/produk/xl-50rb-1451548"></a>
+     </div>
+
+     <!-- PULSA XL 12-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data65()">
+     <!-- PRODUK 12--> 
+      <list id="nama_barang65">Pulsa 50.000 alternatif</list>
+      <harga id="harga_barang65">Rp 51.300</harga>
+      <a id="url_barang65" href="https://gltpulsa.bukaolshop.site/produk/xl-50rb-alternatif-1460841"></a>
+     </div>
+     
+     <!-- PULSA XL 13-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data66()">
+     <!-- PRODUK 13--> 
+      <list id="nama_barang66">Pulsa 100.000</list>
+      <harga id="harga_barang66">Rp 100.550</harga>
+      <a id="url_barang66" href="https://gltpulsa.bukaolshop.site/produk/xl-100rb-1451552"></a>
+     </div>
+
+     <!-- PULSA XL 14-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data67()">
+     <!-- PRODUK 14--> 
+      <list id="nama_barang67">Pulsa 100.000 alternatif</list>
+      <harga id="harga_barang67">Rp 100.600</harga>
+      <a id="url_barang67" href="https://gltpulsa.bukaolshop.site/produk/xl-100rb-alternatif-1460843"></a>
+     </div>
+     
+     <!-- PULSA XL 15-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data68()">
+     <!-- PRODUK 15 --> 
+      <list id="nama_barang68">Pulsa 150.000</list>
+      <harga id="harga_barang68">Rp. 150.400</harga>
+      <a id="url_barang68" href="https://gltpulsa.bukaolshop.site/produk/xl-150rb-1451559"></a>
+     </div>
+
+     <!-- PULSA XL 16-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data69()">
+     <!-- PRODUK 16 --> 
+      <list id="nama_barang69">Pulsa 150.000 alternatif</list>
+      <harga id="harga_barang69">Rp. 150.450</harga>
+      <a id="url_barang69" href="https://gltpulsa.bukaolshop.site/produk/xl-150rb-alternatif-1460844"></a>
+     </div>
+     
+     <!-- PULSA XL 17-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data70()">
+     <!-- PRODUK 10 --> 
+      <list id="nama_barang70">Pulsa 200.000</list>
+      <harga id="harga_barang70">Rp. 199.600</harga>
+      <a id="url_barang70" href="https://gltpulsa.bukaolshop.site/produk/xl-200rb-1451565"></a>
+     </div>
+
+     <!-- PULSA XL 18-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data71()">
+     <!-- PRODUK 18 --> 
+      <list id="nama_barang71">Pulsa 200.000 alternatif</list>
+      <harga id="harga_barang71">Rp. 199.700</harga>
+      <a id="url_barang71" href="https://gltpulsa.bukaolshop.site/produk/xl-200rb-alternatif-1460848"></a>
+     </div>
+
+     </section>
+     
+   <!-- END AREA DATA PRODUK XL -->
+   
+   
+     <!-- AREA DATA PRODUK TRI -->
+   <section id="pulsa_tri">
+   
+   <!-- PULSA Three 1-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data72()">
+     <!-- PRODUK 1 --> 
+      <list id="nama_barang72">Pulsa 5.000</list>
+      <harga id="harga_barang72">Rp. 6.325</harga>
+      <a id="url_barang72" href="https://gltpulsa.bukaolshop.site/produk/three-5rb-1451824"></a>
+     </div>
+     
+     <!-- PULSA Three 2-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data73()">
+     <!-- PRODUK 2 --> 
+      <list id="nama_barang73">Pulsa 5.000 alternatif</list>
+      <harga id="harga_barang73">Rp. 6.325</harga>
+      <a id="url_barang73" href="https://gltpulsa.bukaolshop.site/produk/three-5rb-alternatif-1461021"></a>
+     </div>   
+     
+     <!-- PULSA Three 3-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data74()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang74">Pulsa 10.000</list>
+      <harga id="harga_barang74">Rp. 11.075</harga>
+      <a id="url_barang74" href="https://gltpulsa.bukaolshop.site/produk/three-10rb-1451826"></a>
+     </div>
+     
+     <!-- PULSA Three 4-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data75()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang75">Pulsa 10.000 alternatif</list>
+      <harga id="harga_barang75">Rp. 11.100</harga>
+      <a id="url_barang75" href="https://gltpulsa.bukaolshop.site/produk/three-10rb-alternatif-1461022"></a>
+     </div>
+     
+     <!-- PULSA Three 5-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data76()">
+     <!-- PRODUK 5 --> 
+      <list id="nama_barang76">Pulsa 15.000</list>
+      <harga id="harga_barang76">Rp. 15.950</harga>
+      <a id="url_barang76" href="https://gltpulsa.bukaolshop.site/produk/three-15rb-1451830"></a>
+     </div>
+
+     <!-- PULSA Three 6-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data77()">
+     <!-- PRODUK 6 --> 
+      <list id="nama_barang77">Pulsa 15.000 alternatif</list>
+      <harga id="harga_barang77">Rp. 15.975</harga>
+      <a id="url_barang77" href="https://gltpulsa.bukaolshop.site/produk/three-15rb-alternatif-1461023"></a>
+     </div>
+     
+     <!-- PULSA Three 7-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data78()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang78">Pulsa 20.000</list>
+      <harga id="harga_barang78">Rp 20.800</harga>
+      <a id="url_barang78" href="https://gltpulsa.bukaolshop.site/produk/three-20rb-1451833"></a>
+     </div>
+
+     <!-- PULSA Three 8-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data79()">
+     <!-- PRODUK 8 --> 
+      <list id="nama_barang79">Pulsa 20.000 alternatif</list>
+      <harga id="harga_barang79">Rp 20.850</harga>
+      <a id="url_barang79" href="https://gltpulsa.bukaolshop.site/produk/three-20rb-alternatif-1461024"></a>
+     </div>
+     
+     <!-- PULSA Three 9-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data80()">
+     <!-- PRODUK 9--> 
+      <list id="nama_barang80">Pulsa 25.000</list>
+      <harga id="harga_barang80">Rp. 25.750</harga>
+      <a id="url_barang80" href="https://gltpulsa.bukaolshop.site/produk/three-25rb-1451836"></a>
+     </div>
+
+     <!-- PULSA Three 10-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data81()">
+     <!-- PRODUK 10--> 
+      <list id="nama_barang81">Pulsa 25.000 alternatif</list>
+      <harga id="harga_barang81">Rp. 25.775</harga>
+      <a id="url_barang81" href="https://gltpulsa.bukaolshop.site/produk/three-25rb-alternatif-1461025"></a>
+     </div>
+     
+     <!-- PULSA Three 11-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data82()">
+     <!-- PRODUK 11--> 
+      <list id="nama_barang82">Pulsa 30.000</list>
+      <harga id="harga_barang82">Rp. 31.150</harga>
+      <a id="url_barang82" href="https://gltpulsa.bukaolshop.site/produk/three-30rb-1451838"></a>
+     </div>
+
+     <!-- PULSA Three 12-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data83()">
+     <!-- PRODUK 12--> 
+      <list id="nama_barang83">Pulsa 30.000 alternatif</list>
+      <harga id="harga_barang83">Rp. 31.200</harga>
+      <a id="url_barang83" href="https://gltpulsa.bukaolshop.site/produk/three-30rb-alternatif-1461027"></a>
+     </div>
+     
+     <!-- PULSA Three 13-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data84()">
+     <!-- PRODUK 13 --> 
+      <list id="nama_barang84">Pulsa 40.000</list>
+      <harga id="harga_barang84">Rp. 40.500</harga>
+      <a id="url_barang84" href="https://gltpulsa.bukaolshop.site/produk/three-40rb-1451825"></a>
+     </div>
+
+    <!-- PULSA Three 14-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data85()">
+     <!-- PRODUK 14 --> 
+      <list id="nama_barang85">Pulsa 40.000 alternatif</list>
+      <harga id="harga_barang85">Rp. 40.700</harga>
+      <a id="url_barang85" href="https://gltpulsa.bukaolshop.site/produk/three-40rb-alternatif-1461030"></a>
+     </div>
+     
+     <!-- PULSA Three 15-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data86()">
+     <!-- PRODUK 15 --> 
+      <list id="nama_barang86">Pulsa 50.000</list>
+      <harga id="harga_barang86">Rp. 51.200</harga>
+      <a id="url_barang86" href="https://gltpulsa.bukaolshop.site/produk/three-50rb-1451842"></a>
+     </div>
+
+     <!-- PULSA Three 16-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data87()">
+     <!-- PRODUK 16 --> 
+      <list id="nama_barang87">Pulsa 50.000 alternatif</list>
+      <harga id="harga_barang87">Rp. 51.250</harga>
+      <a id="url_barang87" href="https://gltpulsa.bukaolshop.site/produk/three-50rb-alternatif-1461033"></a>
+     </div>
+
+     <!-- PULSA Three 17-->     
+        <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data88()">
+     <!-- PRODUK 17 --> 
+      <list id="nama_barang88">Pulsa 75.000</list>
+      <harga id="harga_barang88">Rp. 75.950</harga>
+      <a id="url_barang88" href="https://gltpulsa.bukaolshop.site/produk/three-75rb-1451854"></a>
+     </div>
+
+     <!-- PULSA Three 18-->     
+        <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data89()">
+     <!-- PRODUK 18 --> 
+      <list id="nama_barang89">Pulsa 75.000 alternatif</list>
+      <harga id="harga_barang89">Rp. 75.950</harga>
+      <a id="url_barang89" href="https://gltpulsa.bukaolshop.site/produk/three-75rb-alternatif-1461034"></a>
+     </div>
+
+     <!-- PULSA Three 19-->     
+        <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data90()">
+     <!-- PRODUK 19 --> 
+      <list id="nama_barang90">Pulsa 100.000</list>
+      <harga id="harga_barang90">Rp. 99.950</harga>
+      <a id="url_barang90" href="https://gltpulsa.bukaolshop.site/produk/three-100rb-1451856"></a>
+     </div>
+
+     <!-- PULSA Three 20-->     
+        <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data91()">
+     <!-- PRODUK 20 --> 
+      <list id="nama_barang91">Pulsa 100.000 alternatif</list>
+      <harga id="harga_barang91">Rp. 99.975</harga>
+      <a id="url_barang91" href="https://gltpulsa.bukaolshop.site/produk/three-100rb-alternatif-1461037"></a>
+     </div>
+     
+     </section>
+   <!-- END AREA DATA PRODUK TRI -->
+   
+   
+   <!-- AREA DATA PRODUK AXIS --> 
+   <section id="pulsa_axis">
+   
+   <!-- PULSA AXIS 1-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data92()">
+     <!-- PRODUK 1 --> 
+      <list id="nama_barang92">Pulsa 5.000</list>
+      <harga id="harga_barang92">Rp. 6.425</harga>
+      <a id="url_barang92" href="https://gltpulsa.bukaolshop.site/produk/axis-5rb-1435494"></a>
+     </div>
+   
+     <!-- PULSA AXIS 2-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data93()">
+     <!-- PRODUK 2 --> 
+      <list id="nama_barang93">Pulsa 5.000 alternatif</list>
+      <harga id="harga_barang93">Rp. 6.450</harga>
+      <a id="url_barang93" href="https://gltpulsa.bukaolshop.site/produk/axis-5rb-alternatif-1436209"></a>
+     </div>
+     
+     <!-- PULSA AXIS 3-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data94()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang94">Pulsa 10.000</list>
+      <harga id="harga_barang94">Rp. 11.122</harga>
+      <a id="url_barang94" href="https://gltpulsa.bukaolshop.site/produk/axis-10rb-1436213"></a>
+     </div>
+
+     <!-- PULSA AXIS 4-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data95()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang95">Pulsa 10.000 alternatif</list>
+      <harga id="harga_barang95">Rp. 11.150</harga>
+      <a id="url_barang95" href="https://gltpulsa.bukaolshop.site/produk/axis-10rb-alternatif-1436215"></a>
+     </div>
+     
+     <!-- PULSA AXIS 5-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data96()">
+     <!-- PRODUK 5 --> 
+      <list id="nama_barang96">Pulsa 15.000</list>
+      <harga id="harga_barang96">Rp. 15.958</harga>
+      <a id="url_barang96" href="https://gltpulsa.bukaolshop.site/produk/axis-15rb-1436218"></a>
+     </div>
+
+     <!-- PULSA AXIS 6-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data97()">
+     <!-- PRODUK 6 --> 
+      <list id="nama_barang97">Pulsa 15.000 alternatif</list>
+      <harga id="harga_barang97">Rp. 15.975</harga>
+      <a id="url_barang97" href="https://gltpulsa.bukaolshop.site/produk/axis-15rb-alternatif-1436222"></a>
+     </div>
+     
+     <!-- PULSA AXIS 7-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data98()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang98">Pulsa 25.000</list>
+      <harga id="harga_barang98">Rp. 25.942</harga>
+      <a id="url_barang98" href="https://gltpulsa.bukaolshop.site/produk/axis-25rb-1436225"></a>
+     </div>
+
+     <!-- PULSA AXIS 8-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data99()">
+     <!-- PRODUK 8 --> 
+      <list id="nama_barang99">Pulsa 25.000 alternatif</list>
+      <harga id="harga_barang99">Rp. 25.950</harga>
+      <a id="url_barang99" href="https://gltpulsa.bukaolshop.site/produk/axis-25rb-alternatif-1436227"></a>
+     </div>
+     
+     <!-- PULSA AXIS 9-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data100()">
+     <!-- PRODUK 9 --> 
+      <list id="nama_barang100">Pulsa 30.000</list>
+      <harga id="harga_barang100">Rp. 30.995</harga>
+      <a id="url_barang100" href="https://gltpulsa.bukaolshop.site/produk/axis-30rb-1436230"></a>
+     </div>
+
+     <!-- PULSA AXIS 10-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data101()">
+     <!-- PRODUK 10 --> 
+      <list id="nama_barang101">Pulsa 30.000 alternatif</list>
+      <harga id="harga_barang101">Rp. 31.000</harga>
+      <a id="url_barang101" href="https://gltpulsa.bukaolshop.site/produk/axis-30rb-alternatif-1437714"></a>
+     </div>
+     
+     <!-- PULSA AXIS 11-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data102()">
+     <!-- PRODUK 11--> 
+      <list id="nama_barang102">Pulsa 50.000</list>
+      <harga id="harga_barang102">Rp. 51.045</harga>
+      <a id="url_barang102" href="https://gltpulsa.bukaolshop.site/produk/axis-50rb-1440850"></a>
+     </div>
+
+     <!-- PULSA AXIS 12-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data103()">
+     <!-- PRODUK 12--> 
+      <list id="nama_barang103">Pulsa 50.000 alternatif</list>
+      <harga id="harga_barang103">Rp. 51.100</harga>
+      <a id="url_barang103" href="https://gltpulsa.bukaolshop.site/produk/axis-50rb-alternatif-1440852"></a>
+     </div>
+     
+     <!-- PULSA AXIS 13-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data104()">
+     <!-- PRODUK 13--> 
+      <list id="nama_barang104">Pulsa 100.000</list>
+      <harga id="harga_barang104">Rp. 100.105</harga>
+      <a id="url_barang104" href="https://gltpulsa.bukaolshop.site/produk/axis-100rb-1440856"></a>
+     </div>
+     
+     <!-- PULSA AXIS 14-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data105()">
+     <!-- PRODUK 14--> 
+      <list id="nama_barang105">Pulsa 100.000 alternatif</list>
+      <harga id="harga_barang105">Rp. 100.150</harga>
+      <a id="url_barang105" href="https://gltpulsa.bukaolshop.site/produk/axis-100rb-alternatif-1440860"></a>
+     </div>
+
+     <!-- PULSA AXIS 15-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data106()">
+     <!-- PRODUK 15--> 
+      <list id="nama_barang106">Pulsa 200.000</list>
+      <harga id="harga_barang106">Rp. 199.645</harga>
+      <a id="url_barang106" href="https://gltpulsa.bukaolshop.site/produk/axis-200rb-1448669"></a>
+     </div>
+
+     <!-- PULSA AXIS 16-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data107()">
+     <!-- PRODUK 16--> 
+      <list id="nama_barang107">Pulsa 200.000 alternatif</list>
+      <harga id="harga_barang107">Rp. 199.700</harga>
+      <a id="url_barang107" href="https://gltpulsa.bukaolshop.site/produk/axis-200rb-alternatif-1461624"></a>
+     </div>
+  
+     </section>
+   <!-- END AREA DATA PRODUK AXIS -->
+   
+   
+    <!-- AREA DATA PRODUK SMARTFREN -->
+   <section id="pulsa_smartfren">
+
+   <!-- PULSA Smartfren 1-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data108()">
+     <!-- PRODUK 1 --> 
+      <list id="nama_barang108">Pulsa 5.000</list>
+      <harga id="harga_barang108">Rp. 6.075</harga>
+      <a id="url_barang108" href="https://gltpulsa.bukaolshop.site/produk/smartfren-5rb-1451913"></a>
+     </div>
+
+   <!-- PULSA Smartfren 2-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data109()">
+     <!-- PRODUK 2 --> 
+      <list id="nama_barang109">Pulsa 5.000 alternatif</list>
+      <harga id="harga_barang109">Rp. 6.100</harga>
+      <a id="url_barang109" href="https://gltpulsa.bukaolshop.site/produk/smartfren-5rb-alternatif-1451920"></a>
+     </div>
+     
+     <!-- PULSA Smartfren 3-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data110()">
+     <!-- PRODUK 3 --> 
+      <list id="nama_barang110">Pulsa 10.000</list>
+      <harga id="harga_barang110">Rp. 10.925</harga>
+      <a id="url_barang110" href="https://gltpulsa.bukaolshop.site/produk/smartfren-10rb-1451923"></a>
+     </div>
+     
+     <!-- PULSA Smartfren 4-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data111()">
+     <!-- PRODUK 4 --> 
+      <list id="nama_barang111">Pulsa 10.000 alternatif</list>
+      <harga id="harga_barang111">Rp. 10.950</harga>
+      <a id="url_barang111" href="https://gltpulsa.bukaolshop.site/produk/smartfren-10rb-alternatif-1451925"></a>
+     </div>
+    
+     <!-- PULSA Smartfren 5-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data112()">
+     <!-- PRODUK 5 --> 
+      <list id="nama_barang112">Pulsa 15.000</list>
+      <harga id="harga_barang112">Rp. 15.900</harga>
+      <a id="url_barang112" href="https://gltpulsa.bukaolshop.site/produk/smartfren-15rb-1451931"></a>
+     </div>
+
+     <!-- PULSA Smartfren 6-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data113()">
+     <!-- PRODUK 6 --> 
+      <list id="nama_barang113">Pulsa 15.000 alternatif</list>
+      <harga id="harga_barang113">Rp. 15.950</harga>
+      <a id="url_barang113" href="https://gltpulsa.bukaolshop.site/produk/smartfren-15rb-alternatif-1451933"></a>
+     </div>
+     
+     <!-- PULSA Smartfren 7-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data114()">
+     <!-- PRODUK 7 --> 
+      <list id="nama_barang114">Pulsa 20.000</list>
+      <harga id="harga_barang114">Rp. 20.725</harga>
+      <a id="url_barang114" href="https://gltpulsa.bukaolshop.site/produk/smartfren-20rb-1451939"></a>
+     </div>
+     
+     <!-- PULSA Smartfren 8-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data115()">
+     <!-- PRODUK 8 --> 
+      <list id="nama_barang115">Pulsa 20.000 alternatif</list>
+      <harga id="harga_barang115">Rp. 20.750</harga>
+      <a id="url_barang115" href="https://gltpulsa.bukaolshop.site/produk/smartfren-20rb-alternatif-1451942"></a>
+     </div>     
+     
+     <!-- PULSA Smartfren 9-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data116()">
+     <!-- PRODUK 9--> 
+      <list id="nama_barang116">Pulsa 25.000</list>
+      <harga id="harga_barang116">Rp. 25.775</harga>
+      <a id="url_barang116" href="https://gltpulsa.bukaolshop.site/produk/smartfren-25rb-1451950"></a>
+     </div>
+
+     <!-- PULSA Smartfren 10-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data117()">
+     <!-- PRODUK 10--> 
+      <list id="nama_barang117">Pulsa 25.000 alternatif</list>
+      <harga id="harga_barang117">Rp. 25.780</harga>
+      <a id="url_barang117" href="https://gltpulsa.bukaolshop.site/produk/smartfren-25rb-alternatif-1451953"></a>
+     </div>
+     
+     <!-- PULSA Smartfren 11-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data118()">
+     <!-- PRODUK 11--> 
+      <list id="nama_barang118">Pulsa 30.000</list>
+      <harga id="harga_barang118">Rp. 30.750</harga>
+      <a id="url_barang118" href="https://gltpulsa.bukaolshop.site/produk/smartfren-30rb-1451956"></a>
+     </div>
+
+     <!-- PULSA Smartfren 12-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data119()">
+     <!-- PRODUK 12--> 
+      <list id="nama_barang119">Pulsa 30.000 alternatif</list>
+      <harga id="harga_barang119">Rp. 30.760</harga>
+      <a id="url_barang119" href="https://gltpulsa.bukaolshop.site/produk/smartfren-30rb-alternatif-1451960"></a>
+     </div>
+
+     <!-- PULSA Smartfren 13-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data120()">
+     <!-- PRODUK 13--> 
+      <list id="nama_barang120">Pulsa 40.000</list>
+      <harga id="harga_barang120">Rp. 40.700</harga>
+      <a id="url_barang120" href="https://gltpulsa.bukaolshop.site/produk/smartfren-40rb-1461791"></a>
+     </div>
+
+     <!-- PULSA Smartfren 14-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data121()">
+     <!-- PRODUK 14--> 
+      <list id="nama_barang121">Pulsa 40.000 alternatif</list>
+      <harga id="harga_barang121">Rp. 40.750</harga>
+      <a id="url_barang121" href="https://gltpulsa.bukaolshop.site/produk/smartfren-40rb-alternatif-1461811"></a>
+     </div>
+
+     <!-- PULSA Smartfren 15-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data122()">
+     <!-- PRODUK 15--> 
+      <list id="nama_barang122">Pulsa 50.000</list>
+      <harga id="harga_barang122">Rp. 50.100</harga>
+      <a id="url_barang122" href="https://gltpulsa.bukaolshop.site/produk/smartfren-50rb-1451964"></a>
+     </div>
+
+     <!-- PULSA Smartfren 16-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data123()">
+     <!-- PRODUK 16--> 
+      <list id="nama_barang123">Pulsa 50.000 alternatif</list>
+      <harga id="harga_barang123">Rp. 50.150</harga>
+      <a id="url_barang123" href="https://gltpulsa.bukaolshop.site/produk/smartfren-50rb-alternatif-1451968"></a>
+     </div>
+
+     <!-- PULSA Smartfren 17-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data124()">
+     <!-- PRODUK 17--> 
+      <list id="nama_barang124">Pulsa 75.000</list>
+      <harga id="harga_barang124">Rp. 74.950</harga>
+      <a id="url_barang124" href="https://gltpulsa.bukaolshop.site/produk/smartfren-75rb-1451971"></a>
+     </div>
+
+     <!-- PULSA Smartfren 18-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data125()">
+     <!-- PRODUK 18--> 
+      <list id="nama_barang125">Pulsa 75.000 alternatif</list>
+      <harga id="harga_barang125">Rp. 74.975</harga>
+      <a id="url_barang125" href="https://gltpulsa.bukaolshop.site/produk/smartfren-75rb-alternatif-1451973"></a>
+     </div>
+
+     <!-- PULSA Smartfren 19-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data126()">
+     <!-- PRODUK 19--> 
+      <list id="nama_barang126">Pulsa 100.000</list>
+      <harga id="harga_barang126">Rp. 99.800</harga>
+      <a id="url_barang126" href="https://gltpulsa.bukaolshop.site/produk/smartfren-100rb-1451977"></a>
+     </div>
+
+     <!-- PULSA Smartfren 20-->
+   <div class="kiosscript" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="produk" onclick="cetak_data127()">
+     <!-- PRODUK 20--> 
+      <list id="nama_barang127">Pulsa 100.000 alternatif</list>
+      <harga id="harga_barang127">Rp. 99.900</harga>
+      <a id="url_barang127" href="https://gltpulsa.bukaolshop.site/produk/smartfren-100rb-alternatif-1451980"></a>
+     </div>
+    
+     </section>
+   <!-- END AREA DATA PRODUK SMARTFREN -->
+
+
+
+  <!-- AREA DATA SAAT DIKLIK OLEH USER --> 
+   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+  <div class="offcanvas-header tinggi-konten">
+    <!-- Konten header canvas !-->
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+      konfirmasi Pembelian
+    </h5>
+  </div>
+  <div class="offcanvas-body medium">
+    <div class="dataKlik">
+    <list>Nomor Tujuan:</list>
+    <p id="noTujuan">none</p>
+    <list>Pulsa:</list>
+    <p id="beliPulsa">none</p>
+    <hr class="jarakKlik"/>
+    <harga>Konfirmasi kembali:</harga>
+    <span class="notice">Periksa kembali nomor tujuan Anda, pastikan sudah benar dan tidak ada kesalahan!</span>
+    <div style="clear:both;">
+      
+    </div>
+     <hr class="jarakKlik"/>
+    <list>Harga:</list>
+    <p id="HargaBarang">none</p>
+    <list>Operator:</list>
+    <p id="cetakOperator">none</p>
+    <list>Diskon & Potongan:</list>
+    <p id="metodePembayaran">Rp0</p>
+    <p id="linkUrl"></p>
+    <div style="border-bottom:1px dashed rgb(197,197,197);">
+    </div>
+    
+    
+    <list style="color: black; margin-top: 4%; font-size: 16px; margin-left:4%; opacity:1;">Total Pembayaran:</list>
+    
+    <p id="totalTagihan" style="color: black; margin-top: 4%; font-size: 16px; opacity:1;">none</p>
+    
+    <button class="cleaning" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Ubah</button>
+    
+    <button type="button" class="postdata" onclick="kirimData()">Lanjutkan</button>
+    </div>
+  </div>
+</div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="pulsa.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      
+// CEK NOMOR TELEPON
+function cekNomorTelponUser(){
+  
+  // operator
+  let operatorPulsa = document.getElementById("operatorPulsa");
+  
+  // input user
+  let b = document.getElementById("nomor").value;
+  
+  // img operator
+  let imgOperator = document.getElementById("img_operator");
+  
+  // pulsa Indosat
+  let pulsaIndosat = document.getElementById("pulsa_indosat");
+  
+   // pulsa Simpati
+  let pulsaSimpati = document.getElementById("pulsa_simpati");
+  
+   // pulsa Simpati
+  let pulsaXl = document.getElementById("pulsa_xl");
+  
+   // pulsa Simpati
+  let pulsaAxis = document.getElementById("pulsa_axis");
+  
+   // pulsa Simpati
+  let pulsaTri = document.getElementById("pulsa_tri");
+  let e500 = document.getElementById("E500");
+   // pulsa Simpati
+  let pulsaSmartfren = document.getElementById("pulsa_smartfren");
+  
+  let x = b.replace(/[^0-9]/g).substring(0, 4);
+  
+  if (x == null || x == ' ' || x < 4  || x == "") {
+    operatorPulsa.innerHTML = "OPERATOR";
+    pulsaIndosat.style.display = "none";
+    pulsaSimpati.style.display = "none";
+    pulsaXl.style.display = "none";
+    pulsaAxis.style.display = "none";
+    pulsaTri.style.display = "none";
+    pulsaSmartfren.style.display = "none";
+    e500.style.display = "block";
+    // CEK  NOMOR
+  }else if(x == 08){
+    operatorPulsa.innerHTML = "OPERATOR";
+    imgOperator.src = "https://upload.cc/i4/q3OlX.gif";
+    pulsaIndosat.style.display = "none";
+    pulsaSimpati.style.display = "none";
+    pulsaXl.style.display = "none";
+    pulsaAxis.style.display = "none";
+    pulsaTri.style.display = "none";
+    pulsaSmartfren.style.display = "none";
+    e500.style.display = "block";
+    // NOMOR TRI
+  }else if(x == 0895 || x == 0896 || x == 0897 || x == 0898 || x == 0899){
+    operatorPulsa.innerHTML = "TRI";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/742137058d.jpg";
+    pulsaTri.style.display = "block";
+    e500.style.display = "none";
+    // NOMOR AXIS
+  }else if(x == 0838 || x == 0831 || x == 0832 || x == 0833){
+    operatorPulsa.innerHTML = "AXIS";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/810219098e.jpg";
+    pulsaAxis.style.display = "block";
+  e500.style.display = "none";
+  
+  // NOMOR INDOSAT
+ } else if(x == 0814 || x == 0815 || x == 0816 || x == 0855 || x == 0856 || x == 0857 || x == 0858){
+    operatorPulsa.innerHTML = "INDOSAT";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/859438076d.jpg";
+    pulsaIndosat.style.display = "block";
+    e500.style.display = "none";
+    // NOMOR XL
+  }else if (x == 0818 || x == 0817 || x == 0819 || x == 0859 || x == 0877 || x == 0878) {
+    operatorPulsa.innerHTML = "XL";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/915306210e.jpg";
+    pulsaXl.style.display = "block";
+e500.style.display = "none";
+    // NOMOR SMARTFREN
+  }else if(x == 0881 || x == 0882 || x == 0883 || x == 0884 || x == 0885 || x == 0886 || x == 0887 || x == 0888 || x == 0889){
+   operatorPulsa.innerHTML = "SMARTFREN";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/560788348y.jpg";
+    pulsaSmartfren.style.display = "block";
+    e500.style.display = "none";
+    
+    //  NOMOR TELKOMSEL
+  }else if (x == 0811 || x == 0812 || x == 0813 || x == 0821 || x == 0822 || x == 0852 || x == 0853 || x == 0823 || x == 0851 || x == 0835) {
+   operatorPulsa.innerHTML = "TELKOMSEL";
+    imgOperator.src = "https://reservebukaolshop.nos.jkt-1.neo.id/70913/960556997o.jpg"; 
+    pulsaSimpati.style.display = "block";
+    e500.style.display = "none";
+  }
+}
+// bersihkan konten alert saat diklik oleh user
+function clearData(e) {
+  document.getElementById('alertWarning').style.display = "none";
+}
+// SIMPAN SEMUA HASIL CETAKAN DARI SEMUA FUNCTION KESINI
+// CETAK NAMA BARANG
+ let cetakNama = document.getElementById("beliPulsa");
+ // CETAK HARGA BARANG
+ let cetakHarga = document.getElementById("HargaBarang");
+// CETAK URL BARANG
+let url = document.getElementById("linkUrl");
+// CETAK NOMOR TUJUAN
+ let nomorTujuan = document.getElementById("noTujuan");
+ let nomorInputan = document.getElementById("nomor");
+ 
+ // TOTAL PEMBAYARAN USER
+ let totalTagihan = document.getElementById("totalTagihan");
+ 
+ // CETAK OPERATOR PULSA
+ let cetak_operator = document.getElementById("cetakOperator");
+   
+ // cetak produk yang  manapun dan keluarkan hanya produk yang diklik oleh user dan ambil semua data dari html
+ 
+ // ############# KALAU KAMU PAKAI HOSTING GK PERLU LAKUKAN INI, CUKUP BIKIN CLASS UNTUK QUERY DATABASE KAMU #############
+ 
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data() {
+   nama = document.getElementById("nama_barang").innerHTML;
+   harga = document.getElementById("harga_barang").innerHTML;
+   url_barang = document.getElementById("url_barang").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data1() {
+   nama = document.getElementById("nama_barang1").innerHTML;
+   harga = document.getElementById("harga_barang1").innerHTML;
+   url_barang = document.getElementById("url_barang1").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data2() {
+   nama = document.getElementById("nama_barang2").innerHTML;
+   harga = document.getElementById("harga_barang2").innerHTML;
+   url_barang = document.getElementById("url_barang2").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data3() {
+   nama = document.getElementById("nama_barang3").innerHTML;
+   harga = document.getElementById("harga_barang3").innerHTML;
+   url_barang = document.getElementById("url_barang3").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data4() {
+   nama = document.getElementById("nama_barang4").innerHTML;
+   harga = document.getElementById("harga_barang4").innerHTML;
+   url_barang = document.getElementById("url_barang4").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data5() {
+   nama = document.getElementById("nama_barang5").innerHTML;
+   harga = document.getElementById("harga_barang5").innerHTML;
+   url_barang = document.getElementById("url_barang5").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data6() {
+   nama = document.getElementById("nama_barang6").innerHTML;
+   harga = document.getElementById("harga_barang6").innerHTML;
+   url_barang = document.getElementById("url_barang6").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data7() {
+   nama = document.getElementById("nama_barang7").innerHTML;
+   harga = document.getElementById("harga_barang7").innerHTML;
+   url_barang = document.getElementById("url_barang7").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data8() {
+   nama = document.getElementById("nama_barang8").innerHTML;
+   harga = document.getElementById("harga_barang8").innerHTML;
+   url_barang = document.getElementById("url_barang8").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data9() {
+   nama = document.getElementById("nama_barang9").innerHTML;
+   harga = document.getElementById("harga_barang9").innerHTML;
+   url_barang = document.getElementById("url_barang9").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data10() {
+   nama = document.getElementById("nama_barang10").innerHTML;
+   harga = document.getElementById("harga_barang10").innerHTML;
+   url_barang = document.getElementById("url_barang10").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data11() {
+   nama = document.getElementById("nama_barang11").innerHTML;
+   harga = document.getElementById("harga_barang11").innerHTML;
+   url_barang = document.getElementById("url_barang11").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data12() {
+   nama = document.getElementById("nama_barang12").innerHTML;
+   harga = document.getElementById("harga_barang12").innerHTML;
+   url_barang = document.getElementById("url_barang12").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data13() {
+   nama = document.getElementById("nama_barang13").innerHTML;
+   harga = document.getElementById("harga_barang13").innerHTML;
+   url_barang = document.getElementById("url_barang13").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data14() {
+   nama = document.getElementById("nama_barang14").innerHTML;
+   harga = document.getElementById("harga_barang14").innerHTML;
+   url_barang = document.getElementById("url_barang14").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data15() {
+   nama = document.getElementById("nama_barang15").innerHTML;
+   harga = document.getElementById("harga_barang15").innerHTML;
+   url_barang = document.getElementById("url_barang15").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data16() {
+   nama = document.getElementById("nama_barang16").innerHTML;
+   harga = document.getElementById("harga_barang16").innerHTML;
+   url_barang = document.getElementById("url_barang16").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data17() {
+   nama = document.getElementById("nama_barang17").innerHTML;
+   harga = document.getElementById("harga_barang17").innerHTML;
+   url_barang = document.getElementById("url_barang17").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data18() {
+   nama = document.getElementById("nama_barang18").innerHTML;
+   harga = document.getElementById("harga_barang18").innerHTML;
+   url_barang = document.getElementById("url_barang18").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data19() {
+   nama = document.getElementById("nama_barang19").innerHTML;
+   harga = document.getElementById("harga_barang19").innerHTML;
+   url_barang = document.getElementById("url_barang19").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data20() {
+   nama = document.getElementById("nama_barang20").innerHTML;
+   harga = document.getElementById("harga_barang20").innerHTML;
+   url_barang = document.getElementById("url_barang20").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data21() {
+   nama = document.getElementById("nama_barang21").innerHTML;
+   harga = document.getElementById("harga_barang21").innerHTML;
+   url_barang = document.getElementById("url_barang21").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data22() {
+   nama = document.getElementById("nama_barang22").innerHTML;
+   harga = document.getElementById("harga_barang22").innerHTML;
+   url_barang = document.getElementById("url_barang22").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data23() {
+   nama = document.getElementById("nama_barang23").innerHTML;
+   harga = document.getElementById("harga_barang23").innerHTML;
+   url_barang = document.getElementById("url_barang23").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data24() {
+   nama = document.getElementById("nama_barang24").innerHTML;
+   harga = document.getElementById("harga_barang24").innerHTML;
+   url_barang = document.getElementById("url_barang24").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data25() {
+   nama = document.getElementById("nama_barang25").innerHTML;
+   harga = document.getElementById("harga_barang25").innerHTML;
+   url_barang = document.getElementById("url_barang25").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data26() {
+   nama = document.getElementById("nama_barang26").innerHTML;
+   harga = document.getElementById("harga_barang26").innerHTML;
+   url_barang = document.getElementById("url_barang26").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data27() {
+   nama = document.getElementById("nama_barang27").innerHTML;
+   harga = document.getElementById("harga_barang27").innerHTML;
+   url_barang = document.getElementById("url_barang27").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data28() {
+   nama = document.getElementById("nama_barang28").innerHTML;
+   harga = document.getElementById("harga_barang28").innerHTML;
+   url_barang = document.getElementById("url_barang28").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data29() {
+   nama = document.getElementById("nama_barang29").innerHTML;
+   harga = document.getElementById("harga_barang29").innerHTML;
+   url_barang = document.getElementById("url_barang29").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data30() {
+   nama = document.getElementById("nama_barang30").innerHTML;
+   harga = document.getElementById("harga_barang30").innerHTML;
+   url_barang = document.getElementById("url_barang30").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data31() {
+   nama = document.getElementById("nama_barang31").innerHTML;
+   harga = document.getElementById("harga_barang31").innerHTML;
+   url_barang = document.getElementById("url_barang31").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data32() {
+   nama = document.getElementById("nama_barang32").innerHTML;
+   harga = document.getElementById("harga_barang32").innerHTML;
+   url_barang = document.getElementById("url_barang32").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data33() {
+   nama = document.getElementById("nama_barang33").innerHTML;
+   harga = document.getElementById("harga_barang33").innerHTML;
+   url_barang = document.getElementById("url_barang33").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data34() {
+   nama = document.getElementById("nama_barang34").innerHTML;
+   harga = document.getElementById("harga_barang34").innerHTML;
+   url_barang = document.getElementById("url_barang34").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data35() {
+   nama = document.getElementById("nama_barang35").innerHTML;
+   harga = document.getElementById("harga_barang35").innerHTML;
+   url_barang = document.getElementById("url_barang35").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data36() {
+   nama = document.getElementById("nama_barang36").innerHTML;
+   harga = document.getElementById("harga_barang36").innerHTML;
+   url_barang = document.getElementById("url_barang36").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data37() {
+   nama = document.getElementById("nama_barang37").innerHTML;
+   harga = document.getElementById("harga_barang37").innerHTML;
+   url_barang = document.getElementById("url_barang37").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data38() {
+   nama = document.getElementById("nama_barang38").innerHTML;
+   harga = document.getElementById("harga_barang38").innerHTML;
+   url_barang = document.getElementById("url_barang38").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data39() {
+   nama = document.getElementById("nama_barang39").innerHTML;
+   harga = document.getElementById("harga_barang39").innerHTML;
+   url_barang = document.getElementById("url_barang39").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data40() {
+   nama = document.getElementById("nama_barang40").innerHTML;
+   harga = document.getElementById("harga_barang40").innerHTML;
+   url_barang = document.getElementById("url_barang40").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data41() {
+   nama = document.getElementById("nama_barang41").innerHTML;
+   harga = document.getElementById("harga_barang41").innerHTML;
+   url_barang = document.getElementById("url_barang41").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data42() {
+   nama = document.getElementById("nama_barang42").innerHTML;
+   harga = document.getElementById("harga_barang42").innerHTML;
+   url_barang = document.getElementById("url_barang42").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data43() {
+   nama = document.getElementById("nama_barang43").innerHTML;
+   harga = document.getElementById("harga_barang43").innerHTML;
+   url_barang = document.getElementById("url_barang43").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data44() {
+   nama = document.getElementById("nama_barang44").innerHTML;
+   harga = document.getElementById("harga_barang44").innerHTML;
+   url_barang = document.getElementById("url_barang44").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data45() {
+   nama = document.getElementById("nama_barang45").innerHTML;
+   harga = document.getElementById("harga_barang45").innerHTML;
+   url_barang = document.getElementById("url_barang45").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data46() {
+   nama = document.getElementById("nama_barang46").innerHTML;
+   harga = document.getElementById("harga_barang46").innerHTML;
+   url_barang = document.getElementById("url_barang46").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data47() {
+   nama = document.getElementById("nama_barang47").innerHTML;
+   harga = document.getElementById("harga_barang47").innerHTML;
+   url_barang = document.getElementById("url_barang47").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data48() {
+   nama = document.getElementById("nama_barang48").innerHTML;
+   harga = document.getElementById("harga_barang48").innerHTML;
+   url_barang = document.getElementById("url_barang48").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data49() {
+   nama = document.getElementById("nama_barang49").innerHTML;
+   harga = document.getElementById("harga_barang49").innerHTML;
+   url_barang = document.getElementById("url_barang49").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data50() {
+   nama = document.getElementById("nama_barang50").innerHTML;
+   harga = document.getElementById("harga_barang50").innerHTML;
+   url_barang = document.getElementById("url_barang50").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data51() {
+   nama = document.getElementById("nama_barang51").innerHTML;
+   harga = document.getElementById("harga_barang51").innerHTML;
+   url_barang = document.getElementById("url_barang51").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data52() {
+   nama = document.getElementById("nama_barang52").innerHTML;
+   harga = document.getElementById("harga_barang52").innerHTML;
+   url_barang = document.getElementById("url_barang52").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data53() {
+   nama = document.getElementById("nama_barang53").innerHTML;
+   harga = document.getElementById("harga_barang53").innerHTML;
+   url_barang = document.getElementById("url_barang53").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data54() {
+   nama = document.getElementById("nama_barang54").innerHTML;
+   harga = document.getElementById("harga_barang54").innerHTML;
+   url_barang = document.getElementById("url_barang54").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data55() {
+   nama = document.getElementById("nama_barang55").innerHTML;
+   harga = document.getElementById("harga_barang55").innerHTML;
+   url_barang = document.getElementById("url_barang55").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data56() {
+   nama = document.getElementById("nama_barang56").innerHTML;
+   harga = document.getElementById("harga_barang56").innerHTML;
+   url_barang = document.getElementById("url_barang56").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data57() {
+   nama = document.getElementById("nama_barang57").innerHTML;
+   harga = document.getElementById("harga_barang57").innerHTML;
+   url_barang = document.getElementById("url_barang57").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data58() {
+   nama = document.getElementById("nama_barang58").innerHTML;
+   harga = document.getElementById("harga_barang58").innerHTML;
+   url_barang = document.getElementById("url_barang58").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data59() {
+   nama = document.getElementById("nama_barang59").innerHTML;
+   harga = document.getElementById("harga_barang59").innerHTML;
+   url_barang = document.getElementById("url_barang59").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data60() {
+   nama = document.getElementById("nama_barang60").innerHTML;
+   harga = document.getElementById("harga_barang60").innerHTML;
+   url_barang = document.getElementById("url_barang60").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data61() {
+   nama = document.getElementById("nama_barang61").innerHTML;
+   harga = document.getElementById("harga_barang61").innerHTML;
+   url_barang = document.getElementById("url_barang61").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data62() {
+   nama = document.getElementById("nama_barang62").innerHTML;
+   harga = document.getElementById("harga_barang62").innerHTML;
+   url_barang = document.getElementById("url_barang62").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data63() {
+   nama = document.getElementById("nama_barang63").innerHTML;
+   harga = document.getElementById("harga_barang63").innerHTML;
+   url_barang = document.getElementById("url_barang63").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data64() {
+   nama = document.getElementById("nama_barang64").innerHTML;
+   harga = document.getElementById("harga_barang64").innerHTML;
+   url_barang = document.getElementById("url_barang64").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data65() {
+   nama = document.getElementById("nama_barang65").innerHTML;
+   harga = document.getElementById("harga_barang65").innerHTML;
+   url_barang = document.getElementById("url_barang65").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data66() {
+   nama = document.getElementById("nama_barang66").innerHTML;
+   harga = document.getElementById("harga_barang66").innerHTML;
+   url_barang = document.getElementById("url_barang66").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data67() {
+   nama = document.getElementById("nama_barang67").innerHTML;
+   harga = document.getElementById("harga_barang67").innerHTML;
+   url_barang = document.getElementById("url_barang67").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data68() {
+   nama = document.getElementById("nama_barang68").innerHTML;
+   harga = document.getElementById("harga_barang68").innerHTML;
+   url_barang = document.getElementById("url_barang68").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data69() {
+   nama = document.getElementById("nama_barang69").innerHTML;
+   harga = document.getElementById("harga_barang69").innerHTML;
+   url_barang = document.getElementById("url_barang69").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data70() {
+   nama = document.getElementById("nama_barang70").innerHTML;
+   harga = document.getElementById("harga_barang70").innerHTML;
+   url_barang = document.getElementById("url_barang70").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data71() {
+   nama = document.getElementById("nama_barang71").innerHTML;
+   harga = document.getElementById("harga_barang71").innerHTML;
+   url_barang = document.getElementById("url_barang71").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data72() {
+   nama = document.getElementById("nama_barang72").innerHTML;
+   harga = document.getElementById("harga_barang72").innerHTML;
+   url_barang = document.getElementById("url_barang72").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data73() {
+   nama = document.getElementById("nama_barang73").innerHTML;
+   harga = document.getElementById("harga_barang73").innerHTML;
+   url_barang = document.getElementById("url_barang73").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data74() {
+   nama = document.getElementById("nama_barang74").innerHTML;
+   harga = document.getElementById("harga_barang74").innerHTML;
+   url_barang = document.getElementById("url_barang74").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data75() {
+   nama = document.getElementById("nama_barang75").innerHTML;
+   harga = document.getElementById("harga_barang75").innerHTML;
+   url_barang = document.getElementById("url_barang75").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data76() {
+   nama = document.getElementById("nama_barang76").innerHTML;
+   harga = document.getElementById("harga_barang76").innerHTML;
+   url_barang = document.getElementById("url_barang76").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data77() {
+   nama = document.getElementById("nama_barang77").innerHTML;
+   harga = document.getElementById("harga_barang77").innerHTML;
+   url_barang = document.getElementById("url_barang77").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data78() {
+   nama = document.getElementById("nama_barang78").innerHTML;
+   harga = document.getElementById("harga_barang78").innerHTML;
+   url_barang = document.getElementById("url_barang78").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data79() {
+   nama = document.getElementById("nama_barang79").innerHTML;
+   harga = document.getElementById("harga_barang79").innerHTML;
+   url_barang = document.getElementById("url_barang79").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data80() {
+   nama = document.getElementById("nama_barang80").innerHTML;
+   harga = document.getElementById("harga_barang80").innerHTML;
+   url_barang = document.getElementById("url_barang80").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data81() {
+   nama = document.getElementById("nama_barang81").innerHTML;
+   harga = document.getElementById("harga_barang81").innerHTML;
+   url_barang = document.getElementById("url_barang81").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data82() {
+   nama = document.getElementById("nama_barang82").innerHTML;
+   harga = document.getElementById("harga_barang82").innerHTML;
+   url_barang = document.getElementById("url_barang82").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data83() {
+   nama = document.getElementById("nama_barang83").innerHTML;
+   harga = document.getElementById("harga_barang83").innerHTML;
+   url_barang = document.getElementById("url_barang83").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data84() {
+   nama = document.getElementById("nama_barang84").innerHTML;
+   harga = document.getElementById("harga_barang84").innerHTML;
+   url_barang = document.getElementById("url_barang84").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data85() {
+   nama = document.getElementById("nama_barang85").innerHTML;
+   harga = document.getElementById("harga_barang85").innerHTML;
+   url_barang = document.getElementById("url_barang85").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data86() {
+   nama = document.getElementById("nama_barang86").innerHTML;
+   harga = document.getElementById("harga_barang86").innerHTML;
+   url_barang = document.getElementById("url_barang86").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data87() {
+   nama = document.getElementById("nama_barang87").innerHTML;
+   harga = document.getElementById("harga_barang87").innerHTML;
+   url_barang = document.getElementById("url_barang87").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data88() {
+   nama = document.getElementById("nama_barang88").innerHTML;
+   harga = document.getElementById("harga_barang88").innerHTML;
+   url_barang = document.getElementById("url_barang88").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data89() {
+   nama = document.getElementById("nama_barang89").innerHTML;
+   harga = document.getElementById("harga_barang89").innerHTML;
+   url_barang = document.getElementById("url_barang89").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data90() {
+   nama = document.getElementById("nama_barang90").innerHTML;
+   harga = document.getElementById("harga_barang90").innerHTML;
+   url_barang = document.getElementById("url_barang90").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data91() {
+   nama = document.getElementById("nama_barang91").innerHTML;
+   harga = document.getElementById("harga_barang91").innerHTML;
+   url_barang = document.getElementById("url_barang91").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data92() {
+   nama = document.getElementById("nama_barang92").innerHTML;
+   harga = document.getElementById("harga_barang92").innerHTML;
+   url_barang = document.getElementById("url_barang92").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data93() {
+   nama = document.getElementById("nama_barang93").innerHTML;
+   harga = document.getElementById("harga_barang93").innerHTML;
+   url_barang = document.getElementById("url_barang93").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data94() {
+   nama = document.getElementById("nama_barang94").innerHTML;
+   harga = document.getElementById("harga_barang94").innerHTML;
+   url_barang = document.getElementById("url_barang94").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data95() {
+   nama = document.getElementById("nama_barang95").innerHTML;
+   harga = document.getElementById("harga_barang95").innerHTML;
+   url_barang = document.getElementById("url_barang95").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data96() {
+   nama = document.getElementById("nama_barang96").innerHTML;
+   harga = document.getElementById("harga_barang96").innerHTML;
+   url_barang = document.getElementById("url_barang96").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data97() {
+   nama = document.getElementById("nama_barang97").innerHTML;
+   harga = document.getElementById("harga_barang97").innerHTML;
+   url_barang = document.getElementById("url_barang97").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data98() {
+   nama = document.getElementById("nama_barang98").innerHTML;
+   harga = document.getElementById("harga_barang98").innerHTML;
+   url_barang = document.getElementById("url_barang98").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data99() {
+   nama = document.getElementById("nama_barang99").innerHTML;
+   harga = document.getElementById("harga_barang99").innerHTML;
+   url_barang = document.getElementById("url_barang99").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data100() {
+   nama = document.getElementById("nama_barang100").innerHTML;
+   harga = document.getElementById("harga_barang100").innerHTML;
+   url_barang = document.getElementById("url_barang100").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data101() {
+   nama = document.getElementById("nama_barang101").innerHTML;
+   harga = document.getElementById("harga_barang101").innerHTML;
+   url_barang = document.getElementById("url_barang101").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data102() {
+   nama = document.getElementById("nama_barang102").innerHTML;
+   harga = document.getElementById("harga_barang102").innerHTML;
+   url_barang = document.getElementById("url_barang102").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data103() {
+   nama = document.getElementById("nama_barang103").innerHTML;
+   harga = document.getElementById("harga_barang103").innerHTML;
+   url_barang = document.getElementById("url_barang103").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data104() {
+   nama = document.getElementById("nama_barang104").innerHTML;
+   harga = document.getElementById("harga_barang104").innerHTML;
+   url_barang = document.getElementById("url_barang104").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data105() {
+   nama = document.getElementById("nama_barang105").innerHTML;
+   harga = document.getElementById("harga_barang105").innerHTML;
+   url_barang = document.getElementById("url_barang105").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data106() {
+   nama = document.getElementById("nama_barang106").innerHTML;
+   harga = document.getElementById("harga_barang106").innerHTML;
+   url_barang = document.getElementById("url_barang106").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data107() {
+   nama = document.getElementById("nama_barang107").innerHTML;
+   harga = document.getElementById("harga_barang107").innerHTML;
+   url_barang = document.getElementById("url_barang107").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data108() {
+   nama = document.getElementById("nama_barang108").innerHTML;
+   harga = document.getElementById("harga_barang108").innerHTML;
+   url_barang = document.getElementById("url_barang108").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data109() {
+   nama = document.getElementById("nama_barang109").innerHTML;
+   harga = document.getElementById("harga_barang109").innerHTML;
+   url_barang = document.getElementById("url_barang109").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data110() {
+   nama = document.getElementById("nama_barang110").innerHTML;
+   harga = document.getElementById("harga_barang110").innerHTML;
+   url_barang = document.getElementById("url_barang110").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data111() {
+   nama = document.getElementById("nama_barang111").innerHTML;
+   harga = document.getElementById("harga_barang111").innerHTML;
+   url_barang = document.getElementById("url_barang111").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data112() {
+   nama = document.getElementById("nama_barang112").innerHTML;
+   harga = document.getElementById("harga_barang112").innerHTML;
+   url_barang = document.getElementById("url_barang112").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data113() {
+   nama = document.getElementById("nama_barang113").innerHTML;
+   harga = document.getElementById("harga_barang113").innerHTML;
+   url_barang = document.getElementById("url_barang113").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data114() {
+   nama = document.getElementById("nama_barang114").innerHTML;
+   harga = document.getElementById("harga_barang114").innerHTML;
+   url_barang = document.getElementById("url_barang114").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data115() {
+   nama = document.getElementById("nama_barang115").innerHTML;
+   harga = document.getElementById("harga_barang115").innerHTML;
+   url_barang = document.getElementById("url_barang115").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data116() {
+   nama = document.getElementById("nama_barang116").innerHTML;
+   harga = document.getElementById("harga_barang116").innerHTML;
+   url_barang = document.getElementById("url_barang116").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data117() {
+   nama = document.getElementById("nama_barang117").innerHTML;
+   harga = document.getElementById("harga_barang117").innerHTML;
+   url_barang = document.getElementById("url_barang117").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data118() {
+   nama = document.getElementById("nama_barang118").innerHTML;
+   harga = document.getElementById("harga_barang118").innerHTML;
+   url_barang = document.getElementById("url_barang118").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data119() {
+   nama = document.getElementById("nama_barang119").innerHTML;
+   harga = document.getElementById("harga_barang119").innerHTML;
+   url_barang = document.getElementById("url_barang119").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data120() {
+   nama = document.getElementById("nama_barang120").innerHTML;
+   harga = document.getElementById("harga_barang120").innerHTML;
+   url_barang = document.getElementById("url_barang120").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data121() {
+   nama = document.getElementById("nama_barang121").innerHTML;
+   harga = document.getElementById("harga_barang121").innerHTML;
+   url_barang = document.getElementById("url_barang121").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data122() {
+   nama = document.getElementById("nama_barang122").innerHTML;
+   harga = document.getElementById("harga_barang122").innerHTML;
+   url_barang = document.getElementById("url_barang122").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data123() {
+   nama = document.getElementById("nama_barang123").innerHTML;
+   harga = document.getElementById("harga_barang123").innerHTML;
+   url_barang = document.getElementById("url_barang123").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data124() {
+   nama = document.getElementById("nama_barang124").innerHTML;
+   harga = document.getElementById("harga_barang124").innerHTML;
+   url_barang = document.getElementById("url_barang124").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data125() {
+   nama = document.getElementById("nama_barang125").innerHTML;
+   harga = document.getElementById("harga_barang125").innerHTML;
+   url_barang = document.getElementById("url_barang125").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data126() {
+   nama = document.getElementById("nama_barang126").innerHTML;
+   harga = document.getElementById("harga_barang126").innerHTML;
+   url_barang = document.getElementById("url_barang126").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // cara ini hanya untuk natif atau untuk bukaolshop
+function cetak_data127() {
+   nama = document.getElementById("nama_barang127").innerHTML;
+   harga = document.getElementById("harga_barang127").innerHTML;
+   url_barang = document.getElementById("url_barang127").href;
+   let nomorInputan = document.getElementById("nomor").value.replace(/\s+/g, '');
+   let operator =document.getElementById("operatorPulsa").innerHTML;
+   
+   // jika nomor tidak terdeteksi kasih hasil respon kosong disemua data
+   if (nomorInputan == []|| nomorInputan== null || nomorInputan == 08) {
+     nomorTujuan.innerHTML = none;
+   }
+   cetakNama.innerHTML = nama;
+   cetakHarga.innerHTML = harga;
+   totalTagihan.innerHTML = harga;
+   url = url_barang;
+   nomorTujuan.innerHTML = nomorInputan;
+   cetakOperator.innerHTML = operator;
+}
+
+ // ############# BATAS KALAU KAMU PAKAI HOSTING GK PERLU LAKUKAN CARA DI ATAS INI, CUKUP BIKIN CLASS UNTUK QUERY DATABASE KAMU #############
+
+// SEBELUM KIRIM DATA NOMOR TUJUAN PERIKSA DAN HILANGKAN SEMUA SIMBOL SIMBOL DAN HURUF, CETAK HANYA ANGKA SAJA DAN BERIKAN SPASI DI INPUTAN
+// hasil inputan tidak boleh lebih dari 13 karakter
+document.getElementById('nomor').addEventListener('input', function (e) {
+ e.target.value = e.target.value.replace(/[^0-9]/g,'').replace(/(.{14})/g, '$1 ').substring(0, 16).trim();
+});
+
+  // loading
+var loading = document.getElementById("spinner_load");
+// url tujuan
+            var countuu = 0.5; // dalam detik
+            function countDown() {
+                if (countuu > 0) {
+                    countuu--;
+                    setTimeout("countDown()", 1000);
+                } else {
+                    loading.style.display="none";
+                }
+            }
+            countDown();
+ 
+ 
+ //buat fungsi untuk kirim produk yg dipilih user ke bukaolshop
+ function kirimData() {
+   
+   // ambil url inputan user 
+   const link = url;
+   // masukkan catatan parameter dari bukaolshop
+   const catatan = "?catatan=";
+  // ambil nomor dari hasil inputan user dan hilangkan semua karakter selain ANGKA
+  const nomor = document.getElementById('noTujuan').innerHTML;
+  // sebelum mengirimkan data 
+  //periksa dulu apakah nomor tujuan sudah di isi
+  //periksa juga produk user dan periksa harga produk
+  if (nomor == null || nomor == "0858" || nomor.length < 10 || nomor == "" || nomor == "0" || nomor == "none") {
+    // jika nomor kosong jangan kirimkan data nomor harus lebih dari 10 karakter dan beri peringatan ke user
+    alert('periksa kembali nomor tujuan Anda!!');
+  }else{
+  // jika nomor ada isinya dan isinya lebih dari 10 karakter kirimkan data ke bukaolshop
+  window.location.href=link+catatan+nomor;
+ }}
+    </script>
+  </body>
+</html>
