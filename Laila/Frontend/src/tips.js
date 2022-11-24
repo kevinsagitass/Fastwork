@@ -11,6 +11,10 @@ function getRecap() {
 
 // Function to Display Tips
 async function displayTips(data) {
+
+  rate.innerHTML = "";
+  tips.innerHTML = "";
+
   let weeklyStatus = {
     totalPending: 0,
     totalComplete: 0,

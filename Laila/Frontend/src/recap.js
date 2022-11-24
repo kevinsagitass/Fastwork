@@ -7,6 +7,7 @@ getRecap();
 
 // Get Detail of Recap Data
 function getRecap() {
+  console.log('tes');
   fetch(`http://localhost:3001/recap`)
     .then((response) => response.json())
     .then((data) => displayRecap(data));
@@ -14,6 +15,12 @@ function getRecap() {
 
 // Display Detail of Recap Data to Frontend
 function displayRecap(data) {
+
+  weeklyStatusBox.innerHTML = "";
+  weeklyComplianceBox.innerHTML = "";
+  monthlyStatusBox.innerHTML = "";
+  monthlyComplianceBox.innerHTML = "";
+
   // Weekly Recap
   for (var date in data["weekly"]["status"]) {
     // Status
