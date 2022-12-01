@@ -62,7 +62,7 @@ function showNotification(title, message) {
   });
 }
 
-// Function to Get All Todo List 
+// Function to Get All Todo List
 function getAllTodoList() {
   fetch(`http://localhost:3001/list?filter=All`)
     .then((response) => response.json())
@@ -116,7 +116,7 @@ function displayTaskProgression(data) {
                <li onClick="btnDeleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
                    <div class="btn btn-danger rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
                        <p class="small mb-0">
-                           Delete
+                        <i class="fa fa-solid fa-trash"></i>&nbsp&nbspDelete
                        </p>
                    </div>
                    <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
@@ -142,7 +142,7 @@ function displayTaskProgression(data) {
                  <li onClick="btnEditClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent mx-3">
                       <div class="btn btn-warning rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block" data-bs-toggle="modal" data-bs-target="#editModal">
                          <p class="small mb-0">
-                             Edit
+                          <i class="fa fa-solid fa-edit"></i>&nbsp&nbspEdit
                          </p>
                       </div>
                       <div class="hidden-md hidden-lg visible-sm-block visible-xs-block" data-bs-toggle="modal" data-bs-target="#editModal">
@@ -152,7 +152,7 @@ function displayTaskProgression(data) {
                  <li onClick="btnCompleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
                      <div class="btn btn-primary rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
                          <p class="small mb-0">
-                             Complete
+                          <i class="fa fa-solid fa-check"></i>&nbsp&nbspComplete
                          </p>
                      </div>
                      <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
@@ -174,7 +174,7 @@ function displayTaskProgression(data) {
                <li onClick="btnEditClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent mx-3">
                    <div class="btn btn-warning rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block" data-bs-toggle="modal" data-bs-target="#editModal">
                        <p class="small mb-0">
-                           Edit
+                        <i class="fa fa-solid fa-edit"></i>&nbsp&nbspEdit
                        </p>
                    </div>
                    <div class="hidden-md hidden-lg visible-sm-block visible-xs-block" data-bs-toggle="modal" data-bs-target="#editModal">
@@ -184,7 +184,7 @@ function displayTaskProgression(data) {
                <li onClick="btnCompleteClick(${value.id})" class="list-group-item p-0 d-flex align-items-center border-0 bg-transparent">
                    <div class="btn btn-primary rounded-3 d-flex align-items-center hidden-sm hidden-xs visible-md-block visible-lg-block">
                        <p class="small mb-0">
-                           Complete
+                        <i class="fa fa-solid fa-check"></i>&nbsp&nbspComplete
                        </p>
                    </div>
                    <div class="hidden-md hidden-lg visible-sm-block visible-xs-block">
@@ -291,7 +291,7 @@ function updateTodo() {
   document.getElementById("modalClose").click();
 }
 
-// When User change The Filter 
+// When User change The Filter
 function filterChange() {
   const filterVal = filter.value;
 
@@ -341,8 +341,20 @@ function reminder() {
               "Reminder",
               `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
             );
-          } else if (dif <= 0 && value.status != "Complete") {
+          } else if (
+            dif <= 0 &&
+            value.status != "Complete" &&
+            !value.notified
+          ) {
             showNotification("Task Missed", `You Missed Task ${value.title}`);
+
+            fetch(`http://localhost:3001/notif/${value.id}`, {
+              method: "PUT",
+              headers: {
+                accept: "*/*",
+                "content-type": "application/json",
+              },
+            });
           }
         }
       });
@@ -378,8 +390,20 @@ function reminder() {
                 "Reminder",
                 `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
               );
-            } else if (dif <= 0 && value.status != "Complete") {
+            } else if (
+              dif <= 0 &&
+              value.status != "Complete" &&
+              !value.notified
+            ) {
               showNotification("Task Missed", `You Missed Task ${value.title}`);
+
+              fetch(`http://localhost:3001/notif/${value.id}`, {
+                method: "PUT",
+                headers: {
+                  accept: "*/*",
+                  "content-type": "application/json",
+                },
+              });
             }
           }
         });
@@ -387,7 +411,7 @@ function reminder() {
   }, 300000);
 }
 
-// Export Functions 
+// Export Functions
 window.btnAddClick = btnAddClick;
 window.btnCompleteClick = btnCompleteClick;
 window.btnDeleteClick = btnDeleteClick;

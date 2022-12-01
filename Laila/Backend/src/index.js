@@ -21,6 +21,18 @@ app.post("/set-todo", (req, res) => {
   res.send("ok");
 });
 
+app.put("/notif/:id", (req, res) => {
+  const id = req.params.id;
+
+  todoList.forEach((value, index) => {
+    if (value.id == id) {
+      value.notified = true;
+    }
+  });
+
+  res.send("Ok");
+});
+
 app.get("/list", (req, res) => {
   const filter = req.query.filter;
 
@@ -64,6 +76,7 @@ app.post("/list", (req, res) => {
     date: todo.date,
     status: "Pending",
     compliance: "Pending",
+    notified: false,
   });
 
   res.send("ok");
@@ -241,6 +254,88 @@ app.post("/tips", (req, res) => {
     }
   }
 });
+
+app.get("/this-week-recap", (req, res) => {
+  let thisWeekRecaps = {
+    totalTask: 0,
+    completedTask: 0,
+    onTimeTask: 0,
+    lateTask: 0,
+    completionRate: 0,
+    complianceRate: 0,
+    tips: "",
+  };
+
+  todoList.forEach(function (value) {
+    const dates = value.date.split(" ");
+
+    if (dates.length > 1) {
+      const date = dates[0].split("/");
+      const time = dates[1].split(":");
+
+      const todoDate = new Date(
+        date[2],
+        date[1] - 1,
+        date[0],
+        time[0],
+        time[1],
+        time[2],
+        0
+      );
+
+      if (isDateInThisWeek(todoDate)) {
+        if (value.status == "Complete") {
+          thisWeekRecaps.completedTask++;
+        }
+
+        if (value.compliance == "On Time") {
+          thisWeekRecaps.onTimeTask++;
+        } else if (value.compliance == "Late") {
+          thisWeekRecaps.lateTask++;
+        }
+
+        thisWeekRecaps.totalTask++;
+      }
+    }
+  });
+
+  thisWeekRecaps.completionRate =
+    (thisWeekRecaps.completedTask / thisWeekRecaps.totalTask) * 100;
+  thisWeekRecaps.complianceRate =
+    (thisWeekRecaps.onTimeTask /
+      (thisWeekRecaps.onTimeTask + thisWeekRecaps.lateTask)) *
+    100;
+
+  for (stats in tips) {
+    if (thisWeekRecaps.completionRate <= stats) {
+      for (compliance in tips[stats]) {
+        if (thisWeekRecaps.complianceRate <= compliance) {
+          thisWeekRecaps.tips = tips[stats][compliance];
+
+          res.send(thisWeekRecaps);
+
+          return;
+        }
+      }
+    }
+  }
+});
+
+function isDateInThisWeek(date) {
+  const todayObj = new Date();
+  const todayDate = todayObj.getDate();
+  const todayDay = todayObj.getDay();
+
+  // get first date of week
+  const firstDayOfWeek = new Date(todayObj.setDate(todayDate - todayDay));
+
+  // get last date of week
+  const lastDayOfWeek = new Date(firstDayOfWeek);
+  lastDayOfWeek.setDate(lastDayOfWeek.getDate() + 6);
+
+  // if date is equal or within the first and last dates of the week
+  return date >= firstDayOfWeek && date <= lastDayOfWeek;
+}
 
 app.listen(3001, () => {
   console.log("Server Started on Port 3001");

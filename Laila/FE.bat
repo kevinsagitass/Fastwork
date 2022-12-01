@@ -1,2 +1,2 @@
 cd Frontend
-npm run dev
+npm run start

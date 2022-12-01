@@ -1,13 +1,12 @@
-const weeklyStatusBox = document.getElementById("weeklyStatus");
-const weeklyComplianceBox = document.getElementById("weeklyCompliance");
-const monthlyStatusBox = document.getElementById("monthlyStatus");
-const monthlyComplianceBox = document.getElementById("monthlyCompliance");
+const weeklyStatusCanvas = document.getElementById("weeklyStatus");
+const weeklyComplianceCanvas = document.getElementById("weeklyCompliance");
+const monthlyStatusCanvas = document.getElementById("monthlyStatus");
+const monthlyComplianceCanvas = document.getElementById("monthlyCompliance");
 
 getRecap();
 
 // Get Detail of Recap Data
 function getRecap() {
-  console.log('tes');
   fetch(`http://localhost:3001/recap`)
     .then((response) => response.json())
     .then((data) => displayRecap(data));
@@ -15,11 +14,12 @@ function getRecap() {
 
 // Display Detail of Recap Data to Frontend
 function displayRecap(data) {
-
-  weeklyStatusBox.innerHTML = "";
-  weeklyComplianceBox.innerHTML = "";
-  monthlyStatusBox.innerHTML = "";
-  monthlyComplianceBox.innerHTML = "";
+  let weeklyLabels = [];
+  let weeklyCompletionRate = [];
+  let weeklyComplianceRate = [];
+  let monthlyLabels = [];
+  let monthlyCompletionRate = [];
+  let monthlyComplianceRate = [];
 
   // Weekly Recap
   for (var date in data["weekly"]["status"]) {
@@ -38,11 +38,6 @@ function displayRecap(data) {
         (weeklyStatus["totalPending"] + weeklyStatus["totalComplete"])) *
       100;
 
-    weeklyStatusBox.innerHTML += `<b>Completion Rate Week Of ${date} :</b>
-        <div class="progress">
-            <div class="progress-bar" style="width:${weeklyStatus["completionRate"]}%">${weeklyStatus["completionRate"]}%</div>
-        </div>`;
-
     // Compliance
     let weeklyCompliance = {
       totalPending: 0,
@@ -59,16 +54,61 @@ function displayRecap(data) {
       data["weekly"]["compliance"][date]["On Time"];
     weeklyCompliance["onTimeRate"] =
       (weeklyCompliance["totalOnTime"] /
-        (weeklyCompliance["totalPending"] +
-          weeklyCompliance["totalLate"] +
-          weeklyCompliance["totalOnTime"])) *
+        (weeklyCompliance["totalLate"] + weeklyCompliance["totalOnTime"])) *
       100;
 
-    weeklyComplianceBox.innerHTML += `<b>On Time Rate Week Of ${date} :</b>
-        <div class="progress">
-            <div class="progress-bar" style="width:${weeklyCompliance["onTimeRate"]}%">${weeklyCompliance["onTimeRate"]}%</div>
-        </div>`;
+    weeklyLabels.push(date);
+    weeklyCompletionRate.push(weeklyStatus["completionRate"]);
+    weeklyComplianceRate.push(weeklyCompliance["onTimeRate"]);
   }
+
+  // Weekly Status Chart
+  new Chart(weeklyStatusCanvas, {
+    type: "bar",
+    data: {
+      labels: weeklyLabels,
+      datasets: [
+        {
+          label: "Completion Rate",
+          data: weeklyCompletionRate,
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 100,
+        },
+      },
+    },
+  });
+
+  // Weekly Compliance Chart
+  new Chart(weeklyComplianceCanvas, {
+    type: "bar",
+    data: {
+      labels: weeklyLabels,
+      datasets: [
+        {
+          label: "Compliance Rate",
+          data: weeklyComplianceRate,
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 100,
+        },
+      },
+    },
+  });
 
   // Monthly Recap
   for (var month in data["monthly"]["status"]) {
@@ -89,15 +129,6 @@ function displayRecap(data) {
         (monthlyStatus["totalPending"] + monthlyStatus["totalComplete"])) *
       100;
 
-    monthlyStatusBox.innerHTML += `<b>Completion Rate Month Of ${getMonthName(
-      month
-    )} :</b> 
-        <div class="progress">
-            <div class="progress-bar" style="width:${
-              monthlyStatus["completionRate"]
-            }%">${monthlyStatus["completionRate"]}%</div>
-        </div>`;
-
     // Compliance
     let monthlyCompliance = {
       totalPending: 0,
@@ -115,20 +146,62 @@ function displayRecap(data) {
       data["monthly"]["compliance"][month]["On Time"];
     monthlyCompliance["onTimeRate"] =
       (monthlyCompliance["totalOnTime"] /
-        (monthlyCompliance["totalPending"] +
-          monthlyCompliance["totalLate"] +
-          monthlyCompliance["totalOnTime"])) *
+        (monthlyCompliance["totalLate"] + monthlyCompliance["totalOnTime"])) *
       100;
 
-    monthlyComplianceBox.innerHTML += `<b>On Time Rate Month Of ${getMonthName(
-      month
-    )} :</b>
-        <div class="progress">
-            <div class="progress-bar" style="width:${
-              monthlyCompliance["onTimeRate"]
-            }%">${monthlyCompliance["onTimeRate"]}%</div>
-        </div>`;
+    monthlyLabels.push(getMonthName(month));
+    monthlyCompletionRate.push(monthlyStatus["completionRate"]);
+    monthlyComplianceRate.push(monthlyCompliance["onTimeRate"]);
   }
+
+
+  // Monthly Status Chart
+  new Chart(monthlyStatusCanvas, {
+    type: "bar",
+    data: {
+      labels: monthlyLabels,
+      datasets: [
+        {
+          label: "Completion Rate",
+          data: monthlyCompletionRate,
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 100,
+        },
+      },
+    },
+  });
+
+  // Monthly Compliance Chart
+  new Chart(monthlyComplianceCanvas, {
+    type: "bar",
+    data: {
+      labels: monthlyLabels,
+      datasets: [
+        {
+          label: "Compliance Rate",
+          data: monthlyCompletionRate,
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 100,
+        },
+      },
+    },
+  });
 }
 
 // Function to Return Month Name from Month Number
@@ -139,4 +212,25 @@ function getMonthName(monthNumber) {
   return date.toLocaleString("en-US", {
     month: "long",
   });
+}
+
+// Function to Get Tips from Backend with Status and Compliance Send by Weekly and Monthly
+async function getTips(status, compliance) {
+  var tips = "";
+
+  const res = await fetch("http://localhost:3001/tips", {
+    method: "POST",
+    headers: {
+      accept: "*/*",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      status: status,
+      compliance: compliance,
+    }),
+  });
+
+  tips = await res.text();
+
+  return tips;
 }

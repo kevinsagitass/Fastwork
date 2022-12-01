@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tips and Trick</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 767px) {
+        .navbar-brand {
+          width: 100%;
+        }
+      }
+    </style>
+  <script defer src="/index.js"></script><script defer src="/recap.js"></script><script defer src="/tips.js"></script><script defer src="/todo.js"></script></head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+      <div class="container-fluid" style="justify-content: left !important">
+        <b>
+          <a class="navbar-brand" href="/">Daily</a>
+          <a class="navbar-brand" href="/todo">Manage Todo</a>
+          <a class="navbar-brand" href="/recap">Task Recap</a>
+          <a class="navbar-brand" href="/tips">Tips and Trick</a>
+        </b>
+      </div>
+    </nav>
+    <div>
+      <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col">
+              <div
+                class="card"
+                style="border-radius: 0.75rem; background-color: #eff1f2"
+              >
+                <div class="row card-body py-4 px-4 px-md-5">
+                  <div class="col-6" id="Rate"></div>
+                  <div class="col-6" id="Tips"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="./tips.js"></script>
+</html>

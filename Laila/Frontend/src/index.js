@@ -30,7 +30,10 @@ function setTodos(localTodo) {
 }
 
 // Check if Notification Permission is Granted if Not Request Permission
-if (Notification.permission != "denied" && Notification.permission != "granted") {
+if (
+  Notification.permission != "denied" &&
+  Notification.permission != "granted"
+) {
   Notification.requestPermission().then((permission) => {});
 }
 
@@ -50,6 +53,38 @@ function getTodayList() {
   fetch(`http://localhost:3001/list?filter=All`)
     .then((response) => response.json())
     .then((data) => localStorage.setItem("todos", JSON.stringify(data)));
+
+  getThisWeekRecap();
+}
+
+// Get This Week Recap
+function getThisWeekRecap() {
+  fetch(`http://localhost:3001/this-week-recap`)
+    .then((response) => response.json())
+    .then((data) => displayThisWeekProgress(data));
+}
+
+// Display This Week Task Recap
+function displayThisWeekProgress(weekRecap) {
+  const taskCompletion = document.getElementById("taskCompletion");
+  const complianceCompletion = document.getElementById("complianceCompletion");
+  const weekTips = document.getElementById("weekTips");
+
+  taskCompletion.innerHTML = "";
+  complianceCompletion.innerHTML = "";
+  weekTips.innerHTML = "";
+
+  taskCompletion.innerHTML += `<b>This Week Completion Rate :</b>
+        <div class="progress">
+            <div class="progress-bar" style="width:${weekRecap["completionRate"]}%">${weekRecap["completionRate"]}%</div>
+        </div>`;
+
+  complianceCompletion.innerHTML += `<b>This Week Compliance Rate :</b>
+        <div class="progress">
+            <div class="progress-bar" style="width:${weekRecap["complianceRate"]}%">${weekRecap["complianceRate"]}%</div>
+        </div>`;
+
+  weekTips.innerHTML += weekRecap["tips"];
 }
 
 // Display List of Todos to FrontEnd
@@ -167,8 +202,20 @@ function reminder() {
               "Reminder",
               `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
             );
-          } else if (dif <= 0 && value.status != "Complete") {
+          } else if (
+            dif <= 0 &&
+            value.status != "Complete" &&
+            !value.notified
+          ) {
             showNotification("Task Missed", `You Missed Task ${value.title}`);
+
+            fetch(`http://localhost:3001/notif/${value.id}`, {
+              method: "PUT",
+              headers: {
+                accept: "*/*",
+                "content-type": "application/json",
+              },
+            });
           }
         }
       });
@@ -204,8 +251,20 @@ function reminder() {
                 "Reminder",
                 `Task Due Date is In 5 Minutes or Less! Please Complete Task ${value.title}`
               );
-            } else if (dif <= 0 && value.status != "Complete") {
+            } else if (
+              dif <= 0 &&
+              value.status != "Complete" &&
+              !value.notified
+            ) {
               showNotification("Task Missed", `You Missed Task ${value.title}`);
+
+              fetch(`http://localhost:3001/notif/${value.id}`, {
+                method: "PUT",
+                headers: {
+                  accept: "*/*",
+                  "content-type": "application/json",
+                },
+              });
             }
           }
         });
