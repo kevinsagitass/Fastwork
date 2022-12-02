@@ -24,6 +24,7 @@
       href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
     />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <style>
@@ -111,6 +112,88 @@
        
       }
 
+      @-webkit-keyframes come-in {
+        0% {
+          -webkit-transform: translatey(100px);
+                  transform: translatey(100px);
+          opacity: 0;
+        }
+        30% {
+          -webkit-transform: translateX(-50px) scale(0.4);
+                  transform: translateX(-50px) scale(0.4);
+        }
+        70% {
+          -webkit-transform: translateX(0px) scale(1.2);
+                  transform: translateX(0px) scale(1.2);
+        }
+        100% {
+          -webkit-transform: translatey(0px) scale(1);
+                  transform: translatey(0px) scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes come-in {
+        0% {
+          -webkit-transform: translatey(100px);
+                  transform: translatey(100px);
+          opacity: 0;
+        }
+        30% {
+          -webkit-transform: translateX(-50px) scale(0.4);
+                  transform: translateX(-50px) scale(0.4);
+        }
+        70% {
+          -webkit-transform: translateX(0px) scale(1.2);
+                  transform: translateX(0px) scale(1.2);
+        }
+        100% {
+          -webkit-transform: translatey(0px) scale(1);
+                  transform: translatey(0px) scale(1);
+          opacity: 1;
+        }
+      }
+
+      .floating-container {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        bottom: 0;
+        right: 0;
+        margin: 35px 25px;
+        z-index: 1000;
+      }
+      .floating-container:hover {
+        height: 300px;
+      }
+      .floating-container:hover .floating-button {
+        box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+        -webkit-transform: translatey(5px);
+                transform: translatey(5px);
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      .floating-container .floating-button {
+        position: absolute;
+        width: 65px;
+        height: 65px;
+        background: #2cb3f0;
+        bottom: 0;
+        border-radius: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: white;
+        line-height: 65px;
+        text-align: center;
+        font-size: 23px;
+        z-index: 100;
+        box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        z-index: 1000;
+      }
+
       @media (max-width: 1000px) {
         #formBox {
           width: 90%;
@@ -177,6 +260,24 @@
         id="nomorInput"
         placeholder="Nomor Handphone (08XX) atau tagihan"
       />
+      <div class="row">
+        <div class="col-6" id="boxUserId">
+          <input
+            type="number"
+            class="form-control my-3"
+            id="userIdInput"
+            placeholder="User ID"
+          />
+        </div>
+        <div class="col-6">
+          <input
+            type="number"
+            class="form-control my-3"
+            id="serverInput"
+            placeholder="Server"
+          />
+        </div>
+      </div>
 
       <div class="containerHarga">
         <label>Rp: </label>
@@ -185,6 +286,10 @@
 
       <div>
         <label><a href="#" id="linkKetentuan">Saya sudah membaca cara pembelian</a></label>
+      </div>
+
+      <div class="floating-container" onclick="floatingBtnClick()">
+        <div class="floating-button"><i class="fa-brands fa-whatsapp"></i></div>
       </div>
 
       <button id="orderBtn" onclick="btnClick()">Order Sekarang</button>
@@ -253,175 +358,175 @@
                 value: "Opsi 1.2 Pulsa",
                 label: "Telkomsel 5rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 6.165,
+                harga: "6.165",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-5rb-alternatif-1448707",
               },
               {
                 value: "Opsi 1.3 Pulsa",
                 label: "Telkomsel 10rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 11.305,
+                harga: "11.305",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-10rb-1448786",
               },
               {
                 value: "Opsi 1.4 Pulsa",
                 label: "Telkomsel 10rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 11.25,
+                harga: "11.250",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-10rb-alternatif-1448788",
               },
               {
                 value: "Opsi 1.5 Pulsa",
                 label: "Telkomsel 15rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 16.105,
+                harga: "16.105",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-15rb-1448801",
               },
               {
                 value: "Opsi 1.6 Pulsa",
                 label: "Telkomsel 15rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 16.105,
+                harga: "16.105",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-15rb-alternatif-1448804",
               },
               {
                 value: "Opsi 1.7 Pulsa",
                 label: "Telkomsel 20rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 21.06,
+                harga: "21.060",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-20rb-1448807",
               },
               {
                 value: "Opsi 1.8 Pulsa",
                 label: "Telkomsel 20rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 21.11,
+                harga: "21.110",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-20rb-alternatif-1448809",
               },
               {
                 value: "Opsi 1.9 Pulsa",
                 label: "Telkomsel 25rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 26.05,
+                harga: "26.050",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-25rb-1448835",
               },
               {
                 value: "Opsi 1.10 Pulsa",
                 label: "Telkomsel 25rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 26.125,
+                harga: "26.125",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-25rb-alternatif-1448837",
               },
               {
                 value: "Opsi 1.11 Pulsa",
                 label: "Telkomsel 30rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 30.95,
+                harga: "30.950",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-30rb-1448840",
               },
               {
                 value: "Opsi 1.12 Pulsa",
                 label: "Telkomsel 30rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 31.04,
+                harga: "31.040",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-30rb-alternatif-1448841",
               },
               {
                 value: "Opsi 1.13 Pulsa",
                 label: "Telkomsel 40rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 41.05,
+                harga: "41.050",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-40rb-1448846",
               },
               {
                 value: "Opsi 1.14 Pulsa",
                 label: "Telkomsel 40rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 41.07,
+                harga: "41.070",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-40rb-alternatif-1448848",
               },
               {
                 value: "Opsi 1.15 Pulsa",
                 label: "Telkomsel 50rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 51.125,
+                harga: "51.125",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-50rb-1448857",
               },
               {
                 value: "Opsi 1.16 Pulsa",
                 label: "Telkomsel 50rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 51.13,
+                harga: "51.130",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-50rb-alternatif-1448859",
               },
               {
                 value: "Opsi 1.17 Pulsa",
                 label: "Telkomsel 75rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 75.975,
+                harga: "75.975",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-75rb-1448877",
               },
               {
                 value: "Opsi 1.18 Pulsa",
                 label: "Telkomsel 75rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 76.01,
+                harga: "76.010",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-75rb-alternatif-1448878",
               },
               {
                 value: "Opsi 1.19 Pulsa",
                 label: "Telkomsel 80rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 80.85,
+                harga: "80.850",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-80rb-1459799",
               },
               {
                 value: "Opsi 1.20 Pulsa",
                 label: "Telkomsel 80rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 81.0,
+                harga: "81.000",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-80rb-alternatif-1459800",
               },
               {
                 value: "Opsi 1.21 Pulsa",
                 label: "Telkomsel 100rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 100.75,
+                harga: "100.750",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-100rb-1448886",
               },
               {
                 value: "Opsi 1.22 Pulsa",
                 label: "Telkomsel 100rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 100.85,
+                harga: "100.850",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-100rb-alternatif-1448890",
               },
               {
                 value: "Opsi 1.23 Pulsa",
                 label: "Telkomsel 150rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 150.5,
+                harga: "150.500",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-150rb-1459841",
               },
               {
                 value: "Opsi 1.24 Pulsa",
                 label: "Telkomsel 150rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 150.9,
+                harga: "150.900",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-150rb-alternatif-1459844",
               },
               {
                 value: "Opsi 1.25 Pulsa",
                 label: "Telkomsel 200rb",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 199.5,
+                harga: "199.500",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-200rb-1459854",
               },
               {
                 value: "Opsi 1.26 Pulsa",
                 label: "Telkomsel 200rb (alternatif)",
                 icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
-                harga: 199.7,
+                harga: "199.700",
                 url: "https://galashop.bukaolshop.site/produk/telkomsel-200rb-alternatif-1459856",
               },
             ],
@@ -7049,6 +7154,200 @@
           },
         ],
       },
+      {
+        value: "game",
+        label: "Game",
+        icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+        children: [
+          {
+            value: "null",
+            label: "Pilih Game",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [],
+          },
+          {
+            value: "Free Fire",
+            label: "Free Fire",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [
+              {
+                value: "null",
+                label: "Pilih Jumlah Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "-",
+                url: null,
+              },
+              {
+                value: "100 Diamond",
+                label: "100 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "10.000",
+                url: "https://www.google.com",
+              },
+              {
+                value: "200 Diamond",
+                label: "200 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "20.000",
+                url: "https://www.google.com",
+              },
+            ],
+          },
+          {
+            value: "Mobile Legend",
+            label: "Mobile Legend",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [
+              {
+                value: "null",
+                label: "Pilih Jumlah Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "-",
+                url: null,
+              },
+              {
+                value: "150 Diamond",
+                label: "150 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "15.000",
+                url: "https://www.google.com",
+              },
+              {
+                value: "300 Diamond",
+                label: "300 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "30.000",
+                url: "https://www.google.com",
+              },
+            ],
+          },
+          {
+            value: "PUBG",
+            label: "PUBG",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [
+              {
+                value: "null",
+                label: "Pilih Jumlah Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "-",
+                url: null,
+              },
+              {
+                value: "100 Diamond",
+                label: "100 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "10.000",
+                url: "https://www.google.com",
+              },
+              {
+                value: "200 Diamond",
+                label: "200 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "20.000",
+                url: "https://www.google.com",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "voucher game",
+        label: "Voucher Game",
+        icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+        children: [
+          {
+            value: "null",
+            label: "Pilih Game",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [],
+          },
+          {
+            value: "Free Fire",
+            label: "Free Fire",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [
+              {
+                value: "null",
+                label: "Pilih Jumlah Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "-",
+                url: null,
+              },
+              {
+                value: "Voucher 100 Diamond",
+                label: "Voucher 100 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "10.000",
+                url: "https://www.google.com",
+              },
+              {
+                value: "Voucher 200 Diamond",
+                label: "Voucher 200 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "20.000",
+                url: "https://www.google.com",
+              },
+            ],
+          },
+          {
+            value: "Mobile Legend",
+            label: "Mobile Legend",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [
+              {
+                value: "null",
+                label: "Pilih Jumlah Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "-",
+                url: null,
+              },
+              {
+                value: "Voucher 150 Diamond",
+                label: "Voucher 150 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "15.000",
+                url: "https://www.google.com",
+              },
+              {
+                value: "Voucher 300 Diamond",
+                label: "Voucher 300 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "30.000",
+                url: "https://www.google.com",
+              },
+            ],
+          },
+          {
+            value: "PUBG",
+            label: "PUBG",
+            icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+            children: [
+              {
+                value: "null",
+                label: "Pilih Jumlah Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "-",
+                url: null,
+              },
+              {
+                value: "Voucher 100 Diamond",
+                label: "Voucher 100 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "10.000",
+                url: "https://www.google.com",
+              },
+              {
+                value: "Voucher 200 Diamond",
+                label: "Voucher 200 Diamond",
+                icon: "https://ik.imagekit.io/x7uhqoae6/default-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669877311779",
+                harga: "20.000",
+                url: "https://www.google.com",
+              },
+            ],
+          },
+        ],
+      },
     ];
 
     // Ubah bagian Width dan Height untuk Ubah Image Size di bagian pilihan
@@ -7085,12 +7384,16 @@
     var labelHarga = $("#labelHarga");
     var orderBtn = $("#orderBtn");
     var nomorInput = $("#nomorInput");
+    var userIdInput = $("#userIdInput");
+    var serverInput = $("#serverInput");
 
     $(".slider").bxSlider();
 
     // Hide Box 2, 3, 4
     orderBtn.prop("disabled", true);
     nomorInput.css("display", "none");
+    userIdInput.css("display", "none");
+    serverInput.css("display", "none");
 
     // Populate Selection Box 1, 2, 3 First Load
     $.each(data, function (i, box1) {
@@ -7144,6 +7447,8 @@
     $('#selectionBox4').hide();
 
     function selection1Selected() {
+      labelHarga.text("-");
+      $('#selectionBox2').show();
       $('#selectionBox2').next(".select2-container").show();
       selectionBox2.empty();
       selectionBox3.empty();
@@ -7168,14 +7473,22 @@
         $('#selectionBox4').hide();
         labelHarga.text("-");
         nomorInput.css("display", "none");
+        userIdInput.css("display", "none");
+        serverInput.css("display", "none");
       } else {
+        $("#selectionBox2").select2();
+        $("#selectionBox2").select2('destroy');
         $("#selectionBox3").select2();
         $("#selectionBox3").select2('destroy');
         $('#selectionBox3').next(".select2-container").hide();
+        $('#selectionBox3').hide();
         $("#selectionBox4").select2();
         $("#selectionBox4").select2('destroy');
         $('#selectionBox4').next(".select2-container").hide();
+        $('#selectionBox4').hide();
         nomorInput.css("display", "none");
+        userIdInput.css("display", "none");
+        serverInput.css("display", "none");
 
         let box2Data = data.find((x) => x.value == value).children;
 
@@ -7200,13 +7513,15 @@
         });
 
         if (value == "paket internet" || value == "voucher internet") {
-          $.each(box2Data[0].children[0].children, function (j, box4) {
-            selectionBox4.append(
-              $(`<option style="background-color: #2192ff" data-img_src="${box4.icon}" value="${box4.value}">${box4.label}</option>`)    
-            );
-          });
+          if (box2Data[0].children[0] != undefined) {
+            $.each(box2Data[0].children[0].children, function (j, box4) {
+              selectionBox4.append(
+                $(`<option style="background-color: #2192ff" data-img_src="${box4.icon}" value="${box4.value}">${box4.label}</option>`)    
+              );
+            });
 
-          labelHarga.text(box2Data[0].children[0].children[0]?.harga);
+            labelHarga.text(box2Data[0].children[0].children[0]?.harga);
+          }
         } else {
           labelHarga.text(box2Data[0].children[0]?.harga);
         }
@@ -7214,6 +7529,8 @@
     }
 
     function selection2Selected() {
+      labelHarga.text("-");
+      $('#selectionBox3').show();
       $('#selectionBox3').next(".select2-container").show();
 
       let value1 = selectionBox1.find(":selected").val();
@@ -7222,17 +7539,34 @@
       orderBtn.prop("disabled", true);
 
       if (value2 == "null") {
+        $("#selectionBox3").select2();
+        $("#selectionBox3").select2('destroy');
         $('#selectionBox3').next(".select2-container").hide();
+        $('#selectionBox3').hide();
+        $("#selectionBox4").select2();
+        $("#selectionBox4").select2('destroy');
         $('#selectionBox4').next(".select2-container").hide();
+        $('#selectionBox4').hide();
         labelHarga.text("-");
         nomorInput.css("display", "none");
+        userIdInput.css("display", "none");
+        serverInput.css("display", "none");
       } else {
+        $("#selectionBox3").select2();
+        $("#selectionBox3").select2('destroy');
+        $("#selectionBox4").select2();
+        $("#selectionBox4").select2('destroy');
         $('#selectionBox4').next(".select2-container").hide();
+        $('#selectionBox4').hide();
         nomorInput.css("display", "none");
+        userIdInput.css("display", "none");
+        serverInput.css("display", "none");
 
         let box3Data = data
           .find((x) => x.value == value1)
           .children.find((x) => x.value == value2).children;
+
+        selectionBox3.find("option").remove();
 
         $.each(box3Data, function (i, box3) {
           selectionBox3.append(
@@ -7255,14 +7589,6 @@
             );
           });
 
-          $('#selectionBox4').select2({
-            templateSelection: custom_template_selection,
-            templateResult: custom_template_result,
-            minimumResultsForSearch: -1
-          });
-          $('.select2-container--default .select2-selection--single').css({'background-color': '#2192ff', 'height': '60px'});
-          $('.select2-results__option').css({'background-color': '#2192ff !important'});
-
           labelHarga.text(box3Data[0].children[0]?.harga);
         } else {
           labelHarga.text(box3Data[0]?.harga);
@@ -7271,6 +7597,7 @@
     }
 
     function selection3Selected() {
+      labelHarga.text("-");
       selectionBox4.find("option").remove();
 
       let value1 = selectionBox1.find(":selected").val();
@@ -7278,7 +7605,10 @@
       let value3 = selectionBox3.find(":selected").val();
 
       if (value3 == "null") {
-        selectionBox4.css("display", "none");
+        $("#selectionBox4").select2();
+        $("#selectionBox4").select2('destroy');
+        $('#selectionBox4').next(".select2-container").hide();
+        $('#selectionBox4').hide();
         labelHarga.text("-");
       } else {
         let box3Data = data
@@ -7288,7 +7618,7 @@
 
         if (value1 == "paket internet" || value1 == "voucher internet") {
           orderBtn.prop("disabled", true);
-          selectionBox4.css("display", "block");
+          $('#selectionBox4').show();
           let box4Data = box3Data.children;
 
           $.each(box4Data, function (j, box4) {
@@ -7305,17 +7635,35 @@
           $('.select2-container--default .select2-selection--single').css({'background-color': '#2192ff', 'height': '60px'});
           $('.select2-results__option').css({'background-color': '#2192ff !important'});
 
-          labelHarga.text(box4Data[0].harga);
+          labelHarga.text(box4Data[0]?.harga);
+        } else if (value1 == "game") {
+          userIdInput.css("display", "block");
+          if (value2 == "Mobile Legend") {
+            serverInput.css("display", "block");
+            $("#boxUserId").removeClass("col-12");
+            $("#boxUserId").addClass("col-6");
+          } else {
+            $("#boxUserId").removeClass("col-6");
+            $("#boxUserId").addClass("col-12");
+          }
+          orderBtn.prop("disabled", false);
+          // Tampilkan Harga
+          labelHarga.text(box3Data?.harga);
+        } else if (value1 == "voucher game") {
+          orderBtn.prop("disabled", false);
+          // Tampilkan Harga
+          labelHarga.text(box3Data?.harga);
         } else {
           nomorInput.css("display", "block");
           orderBtn.prop("disabled", false);
           // Tampilkan Harga
-          labelHarga.text(box3Data.harga);
+          labelHarga.text(box3Data?.harga);
         }
       }
     }
 
     function selection4Selected() {
+      labelHarga.text("-");
       let value1 = selectionBox1.find(":selected").val();
       let value2 = selectionBox2.find(":selected").val();
       let value3 = selectionBox3.find(":selected").val();
@@ -7331,7 +7679,7 @@
       orderBtn.prop("disabled", false);
 
       // Tampilkan Harga
-      labelHarga.text(box4Data.harga);
+      labelHarga.text(box4Data?.harga);
     }
 
     document.getElementById("nomorInput").addEventListener("input", function (e) {
@@ -7342,6 +7690,10 @@
         .trim();
     });
 
+    function floatingBtnClick() {
+      window.location.href = "https://wa.me/08121104175";
+    }
+
     function btnClick() {
       let value1 = selectionBox1.find(":selected").val();
       let value2 = selectionBox2.find(":selected").val();
@@ -7349,10 +7701,26 @@
 
       const catatan = "?catatan=";
       let nomor = nomorInput.val();
+      let userId = userIdInput.val();
+      let server = serverInput.val();
 
-      if (nomor.length < 10) {
-        alert("Periksa Kembali Nomor Anda!");
-        return;
+      if (value1 == "game") {
+        if (userId.length == 0) {
+          alert("Periksa Kembali User ID Anda!");
+          return;
+        }
+
+        if (value2 == "Mobile Legend") {
+          if (server.length == 0) {
+            alert("Periksa Kembali Server Anda!");
+            return;
+          }
+        }
+      } else if (value1 != "voucher game") {
+        if (nomor.length < 10) {
+          alert("Periksa Kembali Nomor Anda!");
+          return;
+        }
       }
 
       let url = "";
@@ -7371,7 +7739,15 @@
           .children.find((x) => x.value == value3).url;
       }
 
-      window.location.href = url + catatan + nomor;
+      if (value1 == "game") {
+        if (value2 == "Mobile Legend") {
+          window.location.href = url + catatan + userId + "," + server;
+        } else {
+          window.location.href = url + catatan + userId;
+        }
+      } else {
+        window.location.href = url + catatan + nomor;
+      }
     }
 
     setInterval(function () {
