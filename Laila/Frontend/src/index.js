@@ -69,6 +69,7 @@ function displayThisWeekProgress(weekRecap) {
   const taskCompletion = document.getElementById("taskCompletion");
   const complianceCompletion = document.getElementById("complianceCompletion");
   const weekTips = document.getElementById("weekTips");
+  const tipsEmote = document.getElementById("tipsEmote");
 
   taskCompletion.innerHTML = "";
   complianceCompletion.innerHTML = "";
@@ -84,6 +85,19 @@ function displayThisWeekProgress(weekRecap) {
             <div class="progress-bar" style="width:${weekRecap["complianceRate"]}%">${weekRecap["complianceRate"]}%</div>
         </div>`;
 
+  const total = weekRecap["completionRate"] + weekRecap["complianceRate"] / 2;
+  let emote = ``;
+  if (total <= 25) {
+    emote = `<i class="icon fas fa-sad-cry"></i>`;
+  } else if (total <= 50) {
+    emote = `<i class="icon fas fa-sad-tear"></i>`;
+  } else if (total <= 75) {
+    emote = `<i class="icon fas fa-laugh-wink"></i>`;
+  } else {
+    emote = `<i class="icon fas fa-laugh-squint"></i>`;
+  }
+
+  tipsEmote.innerHTML = emote;
   weekTips.innerHTML += weekRecap["tips"];
 }
 

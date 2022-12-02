@@ -64,7 +64,7 @@ function displayRecap(data) {
 
   // Weekly Status Chart
   new Chart(weeklyStatusCanvas, {
-    type: "bar",
+    type: "line",
     data: {
       labels: weeklyLabels,
       datasets: [
@@ -88,7 +88,7 @@ function displayRecap(data) {
 
   // Weekly Compliance Chart
   new Chart(weeklyComplianceCanvas, {
-    type: "bar",
+    type: "line",
     data: {
       labels: weeklyLabels,
       datasets: [
@@ -157,7 +157,7 @@ function displayRecap(data) {
 
   // Monthly Status Chart
   new Chart(monthlyStatusCanvas, {
-    type: "bar",
+    type: "line",
     data: {
       labels: monthlyLabels,
       datasets: [
@@ -181,7 +181,7 @@ function displayRecap(data) {
 
   // Monthly Compliance Chart
   new Chart(monthlyComplianceCanvas, {
-    type: "bar",
+    type: "line",
     data: {
       labels: monthlyLabels,
       datasets: [
