@@ -11,13 +11,11 @@ function checkLocalItem() {
     // Set Todos to Backend
     setTodos(localTodos);
   }
-
-  getTodayList();
 }
 
 // Set Todos in Backend
 function setTodos(localTodo) {
-  fetch(`http://localhost:3001/set-todo`, {
+  fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/set-todo`, {
     method: "POST",
     headers: {
       accept: "*/*",
@@ -26,6 +24,8 @@ function setTodos(localTodo) {
     body: JSON.stringify({
       localTodo: localTodo,
     }),
+  }).then((response) => {
+    getTodayList();
   });
 }
 
@@ -46,20 +46,22 @@ function showNotification(title, message) {
 
 // Get List of Todo that Has Start Date Today
 function getTodayList() {
-  fetch(`http://localhost:3001/today`)
+  fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/today`)
     .then((response) => response.json())
-    .then((data) => displayTodos(data));
-
-  fetch(`http://localhost:3001/list?filter=All`)
-    .then((response) => response.json())
-    .then((data) => localStorage.setItem("todos", JSON.stringify(data)));
-
-  getThisWeekRecap();
+    .then((data) => {
+      displayTodos(data);
+      fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list?filter=All`, {cache: "no-store"})
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem("todos", JSON.stringify(data));
+          getThisWeekRecap();
+        });
+    });
 }
 
 // Get This Week Recap
 function getThisWeekRecap() {
-  fetch(`http://localhost:3001/this-week-recap`)
+  fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/this-week-recap`)
     .then((response) => response.json())
     .then((data) => displayThisWeekProgress(data));
 }
@@ -161,33 +163,33 @@ function displayTodos(data) {
 
 // Delete Todo by ID
 function btnDeleteClick(id) {
-  fetch(`http://localhost:3001/list/${id}`, {
+  fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list/${id}`, {
     method: "DELETE",
     headers: {
       accept: "*/*",
       "content-type": "application/json",
     },
+  }).then((response) => {
+    getTodayList();
   });
-
-  getTodayList();
 }
 
 // Change Todo Status to Complete
 function btnCompleteClick(id) {
-  fetch(`http://localhost:3001/list/${id}`, {
+  fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list/${id}`, {
     method: "PUT",
     headers: {
       accept: "*/*",
       "content-type": "application/json",
     },
+  }).then((response) => {
+    getTodayList();
   });
-
-  getTodayList();
 }
 
 // Setup Interval to Check if a Todo is Missed or Will Soon Start
 function reminder() {
-  fetch(`http://localhost:3001/list?filter=Pending`)
+  fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list?filter=Pending`)
     .then((response) => response.json())
     .then((data) => {
       const today = new Date();
@@ -223,7 +225,7 @@ function reminder() {
           ) {
             showNotification("Task Missed", `You Missed Task ${value.title}`);
 
-            fetch(`http://localhost:3001/notif/${value.id}`, {
+            fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/notif/${value.id}`, {
               method: "PUT",
               headers: {
                 accept: "*/*",
@@ -236,7 +238,7 @@ function reminder() {
     });
 
   setInterval(function () {
-    fetch(`http://localhost:3001/list?filter=Pending`)
+    fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list?filter=Pending`)
       .then((response) => response.json())
       .then((data) => {
         const today = new Date();
@@ -272,7 +274,7 @@ function reminder() {
             ) {
               showNotification("Task Missed", `You Missed Task ${value.title}`);
 
-              fetch(`http://localhost:3001/notif/${value.id}`, {
+              fetch(`https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/notif/${value.id}`, {
                 method: "PUT",
                 headers: {
                   accept: "*/*",

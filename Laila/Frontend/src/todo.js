@@ -35,16 +35,19 @@ function checkLocalItem() {
 
 // Set todos from LocalStorage to Backend
 function setTodos(localTodo) {
-  fetch(`http://localhost:3001/set-todo`, {
-    method: "POST",
-    headers: {
-      accept: "*/*",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      localTodo: localTodo,
-    }),
-  });
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/set-todo`,
+    {
+      method: "POST",
+      headers: {
+        accept: "*/*",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        localTodo: localTodo,
+      }),
+    }
+  );
 }
 
 // Check if Notification Permission is Granted if not Request Permission
@@ -64,7 +67,10 @@ function showNotification(title, message) {
 
 // Function to Get All Todo List
 function getAllTodoList() {
-  fetch(`http://localhost:3001/list?filter=All`)
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list?filter=All`,
+    { cache: "no-store" }
+  )
     .then((response) => response.json())
     .then((data) => {
       displayTaskProgression(data);
@@ -216,53 +222,64 @@ function btnAddClick() {
     return;
   }
 
-  fetch("http://localhost:3001/list", {
-    method: "POST",
-    headers: {
-      accept: "*/*",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      title: todoTitle.value,
-      date: todoDate.value,
-    }),
+  fetch(
+    "https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list",
+    {
+      method: "POST",
+      headers: {
+        accept: "*/*",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        title: todoTitle.value,
+        date: todoDate.value,
+      }),
+    }
+  ).then((response) => {
+    todoTitle.value = "";
+    todoDate.value = "";
+
+    getAllTodoList();
   });
-
-  todoTitle.value = "";
-  todoDate.value = "";
-
-  getAllTodoList();
 }
 
 // Function to Complete Todo
 function btnCompleteClick(id) {
-  fetch(`http://localhost:3001/list/${id}`, {
-    method: "PUT",
-    headers: {
-      accept: "*/*",
-      "content-type": "application/json",
-    },
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list/${id}`,
+    {
+      method: "PUT",
+      headers: {
+        accept: "*/*",
+        "content-type": "application/json",
+      },
+    }
+  ).then((response) => {
+    getAllTodoList();
   });
-
-  getAllTodoList();
 }
 
 // Function to Delete Todo by ID
 function btnDeleteClick(id) {
-  fetch(`http://localhost:3001/list/${id}`, {
-    method: "DELETE",
-    headers: {
-      accept: "*/*",
-      "content-type": "application/json",
-    },
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        accept: "*/*",
+        "content-type": "application/json",
+      },
+    }
+  ).then((response) => {
+    getAllTodoList();
   });
-
-  getAllTodoList();
 }
 
 // Function to Retrieve Todo Detail
 function btnEditClick(id) {
-  fetch(`http://localhost:3001/list/${id}`)
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list/${id}`
+  )
     .then((response) => response.json())
     .then((data) => {
       editId.value = data.id;
@@ -273,22 +290,25 @@ function btnEditClick(id) {
 
 // Function to Update Todo By ID
 function updateTodo() {
-  fetch(`http://localhost:3001/list/${editId.value}`, {
-    method: "POST",
-    headers: {
-      accept: "*/*",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      id: editId.value,
-      title: editTitle.value,
-      date: editDate.value,
-    }),
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list/${editId.value}`,
+    {
+      method: "POST",
+      headers: {
+        accept: "*/*",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        id: editId.value,
+        title: editTitle.value,
+        date: editDate.value,
+      }),
+    }
+  ).then((response) => {
+    getAllTodoList();
+
+    document.getElementById("modalClose").click();
   });
-
-  getAllTodoList();
-
-  document.getElementById("modalClose").click();
 }
 
 // When User change The Filter
@@ -312,7 +332,9 @@ function filterChange() {
 
 // Function to Check if a Todo is Missed or Will Start Soon
 function reminder() {
-  fetch(`http://localhost:3001/list?filter=Pending`)
+  fetch(
+    `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list?filter=Pending`
+  )
     .then((response) => response.json())
     .then((data) => {
       const today = new Date();
@@ -348,20 +370,25 @@ function reminder() {
           ) {
             showNotification("Task Missed", `You Missed Task ${value.title}`);
 
-            fetch(`http://localhost:3001/notif/${value.id}`, {
-              method: "PUT",
-              headers: {
-                accept: "*/*",
-                "content-type": "application/json",
-              },
-            });
+            fetch(
+              `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/notif/${value.id}`,
+              {
+                method: "PUT",
+                headers: {
+                  accept: "*/*",
+                  "content-type": "application/json",
+                },
+              }
+            );
           }
         }
       });
     });
 
   setInterval(function () {
-    fetch(`http://localhost:3001/list?filter=Pending`)
+    fetch(
+      `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/list?filter=Pending`
+    )
       .then((response) => response.json())
       .then((data) => {
         const today = new Date();
@@ -397,13 +424,16 @@ function reminder() {
             ) {
               showNotification("Task Missed", `You Missed Task ${value.title}`);
 
-              fetch(`http://localhost:3001/notif/${value.id}`, {
-                method: "PUT",
-                headers: {
-                  accept: "*/*",
-                  "content-type": "application/json",
-                },
-              });
+              fetch(
+                `https://638da56fa0eae95503ce5bfa--imaginative-mandazi-f4c661.netlify.app/.netlify/functions/index/notif/${value.id}`,
+                {
+                  method: "PUT",
+                  headers: {
+                    accept: "*/*",
+                    "content-type": "application/json",
+                  },
+                }
+              );
             }
           }
         });
