@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,27 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|min:5|max:20',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+        $remember = $request->only('remember');
+        if (Auth::attempt($credentials)) {
+            if ($remember && $remember['remember'] == "on") {
+                return redirect()->route('home')->withCookie(cookie('email', $request['email'], 180))->withCookie(cookie('password', $request['password'], 180));
+            } else {
+                return redirect()->route('home');
+            }
+        }
+
+
+        return redirect("login")->withSuccess('Opps! You have entered invalid credentials');
     }
 }

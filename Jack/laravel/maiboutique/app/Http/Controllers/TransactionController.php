@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Transaction;
+use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,10 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(8);
+        $transactions = Transaction::where('user_id', '=', Auth::user()->id)->get();
 
-        return view('home', [
-            'products' => $products
+        dd($transactions->transactionDetails);
+
+        return view('transaction_history', [
+            'transactions' => $transactions
         ]);
     }
 }

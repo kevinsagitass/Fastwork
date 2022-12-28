@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['menus' => App\Utils\HeaderUtil::getMenu()])
 
 @section('content')
 <div class="container">
