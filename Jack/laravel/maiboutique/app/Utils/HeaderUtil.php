@@ -22,7 +22,7 @@ class HeaderUtil
                 ],
                 [
                     "name" => "Search",
-                    "route" => "search"
+                    "route" => "product/search"
                 ],
                 [
                     "name" => "Cart",
@@ -45,7 +45,7 @@ class HeaderUtil
                 ],
                 [
                     "name" => "Search",
-                    "route" => "search"
+                    "route" => "product/search"
                 ],
                 [
                     "name" => "Profile",
@@ -54,11 +54,7 @@ class HeaderUtil
                 [
                     "name" => "Add Item",
                     "route" => "add-item"
-                ],
-                [
-                    "name" => "Logged In Users",
-                    "route" => "logged-users"
-                ],
+                ]
             ];
         }
     }

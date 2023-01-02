@@ -24,7 +24,7 @@ class CartController extends Controller
     public function index()
     {
 
-        $carts = Cart::all();
+        $carts = Cart::where('user_id', '=', Auth::user()->id)->get();
         $totalPrice = 0;
 
         foreach ($carts as $cart) {
@@ -79,7 +79,19 @@ class CartController extends Controller
 
     public function removeFromCart($productId)
     {
-        Cart::where('user_id', '=', Auth::user()->id)->where('product_id', '=', $productId)->delete();
+        $item = Cart::where('user_id', '=', Auth::user()->id)->where('product_id', '=', $productId)->first();
+
+        if ($item) {
+            $product = Product::find($productId);
+
+            if ($product) {
+                $product->stock += $item->quantity;
+
+                $product->save();
+            }
+
+            $item->delete();
+        }
 
         return redirect()->route('cart');
     }

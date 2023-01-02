@@ -24,26 +24,26 @@
         </div>
         <div class="col-4 text-right">
             @if (Route::has('login'))
-                <div class="px-3 py-1">
-                    @auth
-                        @include('layouts.partials.nav')
-                    @else
-                        <a href="{{ route('login') }}" class="text-gray-700 dark:text-gray-500 underline">Log in</a>
-                    @endauth
-                </div>
+            <div class="px-3 py-1">
+                @auth
+                @include('layouts.partials.nav')
+                @else
+                <a href="{{ route('login') }}" class="text-gray-700 dark:text-gray-500 underline">Log in</a>
+                @endauth
+            </div>
             @endif
         </div>
     </div>
     <div class="card bg-dark text-white">
-        <img class="card-img" src="{{ asset('images/Arriety.jpg') }}" alt="Card image" style="max-height: 300px;">
-        <div class="card-img-overlay text-center py-auto" style="padding-top: 10%;">
+        <img class="card-img" src="{{ asset('images/Arriety.jpg') }}" alt="Card image" style="height: 70%; width: 100%;">
+        <div class="card-img-overlay text-center py-auto" style="padding-top: 25%;">
             <div class="font-weight-bold">
                 <p class="card-text">Welcome to Maiboutique</p>
                 <p>Online Boutique that Provides You With Various Clothes to Suit Your Various Activities</p>
                 @auth
-                    <button class="btn btn-primary"><a class="text-white font-weight-bold" href="{{ route('home') }}">Register</a></button>
+                <button class="btn btn-primary"><a class="text-white font-weight-bold" href="{{ route('home') }}">Register</a></button>
                 @else
-                    <button class="btn btn-primary"><a class="text-white font-weight-bold" href="{{ route('register') }}">Register</a></button>
+                <button class="btn btn-primary"><a class="text-white font-weight-bold" href="{{ route('register') }}">Register</a></button>
                 @endauth
             </div>
         </div>

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -40,6 +38,35 @@ class ProductController extends Controller
     public function deleteProduct($id)
     {
         Product::destroy($id);
+
+        return redirect()->route('home');
+    }
+
+    public function addItem()
+    {
+        return view('add_item');
+    }
+
+    public function addProduct(Request $request)
+    {
+        $validated = $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg',
+            'name' => 'required|min:5|max:20|unique:products',
+            'description' => 'required|min:5',
+            'price' => 'required|numeric|min:1000',
+            'stock' => 'required|numeric|min:1',
+        ]);
+
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->storeAs('public/products', $imageName);
+
+        Product::create([
+            'image' => $imageName,
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'price' => $validated['price'],
+            'stock' => $validated['stock'],
+        ]);
 
         return redirect()->route('home');
     }

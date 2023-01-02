@@ -26,8 +26,6 @@ class TransactionController extends Controller
     {
         $transactions = Transaction::where('user_id', '=', Auth::user()->id)->get();
 
-        dd($transactions->transactionDetails);
-
         return view('transaction_history', [
             'transactions' => $transactions
         ]);
